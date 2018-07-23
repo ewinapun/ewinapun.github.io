@@ -6,6 +6,9 @@ description: Publications by categories in reversed chronological order. Generat
 years: [1956, 1950, 1935, 1905]
 ---
 
-{% for y in page.years %}
-  <h3 class="year">{{y}}</h3>
-{% endfor %}
+<h3 class="year">2018</h3>
+
+<a href='ewinapun.tk'>Mu pubz</a>
+
+
+<h3 class="year">2017</h3>
