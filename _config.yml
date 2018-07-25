@@ -22,7 +22,7 @@ linkedin_username: ewinapun
 scholar_userid: # your Google Scholar ID
 orcid_id: # your ORCID ID
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+reach me by email is the easiest.
 
 google_analytics: UA-XXXXXXXXX # out your google-analytics code
 
@@ -33,7 +33,7 @@ blog_name: Blog
 blog_description: a collection of my thoughts
 
 # Pagination
-paginate: 4
+paginate: 5
 permalink: /blog/:year/:title/
 paginate_path: /blog/page:num/
 
