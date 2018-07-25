@@ -2,7 +2,7 @@
 layout: about
 permalink: /
 title: <strong>Ewina Tsam Kiu</strong> Pun
-description: Doctorate candidate at Brown. <a href="https://www.braingate.org/">Affiliations</a>
+description: A doctorate candidate at Brown. <a href="https://www.braingate.org/">Affiliations</a>
 
 profile:
   align: right
