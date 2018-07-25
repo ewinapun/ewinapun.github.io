@@ -2,7 +2,7 @@
 layout: page
 title: BioMEMS
 description: Microbubble length tracking using image processing
-img: /assets/img/BioMEMS_project/bubble_crop.gif
+img: /assets/img/BioMEMS_project/bubble_crop1.gif
 ---
 
 
