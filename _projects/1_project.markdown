@@ -9,9 +9,7 @@ I spent two years in USC Biomedical Microsystems Laboratory led by Dr. Ellis Men
 focuses on the application for hydrocephalus; also applicable to other common pressure-induced medical conditions such as hypertension and glaucoma
 
 
-completely fill the microchannel with phosphate buffered saline (PBS) that mimics a wet in-vivo environment
-create a microbubble by a current-induced electrolysis from the nuclear cores via a current source
-chronically measure changes in impedence conducted through the liquid capillaries at the corners
+We completely filled the microchannel with phosphate buffered saline (PBS) that mimics a wet in-vivo environment. By a current-induced electrolysis from the nuclear cores via a current source, we created a microbubble from the middle of the channel. We chronically measure changes in impedence conducted through the liquid capillaries at the corners.
 
 ***
 
