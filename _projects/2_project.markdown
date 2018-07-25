@@ -7,7 +7,7 @@ img: /assets/img/dynamic_tracking_project/auto.png
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.10\textwidth]{/assets/img/dynamic_tracking_project/step.png}
+    \includegraphics[width=0.10\textwidth]{assets/img/dynamic_tracking_project/step.png}
     \caption{test}
 \end{figure}
 <!--
