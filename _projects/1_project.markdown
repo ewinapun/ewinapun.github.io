@@ -7,10 +7,10 @@ img: /assets/img/BioMEMS_project/bubble_crop1.gif
 
 
 
-<div class="img_row">
+<div class="col">
     <img src="{{ site.baseurl }}/assets/img/BioMEMS_project/bubblelength.png">
 </div>
-<div class="col three caption">
+<div class="col caption">
     From raw image, to processed B/W image, to tracking the bubble's length.
 </div>
 
