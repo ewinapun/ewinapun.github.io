@@ -2,7 +2,7 @@
 layout: page
 title: MEMS microbubble length tracking
 description: using image processing
-img: /assets/img/bubble_project/bubble_gif.gif
+img: /assets/img/bubble_project/bubble_gif_crop.gif
 ---
 
 <div class="img_row">
