@@ -2,11 +2,11 @@
 layout: page
 title: Project 1
 description: bubble length tracking using image processing
-img: /assets/img/bubble_project/bubble_gif_crop.gif
+img: /assets/img/bubble_project/ezgif.com-crop.gif
 ---
 
 <div class="img_row">
-    <img class="col three left" src="{{ site.baseurl }}/assets/img/5.jpg" alt="" title="example image"/>
+    <img class="col three left" src="{{ site.baseurl }}/assets/bubble_project/bubblelength.png" alt="" title="example image"/>
 </div>
 <div class="col three caption">
     This image can also have a caption. It's like magic.
