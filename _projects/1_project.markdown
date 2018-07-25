@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Microbubble length tracking
-description: using image processing
+title: BioMEMS
+description: Microbubble length tracking using image processing
 img: /assets/img/bubble_project/bubble_crop.gif
 ---
 
 <div class="img_row">
-    <img class="col three left" src="{{ site.baseurl }}/assets/img/bubble_project/bubblelength.png" height="42" width="42">
+    <img src="{{ site.baseurl }}/assets/img/bubble_project/bubblelength.png">
 </div>
 <div class="col three caption">
     This image can also have a caption. It's like magic.
