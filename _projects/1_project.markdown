@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Project 1
-description: bubble length tracking using image processing
-img: /assets/img/bubble_project/ezgif.com-crop.gif
+title: MEMS microbubble length tracking
+description: using image processing
+img: /assets/img/bubble_project/bubble_gif.gif
 ---
 
 <div class="img_row">
