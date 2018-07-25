@@ -1,12 +1,12 @@
 ---
 layout: page
-title: MEMS microbubble length tracking
+title: Microbubble length tracking
 description: using image processing
-img: /assets/img/bubble_project/bubble_gif_crop.gif
+img: /assets/img/bubble_project/bubble_crop.gif
 ---
 
 <div class="img_row">
-    <img class="col three left" src="{{ site.baseurl }}/assets/img/bubble_project/bubblelength.png" alt="" title="example image"/>
+    <img class="col three left" src="{{ site.baseurl }}/assets/img/bubble_project/bubblelength.png" height="42" width="42">
 </div>
 <div class="col three caption">
     This image can also have a caption. It's like magic.
