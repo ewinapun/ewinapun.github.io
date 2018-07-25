@@ -16,8 +16,8 @@ last_updated: # leave blank if you don't want to display last updated
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
-github_username: # your GitHub user name
-twitter_username: # your Twitter handle
+github_username: ewinapun
+twitter_username: ewinapun
 linkedin_username: ewinapun
 scholar_userid: # your Google Scholar ID
 orcid_id: # your ORCID ID
@@ -29,8 +29,8 @@ google_analytics: UA-XXXXXXXXX # out your google-analytics code
 # -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------
-blog_name:
-blog_description: a simple whitespace theme for academics
+blog_name: Blog
+blog_description: a collection of my thoughts
 
 # Pagination
 paginate: 4
