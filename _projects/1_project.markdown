@@ -6,7 +6,7 @@ img: /assets/img/bubble_project/ezgif.com-crop.gif
 ---
 
 <div class="img_row">
-    <img class="col three left" src="{{ site.baseurl }}/assets/bubble_project/bubblelength.png" alt="" title="example image"/>
+    <img class="col three left" src="{{ site.baseurl }}/assets/img/bubble_project/bubblelength.png" alt="" title="example image"/>
 </div>
 <div class="col three caption">
     This image can also have a caption. It's like magic.
