@@ -10,9 +10,8 @@ img: /assets/img/BioMEMS_project/bubble_crop1.gif
 I spent two years in USC Biomedical Microsystems Laboratory working as an undergraduate researcher. One of the projects aims to treat hydrocephalus via a novel pressure sensor. Hydrocephalus occurs when excessive cerebrospinal fluid accumulates in the brain, resulting in an abnormal widening of spaces. Since such fluid accumulation poses potentially life-threatening pressure against brain tissues, it is necessary to monitor pressure chronically to drive timely therapeutic interventions. Hence, a new, flexible MEMS-based, low-powered and biocompatible pressure sensor was being developed. This pressure sensor enables reliable sensing for chronic \textit{in-vivo} implantation and provides immediate access to actionable pressure data. My job is to characterize the transducer's design to maximize its sensitivity. It is worth mentioning that this pressure sensor is also applicable to other common pressure-induced medical conditions, such as hypertension and glaucoma.
 
 <div class="img_row">
-    <img class="col one left" src="{{ site.baseurl }}/assets/img/BioMEMS_project/deviceFFC.png" alt="" title="example image"/>
+    <img class="col two left" src="{{ site.baseurl }}/assets/img/BioMEMS_project/deviceFFC.png" alt="" title="example image"/>
     <img class="col one left" src="{{ site.baseurl }}/assets/img/BioMEMS_project/device.jpg" alt="" title="example image"/>
-    <img class="col one left" src="{{ site.baseurl }}/assets/img/BioMEMS_project/devicechannel.png" alt="" title="example image"/>
 </div>
 <div class="col three caption">
     Images of a device. left: the MEMS device connected with a FFC cable; middle: a zoomed image of the microbubble pressure transducer (\muBPT); right: a further magnified image of pressure part of \muBPT, with and without a bubble injection.
