@@ -25,10 +25,9 @@ I spent two years in USC Biomedical Microsystems Laboratory working as an underg
 
 # Principle of pressure sensing using microbubble
 
+So how does the magic happen? Boyle's law. It states that pressure of a gas is inversely related to its volume $$ P \varpropto \frac{1}{V} $$.
 We completely filled the microchannel with phosphate buffered saline (PBS) that mimics a wet \textit{in-vivo} environment. By a current-induced electrolysis from the nuclear cores, we created a microbubble from the middle of the channel. We chronically measure changes in impedance conducted through the liquid capillaries at the corners. We conclude from [2] that in response to a pressure change, bubble length is more likely to vary than the cross section area.[^footnote1]
 
-Boyle's law: inversely relates pressure of a gas to its volume by
-$$ P \varpropto \frac{1}{V} $$
 
 
 
