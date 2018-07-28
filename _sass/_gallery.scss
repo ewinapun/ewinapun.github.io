@@ -11,7 +11,7 @@ figcaption {
     background: $theme-color;
 }
 .img_row {
-    height: 100%;
+    height: $img-height;
     width: 100%;
     overflow: hidden;
     box-sizing:border-box;
