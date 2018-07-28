@@ -5,7 +5,9 @@ description: Microbubble length tracking using image processing
 img: /assets/img/BioMEMS_project/bubble_crop1.gif
 ---
 
-![bubble](/assets/img/BioMEMS_project/bubble.gif)
+<p>
+  <img src="/assets/img/BioMEMS_project/bubble.gif" style="width: 100%;"/>
+</p>
 
 ## Introducing a pressure sensor
 
@@ -32,8 +34,7 @@ A microchannel is carefully fabricated into the device. The channel is connected
     The design of a pressure transducer: left: A MEMS device connected with a FFC cable; middle: a zoomed image of the microbubble pressure transducer (μBPT); right: a further magnified image of pressure part of the μBPT, with and without a bubble injection in the microchannel.
 </div>
 
-We first completely fill the microchannel with phosphate buffered saline (PBS) to mimic a wet, *in-vivo* environment. By a current-induced electrolysis from the nuclear cores, we create a microbubble from the middle of the channel. When a microbubble is trapped within a filled chamber with rectangular cross section, the gas tends to fill the middle of the cross sectional area and leave pockets of liquid at the corners. These capillaries allow an ionic conduction path within the channel.[^law]
-![alt text](/assets/img/BioMEMS_project/cross_section.png)
+We first completely fill the microchannel with phosphate buffered saline (PBS) to mimic a wet, *in-vivo* environment. By a current-induced electrolysis from the nuclear cores, we create a microbubble from the middle of the channel. When a microbubble is trapped within a filled chamber with rectangular cross section, the gas tends to fill the middle of the cross sectional area and leave pockets of liquid at the corners. These capillaries allow an ionic conduction path within the channel.[^law]<p><img src="/assets/img/BioMEMS_project/cross_section.png" style="width: 100%;"/></p>
 
 One electrochemical characterization we do is to chronically measure changes in impedance conducted through the liquid capillaries at the corners.[^law] Though it is a good indicator of pressure change, a big obstacle we discover is the instability in impedance measurement from the microbubble generation. So we explore alternative ways to characterize microbubble behavior other than the established method of measuring impedance.
 
@@ -52,11 +53,16 @@ So this is what I got:
   <img src="/assets/img/BioMEMS_project/length_pressure.png" style="width: 50%;"/>
   <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 50%;"/>
 </p>
-
+<div class="caption">
+Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
+</div>
 <p>
   <img src="/assets/img/BioMEMS_project/length_time.png" style="width: 50%;"/>
   <img src="/assets/img/BioMEMS_project/impedance_time.png" style="width: 50%;"/>
 </p>
+<div class="caption">
+Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
+</div>
 
 ***
 
