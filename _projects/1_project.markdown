@@ -12,17 +12,17 @@ I spent two years in USC Biomedical Microsystems Laboratory working as an underg
 <p>
   <img src="/assets/img/BioMEMS_project/deviceFFC.png" style="width: 28%;"/>
   <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 35%;"/>
-  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 36%;"/>
+  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 35%;"/>
 </p>
 <div class="col three caption">
     Images of a device. left: the MEMS device connected with a FFC cable; middle: a zoomed image of the microbubble pressure transducer ($$ \mu $$BPT); right: a further magnified image of pressure part of $$ \mu $$BPT, with and without a bubble injection.
 </div>
-
+$$ \mu $$
 ***
 
 ## Principle of pressure sensing using microbubble
 
-Boyle's law. It states that pressure of a gas is inversely related to its volume $$ P \varpropto \frac{1}{V} $$.
+We learn about the Boyle's law. It states that pressure of a gas is inversely related to its volume $$ P \varpropto \frac{1}{V} $$.
 We completely filled the microchannel with phosphate buffered saline (PBS) that mimics a wet \textit{in-vivo} environment. By a current-induced electrolysis from the nuclear cores, we created a microbubble from the middle of the channel. We chronically measure changes in impedance conducted through the liquid capillaries at the corners. We conclude from [2] that in response to a pressure change, bubble length is more likely to vary than the cross section area.[^footnote1]
 
 
