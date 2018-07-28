@@ -18,10 +18,13 @@ I spent two years in USC Biomedical Microsystems Laboratory working as an underg
 </div>
 
 <p>
-  <img src="/assets/img/BioMEMS_project/deviceFFC.png" style="width: 33%;"/>
-  <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 33%;"/>
-  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 33%;" />
+  <img src="/assets/img/BioMEMS_project/deviceFFC.png" style="width: 30%;"/>
+  <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 34%;"/>
+  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 34%;"/>
 </p>
+<div class="col three caption">
+    Images of a device. left: the MEMS device connected with a FFC cable; middle: a zoomed image of the microbubble pressure transducer (\muBPT); right: a further magnified image of pressure part of \muBPT, with and without a bubble injection.
+</div>
 
 ![deviceFFC](/assets/img/BioMEMS_project/deviceFFC.png) ![device](/assets/img/BioMEMS_project/device.jpg) ![devicechannel](/assets/img/BioMEMS_project/devicechannel.png)
 *Images of a device. left: the MEMS device connected with a FFC cable; middle: a zoomed image of the microbubble pressure transducer (\muBPT); right: a further magnified image of pressure part of \muBPT, with and without a bubble injection.*
