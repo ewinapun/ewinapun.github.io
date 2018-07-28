@@ -14,9 +14,8 @@ I spent two years in USC Biomedical Microsystems Laboratory working as an underg
   <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 35%;"/>
   <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 35%;"/>
 </p>
-<div class="col three caption">
-    Images of a device. left: the MEMS device connected with a FFC cable; middle: a zoomed image of the microbubble pressure transducer ($$ \mu $$ BPT); right: a further magnified image of pressure part of $$ \mu $$ BPT, with and without a bubble injection.
-</div>
+*left: A MEMS device connected with a FFC cable; middle: a zoomed image of the microbubble pressure transducer ($$ \mu $$ BPT); right: a further magnified image of pressure part of the $$ \mu $$ BPT, with and without a bubble injection.*
+
 ***
 
 ## Principle of pressure sensing using microbubble
