@@ -52,6 +52,8 @@ In response to a pressure change, bubble length is more likely to vary than the 
 <details><summary>Matlab Code</summary>
 <p>
 
+yes, even hidden code blocks!
+
 ```python
 % iternate for the whole set of images
 files = dir(fullfile(mydir, 'img*.jpg'));
