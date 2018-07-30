@@ -38,7 +38,7 @@ A microchannel is carefully fabricated into the device. The channel is connected
 
 We first completely fill the microchannel with phosphate buffered saline (PBS) to mimic a wet, *in-vivo* environment. By a current-induced electrolysis from the nuclear cores, we create a microbubble from the middle of the channel. When a microbubble is trapped within a filled chamber with rectangular cross section, the gas tends to fill the middle of the cross sectional area and leave pockets of liquid at the corners. These capillaries allow an ionic conduction path within the channel.[^law]
 <p>
-    <img src="/assets/img/BioMEMS_project/cross_section.png" style="float: left;"/>
+    <img src="/assets/img/BioMEMS_project/cross_section.png" style="float: right; width:35%;"/>
 </p>
 
 One electrochemical characterization we do is to chronically measure changes in impedance conducted through the liquid capillaries at the corners.[^law] Though it is a good indicator of pressure change, a big obstacle we discover is the instability in impedance measurement from the microbubble generation. So we explore alternative ways to characterize microbubble behavior other than the established method of measuring impedance.
