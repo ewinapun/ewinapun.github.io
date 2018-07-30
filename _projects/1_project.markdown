@@ -54,7 +54,6 @@ In response to a pressure change, bubble length is more likely to vary than the 
 Top: raw, cropped image of the microchannel;
 middle: processed B/W image of the bubble isolated;
 bottom: screenshot of the program that tracks the bubble's length.
-
 </div>
 
 So this is what I got:
@@ -67,6 +66,8 @@ So this is what I got:
 <div class="caption">
 Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
 </div>
+
+
 
 <p>
   <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 49%;"/>
@@ -83,3 +84,6 @@ Top: raw, cropped image of the microchannel; middle: processed B/W image of the 
 [^law]: L. Yu, C. A. Gutierrez, E. Meng. An Electrochemical Microbubble-based MEMS Pressure Sensor. Journal of Microelectromechanical Systems. Vol 25. 2016.
 
 [^footnote1]: S. Ma, et al: Effect of Contact Angle on Drainage and Imbibition in Regular Polygonal Tubes. Colloid Surf. A. 117. 1996.
+
+
+cd
