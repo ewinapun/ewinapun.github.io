@@ -50,12 +50,8 @@ One electrochemical characterization we do is to chronically measure changes in 
 In response to a pressure change, bubble length is more likely to vary than the cross section area in a microchannel.[^footnote1] So can we track the bubble length on top of the impedance measurement? With some simple image processing on the snapshots taken 2 frames per second, we implement a Matlab program that automatically tracks changes of the microbubble volume in response to pressure.
 
 <details><summary>Matlab Code</summary>
-<p>
-
-yes, even hidden code blocks!
 
 ```python
-% iternate for the whole set of images
 files = dir(fullfile(mydir, 'img*.jpg'));
 first = 'img.jpg';
 for file = files'
@@ -85,7 +81,6 @@ for file = files'
             else
                 bubble_length = combcol(end)-combcol(1);
 
-                % check if it's a fuzzy image or an actual channel
                 continuous = bubble_length/(size(combcol,2)-size(combcol,1));
 
                 if(continuous < 1.5)
@@ -105,14 +100,9 @@ for file = files'
         [row10,col10] = find(diff(max_row+10,:) > cut_off_pixel);
         [row15,col15] = find(diff(max_row+15,:) > cut_off_pixel);
 
-        %displaying images
         if(disp_images && count-1>=starting_image && count-1<=ending_image)
-            diff_copy = diff;
-%             figure
-%             title(num2str(fname));
-%             imshow(basecropped);
             figure
-            imshow(diff_copy);
+            imshow(diff);
             title(num2str(fname));
             hold on;
             if(~isempty(col))
@@ -129,13 +119,10 @@ for file = files'
             end
             pause(.2);
         end
-        % each for loop return to zero
         bubble_length_ratio = [];
     end
 end
 ```
-
-</p>
 </details>
 
 <p>
