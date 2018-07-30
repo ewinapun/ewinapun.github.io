@@ -49,38 +49,39 @@ One electrochemical characterization we do is to chronically measure changes in 
 
 In response to a pressure change, bubble length is more likely to vary than the cross section area in a microchannel.[^footnote1] So can we track the bubble length on top of the impedance measurement? With some simple image processing on the snapshots taken 2 frames per second, we implement a Matlab program that automatically tracks changes of the microbubble volume in response to pressure.
 
-```
+
+## collapsible markdown?
+
+<details><summary>CLICK ME</summary>
+<p>
+
+#### yes, even hidden code blocks!
+
+```Matlab
 % iternate for the whole set of images
 files = dir(fullfile(mydir, 'img*.jpg'));
 first = 'img.jpg';
-count = 0;
 for file = files'
     fname = file.name;
-    disp(fname);
     count = count + 1;
     if (strcmp(fname,first))
-        base = imread(fullfile(mydir, fname),'jpg');
-        base = rgb2gray(base);
+        base = imread(fullfile(mydir, fname),'jpg'); base = rgb2gray(base);
         basecropped = imcrop(base,crop_parameter);
         basecropped = imrotate(basecropped,angle,'bilinear','crop');
     else
-        im = imread(fullfile(mydir, fname),'jpg');
-        im = rgb2gray(im);
+        im = imread(fullfile(mydir, fname),'jpg'); im = rgb2gray(im);
         imcropped = imcrop(im,crop_parameter);
         imcropped = imrotate(imcropped,angle,'bilinear','crop');
         % Subtract from another photo
         diff = (imcropped - basecropped);
         diff = imadjust(diff);
 
-
-        % do multiple rows to ensure we get some length measurement
         for i = 0:2:test_rows
             [row,col] = find(diff(i+starting_row,:) > cut_off_pixel);
             [row5,col5] = find(diff(i+starting_row+5,:) > cut_off_pixel);
             [row10,col10] = find(diff(i+starting_row+10,:) > cut_off_pixel);
             [row15,col15] = find(diff(i+starting_row+15,:) > cut_off_pixel);
-            combcol = union(col,col5);
-            combcol = union(combcol,col10);
+            combcol = union(col,col5); combcol = union(combcol,col10);
             combcol = union(combcol,col15);
             if(isempty(combcol))
                 bubble_length_ratio = [bubble_length_ratio;0];
@@ -136,10 +137,14 @@ for file = files'
     end
 end
 ```
+</p>
+</details>
 
-![bubblelength](/assets/img/BioMEMS_project/bubblelength.png)
+<p>
+  <img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 90%;"/>
+</p>
 <div class="caption">
-Nothing very fancy in fact: We took the raw, cropped, straightened image of the microchannel and subtract it from a p processed B/W image of the bubble isolated;bottom: screenshot of how we track the bubble's length.
+Nothing very fancy in fact: We took the raw, cropped, straightened image of the microchannel and subtract it from the first image taken before a bubble is injected. By processed into a B/W image of the bubble isolated;bottom: screenshot of how we track the bubble's length.
 </div>
 
 
