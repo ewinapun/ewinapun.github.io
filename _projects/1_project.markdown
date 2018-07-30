@@ -51,7 +51,9 @@ In response to a pressure change, bubble length is more likely to vary than the 
 
 ![bubblelength](/assets/img/BioMEMS_project/bubblelength.png)
 <div class="caption">
-Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
+Top: raw, cropped image of the microchannel;
+middle: processed B/W image of the bubble isolated;
+bottom: screenshot of the program that tracks the bubble's length.
 
 </div>
 
