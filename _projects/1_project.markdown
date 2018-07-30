@@ -18,7 +18,7 @@ I spent two years in USC Biomedical Microsystems Laboratory working as an underg
 
 ## Principle of pressure sensing using a microbubble
 
-The key idea behind the design exploits Boyle’s law - microbubbles respond instantaneously to external pressure variations. By isolating the microbubble in a microchannel filled with an electrolyte solution, we are able to mimic the wet, *in-vivo* environment of cerebrospinal fluid in hydrocephalus. Our goal is to infer pressure change by monitoring the behavior of the bubble dissolution.
+The key idea behind the design exploits how microbubbles respond instantaneously to external pressure variations. By isolating the microbubble in a microchannel filled with an electrolyte solution, we are able to mimic the wet, *in-vivo* environment of cerebrospinal fluid in hydrocephalus. Our goal is to infer pressure change by monitoring the behavior of the bubble dissolution.
 
 > **Boyle's law** tells us that pressure of a gas is inversely related to its volume ($$ P \varpropto \frac{1}{V} $$).
 > **Henry's law** tells us bubble dissolution rate linearly corresponds to change in pressure.
@@ -33,8 +33,8 @@ A microchannel is carefully fabricated into the device. The channel is connected
 </p>
 <div class="caption">
     The design of a pressure transducer: left: A MEMS device connected with a FFC cable; middle: a zoomed image of the microbubble pressure transducer (μBPT); right: a further magnified image of pressure part of the μBPT, with and without a bubble injection in the microchannel.
-
 </div>
+
 
 We first completely fill the microchannel with phosphate buffered saline (PBS) to mimic a wet, *in-vivo* environment. By a current-induced electrolysis from the nuclear cores, we create a microbubble from the middle of the channel.
 
@@ -47,14 +47,58 @@ One electrochemical characterization we do is to chronically measure changes in 
 
 ## Bubble length tracking
 
-In response to a pressure change, bubble length is more likely to vary than the cross section area in a microchannel.[^footnote1] So can we track the bubble length on top of the impedance measurement? With some simple image processing on the snapshots (2 frames/s), I implement a Matlab program that automatically tracks changes of the microbubble volume in response to pressure.
+In response to a pressure change, bubble length is more likely to vary than the cross section area in a microchannel.[^footnote1] So can we track the bubble length on top of the impedance measurement? With some simple image processing on the snapshots taken 2 frames per second, we implement a Matlab program that automatically tracks changes of the microbubble volume in response to pressure.
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Collapsible Group 1</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Collapsible Group 2</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Collapsible Group 3</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+    </div>
+  </div>
+</div>
 
 ![bubblelength](/assets/img/BioMEMS_project/bubblelength.png)
 <div class="caption">
-Top: raw, cropped image of the microchannel;
-middle: processed B/W image of the bubble isolated;
-bottom: screenshot of the program that tracks the bubble's length.
+Nothing very fancy in fact: We took the raw, cropped, straightened image of the microchannel and subtract it from a p processed B/W image of the bubble isolated;bottom: screenshot of how we track the bubble's length.
 </div>
+
 
 So this is what I got:
 
@@ -67,7 +111,7 @@ So this is what I got:
 Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
 </div>
 
-
+The results are actually comparable to that using impedance measurements. This is as expected, but this project provides a very useful visual indicator of the device performance, especially when impedance measurements
 
 <p>
   <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 49%;"/>
@@ -85,5 +129,3 @@ Top: raw, cropped image of the microchannel; middle: processed B/W image of the 
 
 [^footnote1]: S. Ma, et al: Effect of Contact Angle on Drainage and Imbibition in Regular Polygonal Tubes. Colloid Surf. A. 117. 1996.
 
-
-cd
