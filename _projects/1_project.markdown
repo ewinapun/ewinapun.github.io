@@ -28,8 +28,8 @@ A microchannel is carefully fabricated into the device. The channel is connected
 
 <p>
   <img src="/assets/img/BioMEMS_project/deviceFFC.png" style="width: 28%;"/>
-  <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 35%;"/>
-  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 34%;"/>
+  <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 34%;"/>
+  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 35%;"/>
 </p>
 <p>
 <div class="caption">
@@ -52,8 +52,8 @@ In response to a pressure change, bubble length is more likely to vary than the 
 
 We took the raw, cropped, straightened image of the microchannel and subtract it from the initial image taken before a bubble is injected. By processing it into a B/W image of the isolated bubble, we then run the program to track the bubble's length. Note that the markers on top of the channel are 100µm apart, which provide us a nice basis of measuring the actual bubble length.
 
-<p>
-  <img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 80%;vertical-align: middle;"/>
+<p class="aligncenter">
+<img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 80%;vertical-align: middle;"/>
     <div class="caption">
     Top to bottom: raw image of the microchannel, processed B/W image of the bubble, and a snapshot of tracking the bubble's length, respectively.
     </div>
