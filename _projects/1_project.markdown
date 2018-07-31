@@ -50,6 +50,16 @@ One electrochemical characterization we do is to chronically measure changes in 
 
 In response to a pressure change, bubble length is more likely to vary than the cross section area in a microchannel.[^footnote1] So can we track the bubble length on top of the impedance measurement? With some simple image processing on the snapshots taken 2 frames per second, we implement a Matlab program that automatically tracks changes of the microbubble volume in response to pressure.
 
+<p>
+  <img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 90%;"/>
+</p>
+<p>
+<div class="caption">
+Nothing very fancy in fact: We took the raw, cropped, straightened image of the microchannel and subtract it from the first image taken before a bubble is injected. By processed into a B/W image of the bubble isolated;bottom: screenshot of how we track the bubble's length.
+</div>
+</p>
+
+If you're interested about the actual code, click open the collapsible:
 <details>
     <summary>Matlab Code</summary>
     <p>
@@ -127,7 +137,6 @@ In response to a pressure change, bubble length is more likely to vary than the 
                 end
                 pause(.2);
             end
-            % each for loop return to zero
             bubble_length_ratio = [];
         end
     end
@@ -135,15 +144,6 @@ In response to a pressure change, bubble length is more likely to vary than the 
     </p>
 </details>
 
-
-<p>
-  <img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 90%;"/>
-</p>
-<p>
-<div class="caption">
-Nothing very fancy in fact: We took the raw, cropped, straightened image of the microchannel and subtract it from the first image taken before a bubble is injected. By processed into a B/W image of the bubble isolated;bottom: screenshot of how we track the bubble's length.
-</div>
-</p>
 
 So this is what I got:
 
