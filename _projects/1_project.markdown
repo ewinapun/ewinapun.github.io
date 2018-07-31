@@ -53,7 +53,7 @@ In response to a pressure change, bubble length is more likely to vary than the 
 We took the raw, cropped, straightened image of the microchannel and subtract it from the initial image taken before a bubble is injected. By processing it into a B/W image of the isolated bubble, we then run the program to track the bubble's length. Note that the markers on top of the channel are 100µm apart, which provide us a nice basis of measuring the actual bubble length.
 
 <p>
-  <img src="/assets/img/BioMEMS_project/bubblelength.png" align="middle" style="width: 80%;"/>
+  <img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 80%;vertical-align: middle;"/>
     <div class="caption">
     Top to bottom: raw image of the microchannel, processed B/W image of the bubble, and a snapshot of tracking the bubble's length, respectively.
     </div>
@@ -155,7 +155,7 @@ If you're interested in the actual code, click open the collapsible:
     </div>
 </p>
 
-If we compare the bubble length results to the impedance measurements[^note2], we can see some expected similarity. Both bubble length and impedance measurements show us its inverse relationship with pressure, and capture the essence of the microbubble behavior inside the channel.
+If we compare the bubble length results to the impedance measurements[^note2], we can see some similarity. Both bubble length and impedance measurements show us their inverse relationship with pressure, and can capture the essence of the microbubble behavior inside the channel in a similar fashion.
 
 <p>
   <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 49%;"/>
