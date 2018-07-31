@@ -53,13 +53,13 @@ In response to a pressure change, bubble length is more likely to vary than the 
 We took the raw, cropped, straightened image of the microchannel and subtract it from the initial image taken before a bubble is injected. By processing it into a B/W image of the isolated bubble, we then run the program to track the bubble's length. Note that the markers on top of the channel are 100µm apart, which provide us a nice basis of measuring the actual bubble length.
 
 <p>
-  <img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 90%;"/>
+  <img src="/assets/img/BioMEMS_project/bubblelength.png" align="middle" style="width: 80%;"/>
     <div class="caption">
     Top to bottom: raw image of the microchannel, processed B/W image of the bubble, and a snapshot of tracking the bubble's length, respectively.
     </div>
 </p>
 
-If you're interested about the actual code, click open the collapsible:
+If you're interested in the actual code, click open the collapsible:
 <details>
     <summary>Matlab Code</summary>
     <p>
@@ -145,7 +145,7 @@ If you're interested about the actual code, click open the collapsible:
 </details>
 
 
-#### My results
+### Results
 
 <p>
     <img src="/assets/img/BioMEMS_project/length_pressure.png" style="width: 49%;"/>
@@ -158,7 +158,7 @@ If you're interested about the actual code, click open the collapsible:
 If we compare the bubble length results to the impedance measurements[^note2], we can see some expected similarity. Both bubble length and impedance measurements show us its inverse relationship with pressure, and capture the essence of the microbubble behavior inside the channel.
 
 <p>
-  <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 90%;"/>
+  <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 49%;"/>
   <img src="/assets/img/BioMEMS_project/impedance_time.png" style="width: 49%;"/>
     <div class="caption">
     Left: the change in impedance magnitude(∆Z) due to the bubble injection at different pressure setting. Right: the change in impedance over time, from its injection till dissolution.
@@ -168,7 +168,7 @@ If we compare the bubble length results to the impedance measurements[^note2], w
 We have shown how microbubble length tracking is a nice and intuitive visual tool for us to monitor bubble dissolution, as well as give us insights into pressure sensing. However, there is one issue remains unsolved - we couldn't quite explain the correlations between the two indicators (bubble length and impedance). If we plot the two measurements overlapping each other, as the bubble dissolves, the two measurements appear to have different curve.[^note3]
 
 <p>
-  <img src="/assets/img/BioMEMS_project/compare.png" style="width: 90%;"/>
+  <img src="/assets/img/BioMEMS_project/compare.png" style="width: 100%;"/>
     <div class="caption">
     Of all 10 bubble injection experiments on the same device, both bubble length and impedance measurements demonstrate a sharp raise when the bubble is injected and occupies a maximum volume in the channel, and a graduate drop when the bubble slowly dissolves into the solution. Yet, the curves do not exactly align with one another.
     </div>
