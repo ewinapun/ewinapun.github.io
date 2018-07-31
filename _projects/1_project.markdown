@@ -53,7 +53,7 @@ In response to a pressure change, bubble length is more likely to vary than the 
 <details>
     <summary>Matlab Code</summary>
     <p>
-        <code>
+        <pre><code>
             % iternate for the whole set of images
             files = dir(fullfile(mydir, 'img*.jpg'));
             first = 'img.jpg';
@@ -130,7 +130,7 @@ In response to a pressure change, bubble length is more likely to vary than the 
                     bubble_length_ratio = [];
                 end
             end
-        </code>
+        </code></pre>
     </p>
 </details>
 
