@@ -50,13 +50,13 @@ One electrochemical characterization we do is to chronically measure changes in 
 
 In response to a pressure change, bubble length is more likely to vary than the cross section area in a microchannel.[^footnote1] So can we track the bubble length on top of the impedance measurement? With some simple image processing on the snapshots taken 2 frames per second, we implement a Matlab program that automatically tracks changes of the microbubble volume in response to pressure.
 
+We took the raw, cropped, straightened image of the microchannel and subtract it from the initial image taken before a bubble is injected. By processing it into a B/W image of the isolated bubble, we then run the program to track the bubble's length. Note that the markers on top of the channel are 100µm apart, which provide us a nice basis of measuring the actual bubble length.
+
 <p>
   <img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 90%;"/>
-</p>
-<p>
-<div class="caption">
-Nothing very fancy in fact: We took the raw, cropped, straightened image of the microchannel and subtract it from the initial image taken before a bubble is injected. By processing it into a B/W image of the isolated bubble, we then run the program to track the bubble's length. Note that the markers on top of the channel are 100µm apart, which provide us a nice basis of the actual bubble length.
-</div>
+    <div class="caption">
+    Top to bottom: raw image of the microchannel, processed B/W image of the bubble, and a snapshot of tracking the bubble's length, respectively.
+    </div>
 </p>
 
 If you're interested about the actual code, click open the collapsible:
@@ -64,117 +64,120 @@ If you're interested about the actual code, click open the collapsible:
     <summary>Matlab Code</summary>
     <p>
         <pre><code>
-% iternate for the whole set of images
-    files = dir(fullfile(mydir, 'img*.jpg'));
-    first = 'img.jpg';
-    count = 0;
-    for file = files'
-        fname = file.name;
-        disp(fname);
-        count = count + 1;
-% only start processing after the first image (the 'base' image)
-        if (strcmp(fname,first))
-            base = imread(fullfile(mydir, fname),'jpg');
-            base = rgb2gray(base);
-            basecropped = imcrop(base,crop_parameter);
-            basecropped = imrotate(basecropped,angle,'bilinear','crop');
-        else
-            im = imread(fullfile(mydir, fname),'jpg');
-            im = rgb2gray(im);
-            imcropped = imcrop(im,crop_parameter);
-            imcropped = imrotate(imcropped,angle,'bilinear','crop');
-% Subtract from the initial 'base' image that has no bubble
-            diff = (imcropped - basecropped);
-            diff = imadjust(diff);
-% ensure we get the correct length by measuring multiple rows
-            for i = 0:2:test_rows
-                [row,col] = find(diff(i+starting_row,:) > cut_off_pixel);
-                [row5,col5] = find(diff(i+starting_row+5,:) > cut_off_pixel);
-                [row10,col10] = find(diff(i+starting_row+10,:) > cut_off_pixel);
-                [row15,col15] = find(diff(i+starting_row+15,:) > cut_off_pixel);
-                combcol = union(col,col5);
-                combcol = union(combcol,col10);
-                combcol = union(combcol,col15);
-                if(isempty(combcol))
-                    bubble_length_ratio = [bubble_length_ratio;0];
-                else
-                    bubble_length = combcol(end)-combcol(1);
-% sometimes the the image is fuzzy or not cropped properly
-                    continuous = bubble_length/(size(combcol,2)-size(combcol,1));
-                    if(continuous < 1.5)
-                        bubble_length_ratio = [bubble_length_ratio;bubble_length/base_length];
-                    else
+    % iternate for the whole set of images
+        files = dir(fullfile(mydir, 'img*.jpg'));
+        first = 'img.jpg';
+        count = 0;
+        for file = files'
+            fname = file.name;
+            disp(fname);
+            count = count + 1;
+    % only start processing after the first image (the 'base' image)
+            if (strcmp(fname,first))
+                base = imread(fullfile(mydir, fname),'jpg');
+                base = rgb2gray(base);
+                basecropped = imcrop(base,crop_parameter);
+                basecropped = imrotate(basecropped,angle,'bilinear','crop');
+            else
+                im = imread(fullfile(mydir, fname),'jpg');
+                im = rgb2gray(im);
+                imcropped = imcrop(im,crop_parameter);
+                imcropped = imrotate(imcropped,angle,'bilinear','crop');
+    % Subtract from the initial 'base' image that has no bubble
+                diff = (imcropped - basecropped);
+                diff = imadjust(diff);
+    % ensure we get the correct length by measuring multiple rows
+                for i = 0:2:test_rows
+                    [row,col] = find(diff(i+starting_row,:) > cut_off_pixel);
+                    [row5,col5] = find(diff(i+starting_row+5,:) > cut_off_pixel);
+                    [row10,col10] = find(diff(i+starting_row+10,:) > cut_off_pixel);
+                    [row15,col15] = find(diff(i+starting_row+15,:) > cut_off_pixel);
+                    combcol = union(col,col5);
+                    combcol = union(combcol,col10);
+                    combcol = union(combcol,col15);
+                    if(isempty(combcol))
                         bubble_length_ratio = [bubble_length_ratio;0];
+                    else
+                        bubble_length = combcol(end)-combcol(1);
+    % sometimes the the image is fuzzy or not cropped properly
+                        continuous = bubble_length/(size(combcol,2)-size(combcol,1));
+                        if(continuous < 1.5)
+                            bubble_length_ratio = [bubble_length_ratio;bubble_length/base_length];
+                        else
+                            bubble_length_ratio = [bubble_length_ratio;0];
+                        end
                     end
                 end
+                bubble_length_array = [bubble_length_array, bubble_length_ratio];
+                [max_ratio,max_row] = max(bubble_length_ratio);
+                max_ratio
+                max_row = starting_row + max_row;
+                max_ratio_array = [max_ratio_array, max_ratio];
+    %displaying images
+                [row,col] = find(diff(max_row,:) > cut_off_pixel);
+                [row5,col5] = find(diff(max_row+5,:) > cut_off_pixel);
+                [row10,col10] = find(diff(max_row+10,:) > cut_off_pixel);
+                [row15,col15] = find(diff(max_row+15,:) > cut_off_pixel);
+                if(disp_images && count-1>=starting_image && count-1<=ending_image)
+                    figure
+                    imshow(diff);
+                    title(num2str(fname));
+                    hold on;
+                    if(~isempty(col))
+                        plot(col,max_row,'rx', 'MarkerSize', 5);
+                    end
+                    if(~isempty(col5))
+                        plot(col5,max_row+5,'bx', 'MarkerSize', 5);
+                    end
+                    if(~isempty(col10))
+                        plot(col10,max_row+10,'gx', 'MarkerSize', 5);
+                    end
+                    if(~isempty(col15))
+                        plot(col15,max_row+15,'yx', 'MarkerSize', 5);
+                    end
+                    pause(.2);
+                end
+                bubble_length_ratio = [];
             end
-            bubble_length_array = [bubble_length_array, bubble_length_ratio];
-            [max_ratio,max_row] = max(bubble_length_ratio);
-            max_ratio
-            max_row = starting_row + max_row;
-            max_ratio_array = [max_ratio_array, max_ratio];
-%displaying images
-            [row,col] = find(diff(max_row,:) > cut_off_pixel);
-            [row5,col5] = find(diff(max_row+5,:) > cut_off_pixel);
-            [row10,col10] = find(diff(max_row+10,:) > cut_off_pixel);
-            [row15,col15] = find(diff(max_row+15,:) > cut_off_pixel);
-            if(disp_images && count-1>=starting_image && count-1<=ending_image)
-                figure
-                imshow(diff);
-                title(num2str(fname));
-                hold on;
-                if(~isempty(col))
-                    plot(col,max_row,'rx', 'MarkerSize', 5);
-                end
-                if(~isempty(col5))
-                    plot(col5,max_row+5,'bx', 'MarkerSize', 5);
-                end
-                if(~isempty(col10))
-                    plot(col10,max_row+10,'gx', 'MarkerSize', 5);
-                end
-                if(~isempty(col15))
-                    plot(col15,max_row+15,'yx', 'MarkerSize', 5);
-                end
-                pause(.2);
-            end
-            bubble_length_ratio = [];
         end
-    end
-        </code></pre>
-    </p>
+            </code></pre>
+        </p>
 </details>
 
 
 #### My results
 
 <p>
-  <img src="/assets/img/BioMEMS_project/length_pressure.png" style="width: 49%;"/>
-  <img src="/assets/img/BioMEMS_project/length_time.png" style="width: 49%;"/>
-</p>
-
-<p>
-<div class="caption">
-Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
-</div>
-</p>
-
-The results are actually comparable to that using impedance measurements. This is as expected, but this project provides a very useful visual indicator of the device performance, especially when impedance measurements
-
-<p>
-    <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 90%;"/>
+    <img src="/assets/img/BioMEMS_project/length_pressure.png" style="width: 49%;"/>
+    <img src="/assets/img/BioMEMS_project/length_time.png" style="width: 49%;"/>
     <div class="caption">
-    Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
+    Left: the maximum lengths of the microbubble at different pressure setting. Right: the change in microbubble length over time, from its injection till dissolution.
     </div>
 </p>
 
+If we compare the bubble length results to the impedance measurements[^note2], we can see some expected similarity. Both bubble length and impedance measurements show us its inverse relationship with pressure, and capture the essence of the microbubble behavior inside the channel.
+
 <p>
-  <img src="/assets/img/BioMEMS_project/impedance_time.png" style="width: 90%;"/>
+  <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 90%;"/>
+  <img src="/assets/img/BioMEMS_project/impedance_time.png" style="width: 49%;"/>
+    <div class="caption">
+    Left: the change in impedance magnitude(∆Z) due to the bubble injection at different pressure setting. Right: the change in impedance over time, from its injection till dissolution.
+    </div>
 </p>
+
+We have shown how microbubble length tracking is a nice and intuitive visual tool for us to monitor bubble dissolution, as well as give us insights into pressure sensing. However, there is one issue remains unsolved - we couldn't quite explain the correlations between the two indicators (bubble length and impedance). If we plot the two measurements overlapping each other, as the bubble dissolves, the two measurements appear to have different curve.[^note3]
+
 <p>
-<div class="caption">
-Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
-</div>
+  <img src="/assets/img/BioMEMS_project/compare.png" style="width: 90%;"/>
+    <div class="caption">
+    Of all 10 bubble injection experiments on the same device, both bubble length and impedance measurements demonstrate a sharp raise when the bubble is injected and occupies a maximum volume in the channel, and a graduate drop when the bubble slowly dissolves into the solution. Yet, the curves do not exactly align with one another.
+    </div>
 </p>
+
+### Conclusion
+
+Impedance measurements remain to be a precise benchmark for our device characterization, but this project provides us an alternative visual indicator of the device performance. It can be especially useful when the electrochemical performance is unstable/unreliable for some devices.
+
 ***
 
 [^note1]: It is worth mentioning that this pressure sensor can also be applicable to other common pressure-induced medical conditions, such as hypertension and glaucoma.
@@ -183,3 +186,6 @@ Top: raw, cropped image of the microchannel; middle: processed B/W image of the 
 
 [^footnote1]: S. Ma, et al: Effect of Contact Angle on Drainage and Imbibition in Regular Polygonal Tubes. Colloid Surf. A. 117. 1996.
 
+[^note2]: The impedance measurements are actually from another device. The resulted images are from [^law]. Even so, because the underlying principle is unchanged, this comparison is still valid to show an overall idea.
+
+[^note3]: In this plot we obtain both impedance measurements and the snapshot images at the same time, meaning the overlapping graph presents results of the same set of experiments of the same device.
