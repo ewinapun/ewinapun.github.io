@@ -75,8 +75,6 @@ In response to a pressure change, bubble length is more likely to vary than the 
                     % Subtract from another photo
                     diff = (imcropped - basecropped);
                     diff = imadjust(diff);
-
-
                     % do multiple rows to ensure we get some length measurement
                     for i = 0:2:test_rows
                         [row,col] = find(diff(i+starting_row,:) > cut_off_pixel);
@@ -90,10 +88,8 @@ In response to a pressure change, bubble length is more likely to vary than the 
                             bubble_length_ratio = [bubble_length_ratio;0];
                         else
                             bubble_length = combcol(end)-combcol(1);
-
                             % check if it's a fuzzy image or an actual channel
                             continuous = bubble_length/(size(combcol,2)-size(combcol,1));
-
                             if(continuous < 1.5)
                                 bubble_length_ratio = [bubble_length_ratio;bubble_length/base_length];
                             else
@@ -110,7 +106,6 @@ In response to a pressure change, bubble length is more likely to vary than the 
                     [row5,col5] = find(diff(max_row+5,:) > cut_off_pixel);
                     [row10,col10] = find(diff(max_row+10,:) > cut_off_pixel);
                     [row15,col15] = find(diff(max_row+15,:) > cut_off_pixel);
-
                     %displaying images
                     if(disp_images && count-1>=starting_image && count-1<=ending_image)
                         figure
