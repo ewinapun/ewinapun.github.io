@@ -29,7 +29,7 @@ A microchannel is carefully fabricated into the device. The channel is connected
 <p>
   <img src="/assets/img/BioMEMS_project/deviceFFC.png" style="width: 28%;"/>
   <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 35%;"/>
-  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 35%;"/>
+  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 34%;"/>
 </p>
 <p>
 <div class="caption">
@@ -55,7 +55,7 @@ In response to a pressure change, bubble length is more likely to vary than the 
 </p>
 <p>
 <div class="caption">
-Nothing very fancy in fact: We took the raw, cropped, straightened image of the microchannel and subtract it from the first image taken before a bubble is injected. By processed into a B/W image of the bubble isolated;bottom: screenshot of how we track the bubble's length.
+Nothing very fancy in fact: We took the raw, cropped, straightened image of the microchannel and subtract it from the initial image taken before a bubble is injected. By processing it into a B/W image of the isolated bubble, we then run the program to track the bubble's length. Note that the markers on top of the channel are 100µm apart, which provide us a nice basis of the actual bubble length.
 </div>
 </p>
 
@@ -145,7 +145,7 @@ If you're interested about the actual code, click open the collapsible:
 </details>
 
 
-So this is what I got:
+#### My results
 
 <p>
   <img src="/assets/img/BioMEMS_project/length_pressure.png" style="width: 49%;"/>
@@ -161,8 +161,14 @@ Top: raw, cropped image of the microchannel; middle: processed B/W image of the 
 The results are actually comparable to that using impedance measurements. This is as expected, but this project provides a very useful visual indicator of the device performance, especially when impedance measurements
 
 <p>
-  <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 49%;"/>
-  <img src="/assets/img/BioMEMS_project/impedance_time.png" style="width: 49%;"/>
+    <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 90%;"/>
+    <div class="caption">
+    Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
+    </div>
+</p>
+
+<p>
+  <img src="/assets/img/BioMEMS_project/impedance_time.png" style="width: 90%;"/>
 </p>
 <p>
 <div class="caption">
