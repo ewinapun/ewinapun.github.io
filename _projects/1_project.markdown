@@ -31,10 +31,11 @@ A microchannel is carefully fabricated into the device. The channel is connected
   <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 35%;"/>
   <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 35%;"/>
 </p>
+<p>
 <div class="caption">
     The design of a pressure transducer: left: A MEMS device connected with a FFC cable; middle: a zoomed image of the microbubble pressure transducer (μBPT); right: a further magnified image of pressure part of the μBPT, with and without a bubble injection in the microchannel.
 </div>
-
+</p>
 
 We first completely fill the microchannel with phosphate buffered saline (PBS) to mimic a wet, *in-vivo* environment. By a current-induced electrolysis from the nuclear cores, we create a microbubble from the middle of the channel.
 
@@ -49,6 +50,20 @@ One electrochemical characterization we do is to chronically measure changes in 
 
 In response to a pressure change, bubble length is more likely to vary than the cross section area in a microchannel.[^footnote1] So can we track the bubble length on top of the impedance measurement? With some simple image processing on the snapshots taken 2 frames per second, we implement a Matlab program that automatically tracks changes of the microbubble volume in response to pressure.
 
+## collapsible markdown?
+
+<details><summary>CLICK ME</summary>
+<p>
+
+#### yes, even hidden code blocks!
+
+```python
+print("hello world!")
+```
+
+</p>
+</details>
+
 <p>
 <details><summary>Matlab Code</summary>
 ```
@@ -60,10 +75,11 @@ files whatttt
 <p>
   <img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 90%;"/>
 </p>
+<p>
 <div class="caption">
 Nothing very fancy in fact: We took the raw, cropped, straightened image of the microchannel and subtract it from the first image taken before a bubble is injected. By processed into a B/W image of the bubble isolated;bottom: screenshot of how we track the bubble's length.
 </div>
-
+</p>
 
 So this is what I got:
 
@@ -72,9 +88,11 @@ So this is what I got:
   <img src="/assets/img/BioMEMS_project/length_time.png" style="width: 49%;"/>
 </p>
 
+<p>
 <div class="caption">
 Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
 </div>
+</p>
 
 The results are actually comparable to that using impedance measurements. This is as expected, but this project provides a very useful visual indicator of the device performance, especially when impedance measurements
 
@@ -82,10 +100,11 @@ The results are actually comparable to that using impedance measurements. This i
   <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 49%;"/>
   <img src="/assets/img/BioMEMS_project/impedance_time.png" style="width: 49%;"/>
 </p>
+<p>
 <div class="caption">
 Top: raw, cropped image of the microchannel; middle: processed B/W image of the bubble; bottom: screenshot of the program that tracks the bubble's length.
 </div>
-
+</p>
 ***
 
 [^note1]: It is worth mentioning that this pressure sensor can also be applicable to other common pressure-induced medical conditions, such as hypertension and glaucoma.
