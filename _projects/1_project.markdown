@@ -62,8 +62,8 @@ We take the raw, cropped, straightened image of the microchannel and subtract it
 If you're interested in the actual code, click open the collapsible:
 <details>
     <summary>Matlab Code</summary>
-    <p>
-        <pre><code>
+
+    {% highlight c++ %}
     % iternate for the whole set of images
         files = dir(fullfile(mydir, 'img*.jpg'));
         first = 'img.jpg';
@@ -140,8 +140,7 @@ If you're interested in the actual code, click open the collapsible:
                 bubble_length_ratio = [];
             end
         end
-            </code></pre>
-        </p>
+    {% endhighlight %}
 </details>
 
 
