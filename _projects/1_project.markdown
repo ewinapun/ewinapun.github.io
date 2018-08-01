@@ -61,9 +61,9 @@ We take the raw, cropped, straightened image of the microchannel and subtract it
 
 If you're interested in the actual code, click open the collapsible:
 <details>
-    <summary>Matlab Code</summary>
+    <summary>**Matlab Code**</summary>
 
-    {% highlight c++ %}
+    {% highlight matlab %}
     % iternate for the whole set of images
         files = dir(fullfile(mydir, 'img*.jpg'));
         first = 'img.jpg';
