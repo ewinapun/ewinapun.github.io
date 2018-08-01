@@ -7,14 +7,13 @@ img: /assets/img/dynamic_tracking_project/auto(1)-eig-99.png
 
 On this page, I briefly go over what I wrote for my senior thesis. I only cover key research ideas and figures that are extracted from my thesis.
 
-To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>*click here*</a>.
+<!-- To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>*click here*</a>. -->
 
 ***
 
 #### abstract
-<p>
-    In this work, we implement an adaptive subspace identification algorithm developed by [^note1] and test it on simulated time-invariant and time-varying state-space models. We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, experi- mental results indicate the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the tradi- tional non-adaptive identification algorithm. In addition, we investigate the effect of the forgetting factor and training set length to empirically find their best values in our simulations.
-</p>
+
+In this work, we implement an adaptive subspace identification algorithm developed by[^yang] and test it on simulated time-invariant and time-varying state-space models. We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, experimental results indicate the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the traditional non-adaptive identification algorithm. In addition, we investigate the effect of the forgetting factor and training set length to empirically find their best values in our simulations.
 
 ## results
 
@@ -81,7 +80,7 @@ To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets
     </div>
 </p>
 
-Overall, TE_adpt  TE_non-adpt
+Overall, TE_adpt is lower than TE_non-adpt for all time-varying cases. PE_adpt is higher than PE_non-adpt and above PEbaseline(13.70±0.002%). The per- formance of the adaptive algorithm is better than the non-adaptive algorithm.
 
 ## Influence of the forgetting factor
 
@@ -98,4 +97,5 @@ The performance of the algorithm with β = 0.98, 0.99, and 0.995 is very similar
 
 ***
 
-[^note1]: Y. Yang, E. Chang, and M. Shanechi, “Dynamic tracking of non-stationarity in human ECoG activity,” Proc. IEEE Engineering in Medicine and Biology Society Conference(EMBC), Jeju Island, Korea, pp. 1660–1663, 2017.
+[^yang]: Y. Yang, E. Chang, and M. Shanechi, “Dynamic tracking of non-stationarity in human ECoG activity,” Proc. IEEE Engineering in Medicine and Biology Society Conference(EMBC), Jeju Island, Korea, pp. 1660–1663, 2017.
+
