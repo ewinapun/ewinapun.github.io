@@ -1,9 +1,10 @@
 ---
 layout: page
 title: SubID simulations
-description: Adaptive subspace identification algorithm
+description: Adaptive subspace identification algorithm for dynamic tracking
 img: /assets/img/dynamic_tracking_project/auto(1)-eig-99.png
 ---
+
 
 
 <p>
@@ -55,3 +56,4 @@ img: /assets/img/dynamic_tracking_project/auto(1)-eig-99.png
     </div>
 </p>
 
+To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>click here</a>.
