@@ -56,7 +56,7 @@ img: /assets/img/dynamic_tracking_project/auto(1)-eig-99.png
 </p>
 
 ## Simulations summary
-<p class="table;" style="font-size: 12em;">
+<p style="font-size: $small-font-size;">
     | cases | *β* | TE_adpt | TE_non-adpt | PE_adpt | PE_non-adpt | PE_baseline |
     | --- | --- | --- | ---  | --- | --- | --- |
     | TI | 1 | 1.01±0.33% | 0.079±0.062% | 30.18±0.05% | 30.19±0.05% | 25.81±0.02% |
