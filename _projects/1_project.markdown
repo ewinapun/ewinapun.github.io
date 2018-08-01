@@ -61,85 +61,85 @@ We take the raw, cropped, straightened image of the microchannel and subtract it
 
 If you're interested in the actual code, click open the collapsible:
 <details>
-    <summary>**Matlab Code**</summary>
+    <summary>Matlab Code</summary>
 
     {% highlight matlab %}
     % iternate for the whole set of images
-        files = dir(fullfile(mydir, 'img*.jpg'));
-        first = 'img.jpg';
-        count = 0;
-        for file = files'
-            fname = file.name;
-            disp(fname);
-            count = count + 1;
+    files = dir(fullfile(mydir, 'img*.jpg'));
+    first = 'img.jpg';
+    count = 0;
+    for file = files'
+        fname = file.name;
+        disp(fname);
+        count = count + 1;
     % only start processing after the first image (the 'base' image)
-            if (strcmp(fname,first))
-                base = imread(fullfile(mydir, fname),'jpg');
-                base = rgb2gray(base);
-                basecropped = imcrop(base,crop_parameter);
-                basecropped = imrotate(basecropped,angle,'bilinear','crop');
-            else
-                im = imread(fullfile(mydir, fname),'jpg');
-                im = rgb2gray(im);
-                imcropped = imcrop(im,crop_parameter);
-                imcropped = imrotate(imcropped,angle,'bilinear','crop');
+        if (strcmp(fname,first))
+            base = imread(fullfile(mydir, fname),'jpg');
+            base = rgb2gray(base);
+            basecropped = imcrop(base,crop_parameter);
+            basecropped = imrotate(basecropped,angle,'bilinear','crop');
+        else
+            im = imread(fullfile(mydir, fname),'jpg');
+            im = rgb2gray(im);
+            imcropped = imcrop(im,crop_parameter);
+            imcropped = imrotate(imcropped,angle,'bilinear','crop');
     % Subtract from the initial 'base' image that has no bubble
-                diff = (imcropped - basecropped);
-                diff = imadjust(diff);
+            diff = (imcropped - basecropped);
+            diff = imadjust(diff);
     % ensure we get the correct length by measuring multiple rows
-                for i = 0:2:test_rows
-                    [row,col] = find(diff(i+starting_row,:) > cut_off_pixel);
-                    [row5,col5] = find(diff(i+starting_row+5,:) > cut_off_pixel);
-                    [row10,col10] = find(diff(i+starting_row+10,:) > cut_off_pixel);
-                    [row15,col15] = find(diff(i+starting_row+15,:) > cut_off_pixel);
-                    combcol = union(col,col5);
-                    combcol = union(combcol,col10);
-                    combcol = union(combcol,col15);
-                    if(isempty(combcol))
-                        bubble_length_ratio = [bubble_length_ratio;0];
-                    else
-                        bubble_length = combcol(end)-combcol(1);
+            for i = 0:2:test_rows
+                [row,col] = find(diff(i+starting_row,:) > cut_off_pixel);
+                [row5,col5] = find(diff(i+starting_row+5,:) > cut_off_pixel);
+                [row10,col10] = find(diff(i+starting_row+10,:) > cut_off_pixel);
+                [row15,col15] = find(diff(i+starting_row+15,:) > cut_off_pixel);
+                combcol = union(col,col5);
+                combcol = union(combcol,col10);
+                combcol = union(combcol,col15);
+                if(isempty(combcol))
+                    bubble_length_ratio = [bubble_length_ratio;0];
+                else
+                    bubble_length = combcol(end)-combcol(1);
     % sometimes the the image is fuzzy or not cropped properly
-                        continuous = bubble_length/(size(combcol,2)-size(combcol,1));
-                        if(continuous < 1.5)
-                            bubble_length_ratio = [bubble_length_ratio;bubble_length/base_length];
-                        else
-                            bubble_length_ratio = [bubble_length_ratio;0];
-                        end
+                    continuous = bubble_length/(size(combcol,2)-size(combcol,1));
+                    if(continuous < 1.5)
+                        bubble_length_ratio = [bubble_length_ratio;bubble_length/base_length];
+                    else
+                        bubble_length_ratio = [bubble_length_ratio;0];
                     end
                 end
-                bubble_length_array = [bubble_length_array, bubble_length_ratio];
-                [max_ratio,max_row] = max(bubble_length_ratio);
-                max_ratio
-                max_row = starting_row + max_row;
-                max_ratio_array = [max_ratio_array, max_ratio];
-    %displaying images
-                [row,col] = find(diff(max_row,:) > cut_off_pixel);
-                [row5,col5] = find(diff(max_row+5,:) > cut_off_pixel);
-                [row10,col10] = find(diff(max_row+10,:) > cut_off_pixel);
-                [row15,col15] = find(diff(max_row+15,:) > cut_off_pixel);
-                if(disp_images && count-1>=starting_image && count-1<=ending_image)
-                    figure
-                    imshow(diff);
-                    title(num2str(fname));
-                    hold on;
-                    if(~isempty(col))
-                        plot(col,max_row,'rx', 'MarkerSize', 5);
-                    end
-                    if(~isempty(col5))
-                        plot(col5,max_row+5,'bx', 'MarkerSize', 5);
-                    end
-                    if(~isempty(col10))
-                        plot(col10,max_row+10,'gx', 'MarkerSize', 5);
-                    end
-                    if(~isempty(col15))
-                        plot(col15,max_row+15,'yx', 'MarkerSize', 5);
-                    end
-                    pause(.2);
-                end
-                bubble_length_ratio = [];
             end
+            bubble_length_array = [bubble_length_array, bubble_length_ratio];
+            [max_ratio,max_row] = max(bubble_length_ratio);
+            max_ratio
+            max_row = starting_row + max_row;
+            max_ratio_array = [max_ratio_array, max_ratio];
+    %displaying images
+            [row,col] = find(diff(max_row,:) > cut_off_pixel);
+            [row5,col5] = find(diff(max_row+5,:) > cut_off_pixel);
+            [row10,col10] = find(diff(max_row+10,:) > cut_off_pixel);
+            [row15,col15] = find(diff(max_row+15,:) > cut_off_pixel);
+            if(disp_images && count-1>=starting_image && count-1<=ending_image)
+                figure
+                imshow(diff);
+                title(num2str(fname));
+                hold on;
+                if(~isempty(col))
+                    plot(col,max_row,'rx', 'MarkerSize', 5);
+                end
+                if(~isempty(col5))
+                    plot(col5,max_row+5,'bx', 'MarkerSize', 5);
+                end
+                if(~isempty(col10))
+                    plot(col10,max_row+10,'gx', 'MarkerSize', 5);
+                end
+                if(~isempty(col15))
+                    plot(col15,max_row+15,'yx', 'MarkerSize', 5);
+                end
+                pause(.2);
+            end
+            bubble_length_ratio = [];
         end
+    end
     {% endhighlight %}
 </details>
 
