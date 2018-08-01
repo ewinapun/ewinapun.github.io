@@ -13,7 +13,7 @@ On this page, I briefly go over what I wrote for my senior thesis. I only cover 
 
 #### abstract
 
-In this work, we implement an adaptive subspace identification algorithm developed by[^yang] and test it on simulated time-invariant and time-varying state-space models. We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, experimental results indicate the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the traditional non-adaptive identification algorithm. In addition, we investigate the effect of the forgetting factor and training set length to empirically find their best values in our simulations.
+In this work, we implement an adaptive subspace identification algorithm developed by[^yang] and test it on simulated time-invariant and time-varying state-space models. We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, experimental results indicate the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the traditional non-adaptive identification algorithm.
 
 ## results
 
@@ -66,6 +66,9 @@ In this work, we implement an adaptive subspace identification algorithm develop
 </p>
 
 ## Simulations summary
+
+
+
 | cases | *β* | TE_adpt | TE_non-adpt | PE_adpt | PE_non-adpt | PE_baseline |
 | --- | --- | --- | ---  | --- | --- | --- |
 | TI | 1 | 1.01±0.33% | 0.079±0.062% | 30.18±0.05% | 30.19±0.05% | 25.81±0.02% |
@@ -80,7 +83,7 @@ In this work, we implement an adaptive subspace identification algorithm develop
     </div>
 </p>
 
-Overall, TE_adpt is lower than TE_non-adpt for all time-varying cases. PE_adpt is higher than PE_non-adpt and above PEbaseline(13.70±0.002%). The per- formance of the adaptive algorithm is better than the non-adaptive algorithm.
+Overall, TE_adpt < TE_non-adpt and PE_baseline < PE_adpt < PE_non-adpt for all time-varying cases. The performance of the adaptive algorithm is better than the non-adaptive algorithm.
 
 ## Influence of the forgetting factor
 
@@ -93,7 +96,13 @@ Overall, TE_adpt is lower than TE_non-adpt for all time-varying cases. PE_adpt i
 
 For β = 0.8, the pole trajectories of all cases are poorly estimated with large estimate variance. As the value of β increases from 0.8 to 0.98, the algorithm starts to perform more accurately in tracking poles, which affirms the drops of TE in figure 3.8. The estimate variance is also reduced as the value of β gets close to 1. When β = 1, the algorithm cannot track any time-varying part of the system in all cases, because the weights on past data equal to the weights on the recent data.
 
-The performance of the algorithm with β = 0.98, 0.99, and 0.995 is very similar in terms of pole tracking, but there is a difference in their rate of convergence to the true poles. Closer the value of β to 1, more recent data are weighted in the algorithm, so longer it takes to converge to the true poles. As the value of β increases from 0.98 to 0.995, we can see an increasing delay in pole convergence in the random walk case in figure 3.9a and a slower convergence in the step function case in figure 3.9b. There is change in poles at Ttrain/2 in the step function case. If we calculate the number of time steps needed to converge, denote as tconv, the data at tconv is weighted in approximately 1.5% in SSMadpt for β = 0.98, 0.99, and 0.995. This means that the last data needed will approximately be weighted in by 1.5%. So greater the value of β, longer it takes to converge. Based on the averaged pole trajectories, β = 0.99 appears to be an optimal value that gives a small estimation error while maintaining a quick rate of convergence.
+The performance of the algorithm with β = 0.98, 0.99, and 0.995 is very similar in terms of pole tracking, but there is a difference in their rate of convergence to the true poles. Closer the value of β to 1, more recent data are weighted in the algorithm, so longer it takes to converge to the true poles. As the value of β increases from 0.98 to 0.995, we can see an increasing delay in pole convergence in the random walk case in figure 3.9a and a slower convergence in the step function case in figure 3.9b. There is change in poles at Ttrain/2 in the step function case. If we calculate the number of time steps needed to converge, denote as tconv, the data at tconv is weighted in approximately 1.5% in SSMadpt for β = 0.98, 0.99, and 0.995. This means that the last data needed will approximately be weighted in by 1.5%. So greater the value of β, longer it takes to converge.
+
+Based on the averaged pole trajectories, β = 0.99 appears to be an optimal value that gives a small estimation error while maintaining a quick rate of convergence.
+
+### Additional Work
+
+My thesis has slightly more contents that I didn't cover here. To be specific, we investigate the effect of the forgetting factor and training set length empirically (with PEs and TEs) to best optimize our simulations.
 
 ***
 
