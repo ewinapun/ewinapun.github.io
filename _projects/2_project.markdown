@@ -7,7 +7,7 @@ img: /assets/img/dynamic_tracking_project/auto(1)-eig-99.png
 
 On this page, I go over what I wrote for my senior thesis. I only extract the key research ideas and figures from my thesis.
 
-<!-- To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>*click here*</a>. -->
+To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>*click here*</a>.  In addition, I uploaded the matlab codes in github in the <a href='https://github.com/ewinapun/subid'>subid repo</a>/.
 
 ***
 
@@ -15,24 +15,39 @@ On this page, I go over what I wrote for my senior thesis. I only extract the ke
 
 Through identifying and tracking of brain network dynamics, neuroscientists have been able to understand neural mechanisms in a deeper level for the past decades. A broad range of neurological disorders can be effectively treated by developing adaptive closed-loop stimulation therapies or brain-machine-interface (BMI). They utilize real-time neural signal monitoring and brain states control using electrical stimulation. However, due to the non-stationary and time-variant properties of some brain network dynamics, such modeling becomes challenging.
 
-In this work, we implement an adaptive subspace identification algorithm developed by[^yang] and test it on simulated time-invariant and time-varying state-space models(SSMs). We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, we experimentally show that the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the traditional non-adaptive identification algorithm.
+In this work, we implement an adaptive subspace identification algorithm (subID) developed by[^yang] and test it on simulated time-invariant and time-varying state-space models (SSMs). We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, we experimentally show that the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the traditional non-adaptive identification algorithm.
 
 ## Adaptive algorithm
+
+<p class="figcaption">
+    Disclaimer: I try to keep the explanation of this session brief. For details of the subID algorithm, experimental setup, training and testing, performance measures, please refer to my full thesis, [^yang] or [^Overschee].
+</p>
 
 We first formulate time-varying SSMs of purely stochastic systems as
 <p>
     <img src="/assets/img/dynamic_tracking_project/ssm.png" style="width: 30%;"/>
 </p>
 
-where $$x$$ is the hidden state, $$y$$ is the observation state, **A** and **C** are time-varying system matrices, $$K$$ is the forward Kalman gain, $$e_t$$ is a noise set to zero mean with variance of 0.0001. In our experiments, we set our system to a second order with zero inputs and two outputs. **A** is the only time-varying matrix with changing diagonal elements in each time steps, with absolute value of all poles of A less than 1 (stability requirement). The C matrix is set to an identity matrix.
+where $$x$$ is the hidden state, $$y$$ is the observation state, **A** and **C** are time-varying system matrices, $$K$$ is the forward Kalman gain, $$e_t$$ is a noise set to zero mean with variance of 0.0001. In our experiments, we set our system to a second order with zero inputs and two outputs. **A** is the only time-varying matrix with changing diagonal elements in each time steps, with absolute value of all poles of A less than 1 (stability requirement). The **C** matrix is set to an identity matrix.
 
-Since we calculate new output covariance matrices at every time step, the QR- decomposition also needs to be recalculated at every time step. To enable online operation of the QR-decomposition, we use a recursive algorithm to update the R matrix in the QR-decompositions[1].
+We adapt our adaptive subID algorithm from the original time-invariant subID algorithm from Overschee's book (good introduction on subID)[^Overschee]. To make the algorithm adaptive, we introduce a user-defined forgetting factor, *β*, to estimate time-varying output covariance matrices,[^yang]
 
-## Performance measures
+from <p><img src="/assets/img/dynamic_tracking_project/eqn.png" style="float: left; width:40%;"/></p>
+to <p><img src="/assets/img/dynamic_tracking_project/eqn_beta.png" style="float: right; width: 40%;"/></p>
 
-We introduce two error metrics to evaluate the algorithm’s performance. We quantify 1) a prediction error(PE), using a normalized root mean square error between the predicted outputs and the true outputs in the test set, and 2) a tracking error(TE), also using a normalized root mean square error between an averaged estimated and the true eigenvalues of the TV matrix at each time step.
+Here, we update the estimate of output covariance matrices at each time step, while putting more weight on the recent data than past data. A small *β* implies the recent data are more heavily weighted, and a large *β* implies the past data are weighted almost as heavy as the recent data. *β* = 1 means that the entire dataset is weighted equally, which is equivalent to the non-adaptive output covariance matrices.
 
-Note that we take the mean and standard error of the mean (SEM) of PE of all 200 Monte Carlo simulations, but we perform TE on the averaged pole trajectories over all Monte Carlo simulations, instead of on individual simulations with estimated poles that have very large variance to the true poles. We then take the mean and SEM of TE across all all poles.
+Since we calculate new output covariance matrices using QR- decomposition, and that they are updated at every time step, we need to recalculate QR matrices at every time step. To enable an efficient, online operation of the QR-decomposition, we use a recursive algorithm to update the R matrix in the QR-decompositions[1] with the help of Givens rotation (`qrinsert` function in Matlab). I will leave the math details in my thesis.
+
+### Training and testing sets
+
+We allocate the 5500 time steps into 5000 for training and 500 for testing. The adaptive algorithm estimates the SSM at each time step of the training set. During training, we record the estimated poles of the time varying system at each time step to investigate the pole tracking ability of the algorithm. We fix SSM_adpt at the last estimate. The non-adaptive algorithm uses the entire training data to produce a single estimation SSMnon-adpt. Using SSMadpt and SSMnon-adpt, we evaluate the prediction power on the training set, which is unseen by both algorithms in the training set. We do not further adapt the SSMadpt during testing. We compare these prediction powers to the baseline, which is defined as using the true system matrix at the last time step of the training set to do prediction on the adaptive system in the testing set.
+
+### Performance measures
+
+We introduce two error metrics to evaluate the algorithm’s performance. We quantify 1) a prediction error (PE), using a normalized root mean square error between the predicted outputs and the true outputs in the test set, and 2) a tracking error (TE), also using a normalized root mean square error between an averaged estimated and the true eigenvalues of the TV matrix at each time step.
+
+One thing to note is that we take the mean and standard error of the mean (SEM) of PE of all 200 Monte Carlo simulations, but we perform TE on the averaged pole trajectories over all Monte Carlo simulations, instead of on individual simulations, which has estimated poles with very large variance. We then take the mean and SEM of TE across all poles. The exact equations of the error metrics are in my thesis.
 
 ## Results
 
@@ -135,3 +150,4 @@ My thesis has more contents that I didn't get to cover here. To be specific, we 
 
 [^yang]: Y. Yang, E. Chang, and M. Shanechi, “Dynamic tracking of non-stationarity in human ECoG activity,” Proc. IEEE Engineering in Medicine and Biology Society Conference(EMBC), Jeju Island, Korea, pp. 1660–1663, 2017.
 
+[^Overschee]: P. Overschee and B. Moor, Subspace Identification for Linear Systems: Theory, Implementation, Applications, vol. 3. Kluwer academic publishers Dordrecht, 1993.
