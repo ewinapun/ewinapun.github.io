@@ -40,7 +40,7 @@ Since we calculate new output covariance matrices using QR-decomposition, and th
 
 ### Training and testing sets
 
-We allocate the 5500 time steps into 5000 for training and 500 for testing. The adaptive algorithm estimates the SSM at each time step of the training set. During training, we record the estimated poles of the time varying system at each time step to investigate the pole tracking ability of the algorithm. We fix SSM_adpt at the last estimate. The non-adaptive algorithm uses the entire training data to produce a single estimation, SSM_non-adpt. Using SSM_adpt and SSM_non-adpt, we evaluate the prediction power on the training set, which is unseen by both algorithms in the training set. We do not further adapt the SSM_adpt during testing. We compare these prediction powers to the baseline, which is defined as using the true SSM at the last time step.
+We allocate the 5500 time steps into 5000 for training and 500 for testing. The adaptive algorithm estimates the SSM at each time step of the training set. During training, we record the estimated poles of the time varying system at each time step to investigate the pole tracking ability of the algorithm. We fix SSM_adpt at the last estimate. The non-adaptive algorithm uses the entire training data to produce a single estimation, SSM_non-adpt. Using SSM_adpt and SSM_non-adpt, we evaluate the prediction power on the training set, which is unseen by both algorithms in the training set. We do not further adapt the SSM_adpt during testing. We compare these prediction powers to the baseline, which is defined as the true SSM at the last time step of the training set.
 
 ### Performance measures
 
