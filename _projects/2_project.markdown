@@ -5,17 +5,36 @@ description: Adaptive subspace identification algorithm for dynamic tracking
 img: /assets/img/dynamic_tracking_project/auto(1)-eig-99.png
 ---
 
-On this page, I briefly go over what I wrote for my senior thesis. I only cover key research ideas and figures that are extracted from my thesis.
+On this page, I go over what I wrote for my senior thesis. I only extract the key research ideas and figures from my thesis.
 
 <!-- To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>*click here*</a>. -->
 
 ***
 
-#### abstract
+## Introduction
 
-In this work, we implement an adaptive subspace identification algorithm developed by[^yang] and test it on simulated time-invariant and time-varying state-space models. We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, experimental results indicate the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the traditional non-adaptive identification algorithm.
+Through identifying and tracking of brain network dynamics, neuroscientists have been able to understand neural mechanisms in a deeper level for the past decades. A broad range of neurological disorders can be effectively treated by developing adaptive closed-loop stimulation therapies or brain-machine-interface (BMI). They utilize real-time neural signal monitoring and brain states control using electrical stimulation. However, due to the non-stationary and time-variant properties of some brain network dynamics, such modeling becomes challenging.
 
-## results
+In this work, we implement an adaptive subspace identification algorithm developed by[^yang] and test it on simulated time-invariant and time-varying state-space models(SSMs). We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, we experimentally show that the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the traditional non-adaptive identification algorithm.
+
+## Adaptive algorithm
+
+We first formulate time-varying SSMs of purely stochastic systems as
+<p>
+    <img src="/assets/img/dynamic_tracking_project/ssm.png" style="width: 30%;"/>
+</p>
+
+where $$x$$ is the hidden state, $$y$$ is the observation state, **A** and **C** are time-varying system matrices, $$K$$ is the forward Kalman gain, $$e_t$$ is a noise set to zero mean with variance of 0.0001. In our experiments, we set our system to a second order with zero inputs and two outputs. **A** is the only time-varying matrix with changing diagonal elements in each time steps, with absolute value of all poles of A less than 1 (stability requirement). The C matrix is set to an identity matrix.
+
+Since we calculate new output covariance matrices at every time step, the QR- decomposition also needs to be recalculated at every time step. To enable online operation of the QR-decomposition, we use a recursive algorithm to update the R matrix in the QR-decompositions[1].
+
+## Performance measures
+
+We introduce two error metrics to evaluate the algorithm’s performance. We quantify 1) a prediction error(PE), using a normalized root mean square error between the predicted outputs and the true outputs in the test set, and 2) a tracking error(TE), also using a normalized root mean square error between an averaged estimated and the true eigenvalues of the TV matrix at each time step.
+
+Note that we take the mean and standard error of the mean (SEM) of PE of all 200 Monte Carlo simulations, but we perform TE on the averaged pole trajectories over all Monte Carlo simulations, instead of on individual simulations with estimated poles that have very large variance to the true poles. We then take the mean and SEM of TE across all all poles.
+
+## Results
 
 For each case, we visually evaluate the pole tracking ability of the adaptive algorithm and compare the output estimation in the test set. We also quantitatively compare PE and TE of both algorithms.
 
@@ -84,7 +103,7 @@ We also want to compare the algorithms quantitatively using our defined error me
 | random walk | 3.76±0.14% | 10.85±5.03% | 20.50±0.21% | 28.26±0.05% | 13.47±0.01% |
 | linear | 1.96±0.13% | 6.96±0.70% | 15.85±0.19% | 19.77±0.05% | 11.10±0.001% |
 | step-up | 2.68±0.75% | 14.48±0.35% | 13.36±0.17% | 15.23±0.04% | 9.59±0.001% |
-| lin+step-up | 3.78±0.05% | 7.06±0.75% | 17.80±0.19% | 20.77±0.05% | 13.70±0.002% |
+| linear +step-up | 3.78±0.05% | 7.06±0.75% | 17.80±0.19% | 20.77±0.05% | 13.70±0.002% |
 
 <p>
     <div class="caption">
