@@ -7,7 +7,7 @@ img: /assets/img/dynamic_tracking_project/auto(1)-eig-99.png
 
 On this page, I go over what I wrote for my senior thesis. I only extract the key research ideas and figures from my thesis.
 
-To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>*click here*</a>.  In addition, I uploaded the matlab codes in github in the <a href='https://github.com/ewinapun/subid'>subid repo</a>/.
+To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>click here</a>. To view the matlab code, please go to my <a href='https://github.com/ewinapun/subid'>github repo</a>.
 
 ***
 
@@ -109,7 +109,7 @@ For all time-varying cases, we can point out that the non-adaptive algorithm fai
 
 ## Simulations summary
 
-We also want to compare the algorithms quantitatively using our defined error measures. For all time-varying cases, we obtain TE_adpt < TE_non-adpt and PE_baseline < PE_adpt < PE_non-adpt, proving that the performance of the adaptive algorithm is indeed better than the non-adaptive algorithm. Meanwhile, adaptive algorithm can perform equally well as the non-adaptive algorithm in the time-invariant case.
+We also want to compare the algorithms quantitatively using our defined error measures. For all time-varying cases, we obtain **TE_adpt < TE_non-adpt** and **PE_baseline < PE_adpt < PE_non-adpt**, proving that the performance of the adaptive algorithm is indeed better than the non-adaptive algorithm. Meanwhile, adaptive algorithm can perform equally well as the non-adaptive algorithm in the time-invariant case.
 
 | cases | TE_adpt | TE_non-adpt | PE_adpt | PE_non-adpt | PE_baseline |
 | --- | --- | --- | ---  | --- | --- | --- |
@@ -117,7 +117,7 @@ We also want to compare the algorithms quantitatively using our defined error me
 | random walk | 3.76±0.14% | 10.85±5.03% | 20.50±0.21% | 28.26±0.05% | 13.47±0.01% |
 | linear | 1.96±0.13% | 6.96±0.70% | 15.85±0.19% | 19.77±0.05% | 11.10±0.001% |
 | step-up | 2.68±0.75% | 14.48±0.35% | 13.36±0.17% | 15.23±0.04% | 9.59±0.001% |
-| linear +step-up | 3.78±0.05% | 7.06±0.75% | 17.80±0.19% | 20.77±0.05% | 13.70±0.002% |
+| linear+ step-up | 3.78±0.05% | 7.06±0.75% | 17.80±0.19% | 20.77±0.05% | 13.70±0.002% |
 
 <p>
     <div class="caption">
@@ -139,11 +139,11 @@ One goal of the project is to determine the best value of the forgetting factor,
 
 For *β* = 0.8, the pole trajectories of all cases are poorly estimated with large estimate variance. As the value of *β* increases from 0.8 to 0.98, the algorithm starts to perform more accurately in tracking poles. The estimate variance is also reduced as the value of *β* gets close to 1. When *β* = 1, the algorithm cannot track any time-varying part of the system in all cases, because the weights on past data equal to the weights on the recent data.
 
-The performance of the algorithm with *β* = 0.98, 0.99, and 0.995 is very similar in terms of pole tracking, but there is a difference in terms of rate of convergence to the true poles. Closer the value of *β* to 1, more recent data are weighted in the algorithm, so longer it takes to converge to the true poles. As the value of *β* increases from 0.98 to 0.995, we can see an increasing delay in pole convergence in the random walk case and a slower convergence in the step function case. In real-life scenarios, maintaining a quick rate of convergence is surely something scientist concerns.
+The performance of the algorithm with *β* = 0.98, 0.99, and 0.995 is very similar in terms of pole tracking, but there is a difference in terms of rate of **convergence** to the true poles. Closer the value of *β* to 1, more recent data are weighted in the algorithm, so longer it takes to converge to the true poles. As the value of *β* increases from 0.98 to 0.995, we can see an increasing delay in pole convergence in the random walk case and a slower convergence in the step function case. In real-life scenarios, maintaining a quick rate of convergence is surely something scientist concerns.
 
 ### Additional Work
 
-My thesis has more contents that I didn't get to cover here. To be specific, we investigate the effect of the forgetting factor and training set length empirically (with error measures) to best optimize our simulations.
+My thesis has more contents that I didn't get to cover here. To be specific, we investigate the effect of the forgetting factor and training set length empirically (with error measures) to best optimize our simulations. I also encourage you to read the details of the algorithm in the method section.
 
 ***
 
