@@ -19,8 +19,8 @@ In this work, we implement an adaptive subspace identification algorithm (subID)
 
 ## Adaptive algorithm
 
-<p class="figcaption">
-    Disclaimer: I try to keep the explanation of this session brief. For details of the subID algorithm, experimental setup, training and testing, performance measures, please refer to my full thesis or [^yang].
+<p class="caption">
+    Disclaimer: I try to keep the explanation of this session brief. For details of the subID algorithm, experimental setup, training and testing, performance measures, please refer to my full thesis.
 </p>
 
 We first formulate time-varying SSMs of purely stochastic systems as
