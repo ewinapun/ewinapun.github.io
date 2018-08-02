@@ -144,7 +144,7 @@ If you're interested in the actual code, click open the collapsible:
 </details>
 
 
-### Results
+## Results
 
 <p>
     <img src="/assets/img/BioMEMS_project/length_pressure.png" style="width: 49%;"/>
@@ -173,7 +173,7 @@ We have shown how microbubble length tracking is a nice and intuitive visual too
     </div>
 </p>
 
-### Conclusion
+## Conclusion
 
 Impedance measurements remain to be a precise benchmark for our device characterization, but this project provides us an alternative visual indicator of the device performance. It can be especially useful when the electrochemical performance is unstable/unreliable for some devices.
 

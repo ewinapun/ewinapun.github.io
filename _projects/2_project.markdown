@@ -20,20 +20,19 @@ In this work, we implement an adaptive subspace identification algorithm (subID)
 ## Adaptive algorithm
 
 <p class="figcaption">
-    Disclaimer: I try to keep the explanation of this session brief. For details of the subID algorithm, experimental setup, training and testing, performance measures, please refer to my full thesis, [^yang] or [^Overschee].
+    Disclaimer: I try to keep the explanation of this session brief. For details of the subID algorithm, experimental setup, training and testing, performance measures, please refer to my full thesis or [^yang].
 </p>
 
 We first formulate time-varying SSMs of purely stochastic systems as
-<p>
-    <img src="/assets/img/dynamic_tracking_project/ssm.png" style="width: 30%;"/>
-</p>
+<img src="/assets/img/dynamic_tracking_project/ssm.png" style="width: 30%;"/>
 
 where $$x$$ is the hidden state, $$y$$ is the observation state, **A** and **C** are time-varying system matrices, $$K$$ is the forward Kalman gain, $$e_t$$ is a noise set to zero mean with variance of 0.0001. In our experiments, we set our system to a second order with zero inputs and two outputs. **A** is the only time-varying matrix with changing diagonal elements in each time steps, with absolute value of all poles of A less than 1 (stability requirement). The **C** matrix is set to an identity matrix.
 
-We adapt our adaptive subID algorithm from the original time-invariant subID algorithm from Overschee's book (good introduction on subID)[^Overschee]. To make the algorithm adaptive, we introduce a user-defined forgetting factor, *β*, to estimate time-varying output covariance matrices,[^yang]
+We adapt our adaptive subID algorithm from the original time-invariant subID algorithm from Overschee's book (good introduction on subID)[^Overschee]. To make the algorithm adaptive, we introduce a user-defined **forgetting factor**, *β*, to estimate time-varying output covariance matrices,[^yang]
 
-from <p><img src="/assets/img/dynamic_tracking_project/eqn.png" style="float: left; width:40%;"/></p>
-to <p><img src="/assets/img/dynamic_tracking_project/eqn_beta.png" style="float: right; width: 40%;"/></p>
+<p>
+    <img src="/assets/img/dynamic_tracking_project/eqn.png" style=" width:100%;"/>
+</p>
 
 Here, we update the estimate of output covariance matrices at each time step, while putting more weight on the recent data than past data. A small *β* implies the recent data are more heavily weighted, and a large *β* implies the past data are weighted almost as heavy as the recent data. *β* = 1 means that the entire dataset is weighted equally, which is equivalent to the non-adaptive output covariance matrices.
 
@@ -45,7 +44,7 @@ We allocate the 5500 time steps into 5000 for training and 500 for testing. The 
 
 ### Performance measures
 
-We introduce two error metrics to evaluate the algorithm’s performance. We quantify 1) a prediction error (PE), using a normalized root mean square error between the predicted outputs and the true outputs in the test set, and 2) a tracking error (TE), also using a normalized root mean square error between an averaged estimated and the true eigenvalues of the TV matrix at each time step.
+We introduce two error metrics to evaluate the algorithm’s performance. We quantify 1) a **prediction error** (PE), using a normalized root mean square error between the predicted outputs and the true outputs in the test set, and 2) a **tracking error** (TE), also using a normalized root mean square error between an averaged estimated and the true eigenvalues of the TV matrix at each time step.
 
 One thing to note is that we take the mean and standard error of the mean (SEM) of PE of all 200 Monte Carlo simulations, but we perform TE on the averaged pole trajectories over all Monte Carlo simulations, instead of on individual simulations, which has estimated poles with very large variance. We then take the mean and SEM of TE across all poles. The exact equations of the error metrics are in my thesis.
 
