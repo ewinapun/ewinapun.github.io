@@ -18,7 +18,7 @@ I spent two years in USC Biomedical Microsystems Laboratory working as an underg
 
 ## Principle of pressure sensing using a microbubble
 
-The key idea behind the design exploits how microbubbles respond instantaneously to external pressure variations. By isolating the microbubble in a microchannel filled with an electrolyte solution, we are able to mimic the wet, *in-vivo* environment of cerebrospinal fluid in hydrocephalus. Our goal is to infer pressure change by monitoring the behavior of the bubble dissolution.
+The key idea of the design exploits how microbubbles respond instantaneously to external pressure variations. By isolating the microbubble in a microchannel filled with an electrolyte solution, we are able to mimic the wet, *in-vivo* environment of cerebrospinal fluid in hydrocephalus. Our goal is to infer pressure change by monitoring the behavior of the bubble dissolution.
 
 > **Boyle's law** tells us that pressure of a gas is inversely related to its volume ($$ P \varpropto \frac{1}{V} $$).
 > **Henry's law** tells us bubble dissolution rate linearly corresponds to change in pressure.
@@ -28,8 +28,8 @@ A microchannel is carefully fabricated into the device. The channel is connected
 
 <p>
   <img src="/assets/img/BioMEMS_project/deviceFFC.png" style="width: 28%;"/>
-  <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 34%;"/>
-  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 35%;"/>
+  <img src="/assets/img/BioMEMS_project/device.jpg" style="width: 33%;"/>
+  <img src="/assets/img/BioMEMS_project/devicechannel.png" style="width: 34%;"/>
 </p>
 <p>
 <div class="caption">
@@ -50,7 +50,7 @@ One electrochemical characterization we do is to chronically measure changes in 
 
 In response to a pressure change, bubble length is more likely to vary than the cross section area in a microchannel.[^footnote1] So can we infer pressure through tracking microbubble length, rather than using impedance measurements? With some simple image processing on the bubble snapshots taken 2 frames per second, we implement a Matlab program that automatically tracks changes of the microbubble volume in response to pressure.
 
-We take the raw, cropped, straightened image of the microchannel and subtract it from the initial image taken before a bubble is injected. By processing it into a B/W image of the isolated bubble, we then run the program to track both ends of bubble. Note that the markers on top of the channel are 100µm apart, which provide us a nice basis of measuring the actual bubble length.
+We take the raw, cropped, straightened image of the microchannel and subtract it from the initial image taken before a bubble is injected. By processing it into a B/W image of the isolated bubble, we then implement a program to track both ends of the bubble. Note that the markers on top of the channel are 100µm apart. They provide us a nice basis to measure the actual bubble length.
 
 <p class="aligncenter">
 <img src="/assets/img/BioMEMS_project/bubblelength.png" style="width: 80%;vertical-align: middle;"/>
@@ -154,7 +154,7 @@ If you're interested in the actual code, click open the collapsible:
     </div>
 </p>
 
-If we compare the bubble length results to the impedance measurements[^note2], we can see some similarity. Both bubble length and impedance measurements show us their inverse relationship with pressure, and can capture the essence of the microbubble behavior inside the channel in a similar fashion.
+If we compare the bubble length results to the impedance measurements[^note2], we can see some similarities. Both bubble length and impedance measurements show us their inverse relationships with pressure, and can capture the essence of the microbubble behavior inside the channel in a similar fashion.
 
 <p>
   <img src="/assets/img/BioMEMS_project/impedance_pressure.png" style="width: 49%;"/>
@@ -164,12 +164,12 @@ If we compare the bubble length results to the impedance measurements[^note2], w
     </div>
 </p>
 
-We have shown how microbubble length tracking is a nice and intuitive visual tool for us to monitor bubble dissolution, as well as give us insights into pressure sensing. However, there is one issue remains unsolved - we couldn't quite explain the correlations between the two indicators (bubble length and impedance). If we plot the two measurements overlapping each other, as the bubble dissolves, the two measurements appear to have different curve.[^note3]
+We have shown microbubble length tracking is a nice and intuitive visual tool for us to monitor bubble dissolution. However, there is one issue remains unsolved - we couldn't quite explain the correlations between the two indicators (bubble length and impedance). If we plot the two measurements overlapping each other, as the bubble dissolves, the two measurements appear to have different curves as the bubble dissolves.[^note3]
 
 <p>
   <img src="/assets/img/BioMEMS_project/compare.png" style="width: 100%;"/>
     <div class="caption">
-    Of all 10 bubble injection experiments on the same device, both bubble length and impedance measurements demonstrate a sharp raise when the bubble is injected and occupies a maximum volume in the channel, and a graduate drop when the bubble slowly dissolves into the solution. Yet, the curves do not exactly align with one another.
+    Of all 10 bubble injection experiments on one device, both bubble length and impedance measurements demonstrate a sharp raise when the bubble is injected and occupies a maximum volume in the channel, and a graduate drop when the bubble slowly dissolves into the solution. Yet, the curves do not exactly align with one another. But, does it matter?
     </div>
 </p>
 

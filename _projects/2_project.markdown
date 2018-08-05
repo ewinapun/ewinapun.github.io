@@ -5,7 +5,7 @@ description: Adaptive subspace identification algorithm for dynamic tracking
 img: /assets/img/dynamic_tracking_project/auto(1)-eig-99.png
 ---
 
-On this page, I go over what I wrote for my senior thesis. I only extract the key research ideas and figures from my thesis.
+On this page, I go over what I wrote on my senior thesis. I only extract key research ideas and figures from my thesis.
 
 To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>click here</a>. To view the matlab code, please go to my <a href='https://github.com/ewinapun/subid'>github repo</a>.
 
@@ -15,20 +15,20 @@ To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets
 
 Through identifying and tracking of brain network dynamics, neuroscientists have been able to understand neural mechanisms in a deeper level for the past decades. A broad range of neurological disorders can be effectively treated by developing adaptive closed-loop stimulation therapies or brain-machine-interface (BMI). They utilize real-time neural signal monitoring and brain states control using electrical stimulation. However, due to the non-stationary and time-variant properties of some brain network dynamics, such modeling becomes challenging.
 
-In this work, we implement an adaptive subspace identification algorithm (subID) developed by my collaborators [^yang] and test it on simulated time-invariant and time-varying state-space models (SSMs). We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, we experimentally show that the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the traditional non-adaptive identification algorithm.
+In this work, we implement an adaptive subspace identification algorithm (subID) developed by yang et. al.[^yang] and test it on simulated time-invariant and time-varying state-space models (SSMs). We run some simulations to prove that the algorithm can track the poles trajectories of the time-varying State-space models in an adaptive manner with high accuracy. By quantifying the performance with prediction error and tracking error, we experimentally show that the proposed adaptive identification algorithm could better predict and track poles of the true time-varying system, as compared to the traditional non-adaptive identification algorithm.
 
 ## Adaptive algorithm
 
 <p class="caption">
-    Disclaimer: I try to keep the explanation of this session brief. For details of the subID algorithm, experimental setup, training and testing, performance measures, please refer to my full thesis.
+    Disclaimer: I try to keep the explanation of this section brief. For details of the subID algorithm, experimental setup, training and testing, performance measures, please refer to my thesis.
 </p>
 
 We first formulate time-varying SSMs of purely stochastic systems as
-<img src="/assets/img/dynamic_tracking_project/ssm.png" style="width: 30%;"/>
+<img src="/assets/img/dynamic_tracking_project/ssm.png" style="width: 40%;"/>
 
 where $$x$$ is the hidden state, $$y$$ is the observation state, **A** and **C** are time-varying system matrices, $$K$$ is the forward Kalman gain, $$e_t$$ is a noise set to zero mean with variance of 0.0001. In our experiments, we set our system to a second order with zero inputs and two outputs. **A** is the only time-varying matrix with changing diagonal elements in each time steps, with absolute value of all poles of A less than 1 (stability requirement). The **C** matrix is set to an identity matrix.
 
-We adapt our adaptive subID algorithm from the original time-invariant subID algorithm from Overschee's book (good introduction on subID)[^Overschee]. To make the algorithm adaptive, we introduce a user-defined **forgetting factor**, *β*, to estimate time-varying output covariance matrices,[^yang]
+We adapt our adaptive subID algorithm from the original time-invariant subID algorithm from Overschee's book (a good introduction to subID)[^Overschee]. To make the algorithm adaptive, we introduce a user-defined **forgetting factor**, *β*, to estimate time-varying output covariance matrices,[^yang]
 
 <p>
     <img src="/assets/img/dynamic_tracking_project/eqn.png" style=" width:100%;"/>
@@ -36,17 +36,17 @@ We adapt our adaptive subID algorithm from the original time-invariant subID alg
 
 Here, we update the estimate of output covariance matrices at each time step, while putting more weight on the recent data than past data. A small *β* implies the recent data are more heavily weighted, and a large *β* implies the past data are weighted almost as heavy as the recent data. *β* = 1 means that the entire dataset is weighted equally, which is equivalent to the non-adaptive output covariance matrices.
 
-Since we calculate new output covariance matrices using QR-decomposition, and that they are updated at every time step, we need to recalculate QR matrices at every time step. To enable an efficient, online operation of the QR-decomposition, we use a recursive algorithm to update the R matrix in the QR-decompositions [^yang] with the help of Givens rotation (`qrinsert` function in Matlab). I will leave the math details in my thesis.
+Since we calculate new output covariance matrices using QR-decomposition, and that they are updated at every time step, we need to recalculate QR matrices at every time step. To enable an efficient, online operation of the QR-decomposition, we use a recursive algorithm to update the R matrix in the QR-decomposition [^yang] with the help of Givens rotation (check out `qrinsert.m` in Matlab). I will leave the math details in my thesis.
 
 ### Training and testing sets
 
-We allocate the 5500 time steps into 5000 for training and 500 for testing. The adaptive algorithm estimates the SSM at each time step of the training set. During training, we record the estimated poles of the time varying system at each time step to investigate the pole tracking ability of the algorithm. We fix SSM_adpt at the last estimate. The non-adaptive algorithm uses the entire training data to produce a single estimation, SSM_non-adpt. Using SSM_adpt and SSM_non-adpt, we evaluate the prediction power on the training set, which is unseen by both algorithms in the training set. We do not further adapt the SSM_adpt during testing. We compare these prediction powers to the baseline, which is defined as the true SSM at the last time step of the training set.
+We allocate the 5500 time steps into 5000 for training and 500 for testing. The adaptive algorithm estimates the SSM at each time step of the training set. During training, we record the estimated poles of the time varying system at each time step to investigate the pole tracking ability of the algorithm. We fix SSM_adpt at the last estimate. The non-adaptive algorithm uses the entire training data to produce a single estimation, SSM_non-adpt. Using SSM_adpt and SSM_non-adpt, we evaluate the prediction power on the testing set, which is unseen by both algorithms. We do not further adapt the SSM_adpt during testing. We compare these predictions to the baseline, which is defined as the true SSM at the last time step of the training set.
 
 ### Performance measures
 
 We introduce two error metrics to evaluate the algorithm’s performance. We quantify 1) a **prediction error** (PE), using a normalized root mean square error between the predicted outputs and the true outputs in the test set, and 2) a **tracking error** (TE), also using a normalized root mean square error between an averaged estimated and the true eigenvalues of the TV matrix at each time step.
 
-One thing to note is that we take the mean and standard error of the mean (SEM) of PE of all 200 Monte Carlo simulations, but we perform TE on the averaged pole trajectories over all Monte Carlo simulations, instead of on individual simulations, which has estimated poles with very large variance. We then take the mean and SEM of TE across all poles. The exact equations of the error metrics are in my thesis.
+One thing to note is that we take the mean and standard error of the mean (SEM) of PE of all 200 Monte Carlo simulations, but we perform TE on the averaged pole trajectories over all Monte Carlo simulations, instead of on individual simulations, which have estimated poles with very large variance. We then take the mean and SEM of TE across all poles. The exact equations of the error metrics are in my thesis.
 
 ## Results
 
@@ -128,7 +128,7 @@ We also want to compare the algorithms quantitatively using our defined error me
 
 ## Influence of the forgetting factor
 
-One goal of the project is to determine the best value of the forgetting factor, *β* . Here I display the pole trajectories of some time-varying cases as *β* increase from 0.8 to 1. Remember, larger the value of *β*, heavier the past data are weighted. A *β* = 1 means that the entire dataset are weighted equally.
+One goal of the project is to determine the best value of the forgetting factor, *β* . The figure below displays the pole trajectories of some time-varying cases as *β* increase from 0.8 to 1. Remember, larger the value of *β*, heavier the past data are weighted. A *β* = 1 means that the entire dataset is weighted equally.
 
 <p>
     <img src="/assets/img/dynamic_tracking_project/beta_allwith1.png" style="width: 99%;"/>
