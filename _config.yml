@@ -23,7 +23,7 @@ linkedin_username: ewinapun
 scholar_userid: # your Google Scholar ID
 orcid_id: # your ORCID ID
 contact_note: >
-  Email is the easiest way to contact me.
+  Email me if you want a quicker response.
 
 google_analytics: UA-123145736-1 # out your google-analytics code
 
@@ -31,7 +31,7 @@ google_analytics: UA-123145736-1 # out your google-analytics code
 # Blog
 # -----------------------------------------------------------------------------
 blog_name: Blog
-blog_description: a collection of my thoughts
+blog_description: a collection of my understanding on various topics
 
 # Pagination
 paginate: 5
