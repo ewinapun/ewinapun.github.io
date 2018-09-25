@@ -30,7 +30,7 @@ Neural data are collected through placing a recording chamber over the arm area 
 
 ## Analysis using first degree periodic (sinusoidal) regression
 
-* The following expressions are extracted from Georgopoulos's paper.*
+*The following expressions are extracted from Georgopoulos's paper.*
 
 Let $$ y_i (i = 1, 2, ..., 8 ) $$ be the mean rate when a cell discharges during movements towards direction $$ \theta_i = 0, 45, 90, ..., 315^{\circ}$$, respectively. We can fit a regress with
 
@@ -92,7 +92,7 @@ Of the 606 arm-related cells tested, 323 cells were active under the task circum
 * Change of neural discharge: When the movement direction was near (further away) the cell's preferred direction, an increase in activity occurred more (less) frequently.
 * cells with preferred directions at or near (opposite or far from) the direction of the upcoming movement will be activated (inhibited).
 
-* Significance
+## Significance
 
 This paper demonstrated cosine tuning in the motor system, yet the biological explanation for its origin was not presented. Todorov has provided insight into why cosine tuning can be significant. He argues, through empirical observations, that it minimizes the net effect of neuromotor noise, thereby minimizing expected errors in force production.[^Todorov] He proves that a (truncated) cosine is the optimal force activation profile under arbitrary dimensions and arbitrary force direction distribution.
 
