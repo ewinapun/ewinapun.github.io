@@ -9,6 +9,8 @@ On this page, I go over what I wrote on my senior thesis. I only extract key res
 
 To view the full version of my senior thesis, <a href='http://ewinapun.tk/assets/pdf/thesis.pdf'>click here</a>. To view the matlab code, please go to my <a href='https://github.com/ewinapun/subid'>github repo</a>.
 
+*Keywords: adaptive subspace identification, dynamic tracking, state-space models, forgetting factor, prediction error, tracking error.*
+
 ***
 
 ## Introduction
@@ -26,7 +28,7 @@ In this work, we implement an adaptive subspace identification algorithm (subID)
 We first formulate time-varying SSMs of purely stochastic systems as
 <img src="/assets/img/dynamic_tracking_project/ssm.png" style="width: 40%;"/>
 
-where $$x$$ is the hidden state, $$y$$ is the observation state, **A** and **C** are time-varying system matrices, $$K$$ is the forward Kalman gain, $$e_t$$ is a noise set to zero mean with variance of 0.0001. In our experiments, we set our system to a second order with zero inputs and two outputs. **A** is the only time-varying matrix with changing diagonal elements in each time steps, with absolute value of all poles of A less than 1 (stability requirement). The **C** matrix is set to an identity matrix.
+where $$x$$ is the hidden state, $$y$$ is the observation state, $$A$$ and $$C$$ are time-varying system matrices, $$K$$ is the forward Kalman gain, $$e_t$$ is a noise set to zero mean with variance of 0.0001. In our experiments, we set our system to a second order with zero inputs and two outputs. $$A$$ is the only time-varying matrix with changing diagonal elements in each time steps, with absolute value of all poles of $$A$$ less than 1 (stability requirement). The $$C$$ matrix is set to an identity matrix.
 
 We adapt our adaptive subID algorithm from the original time-invariant subID algorithm from Overschee's book (a good introduction to subID)[^Overschee]. To make the algorithm adaptive, we introduce a user-defined **forgetting factor**, *β*, to estimate time-varying output covariance matrices,[^yang]
 
@@ -149,4 +151,4 @@ My thesis has more contents that I didn't get to cover here. To be specific, we 
 
 [^yang]: Y. Yang, E. Chang, and M. Shanechi, “Dynamic tracking of non-stationarity in human ECoG activity,” Proc. IEEE Engineering in Medicine and Biology Society Conference(EMBC), Jeju Island, Korea, pp. 1660–1663, 2017.
 
-[^Overschee]: P. Overschee and B. Moor, Subspace Identification for Linear Systems: Theory, Implementation, Applications, vol. 3. Kluwer academic publishers Dordrecht, 1993.
+[^Overschee]: P. Overschee and B. Moor, Subspace Identification for Linear Systems: Theory, Implementation, Applications, vol. 3. Kluwer academic publishers Dordrecht, 1996.

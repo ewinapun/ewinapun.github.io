@@ -5,6 +5,10 @@ description: Microbubble length tracking using image processing
 img: /assets/img/BioMEMS_project/bubble_crop1.gif
 ---
 
+I spent two years in USC Biomedical Microsystems Laboratory working as an undergraduate researcher. One of the projects aims to treat hydrocephalus via a novel pressure sensor.[^note1]
+
+*Keywords: pressure sensor, image processing, BioMEMS, implantable device, microbubble, fluid dynamics, device characterization, Boyle's law.*
+
 ***
 
 <p>
@@ -13,7 +17,7 @@ img: /assets/img/BioMEMS_project/bubble_crop1.gif
 
 ## Introducing a pressure sensor
 
-I spent two years in USC Biomedical Microsystems Laboratory working as an undergraduate researcher. One of the projects aims to treat hydrocephalus via a novel pressure sensor.[^note1] Hydrocephalus occurs when excessive cerebrospinal fluid accumulates in the brain, resulting in an abnormal widening of spaces. Since fluid accumulation poses potentially life-threatening pressure against brain tissues, it is necessary to monitor pressure chronically to drive timely therapeutic interventions. Hence, a new, flexible, MEMS-based, low-powered, biocompatible pressure sensor was being developed. This pressure sensor enables reliable sensing for chronic *in-vivo* implantation and provides immediate access to actionable pressure data. My job is to characterize the transducer's design to maximize its sensitivity. So how does it work?
+Hydrocephalus occurs when excessive cerebrospinal fluid accumulates in the brain, which results in an abnormal widening of spaces. Since fluid accumulation poses potentially life-threatening pressure against brain tissues, it is necessary to monitor pressure chronically to drive timely therapeutic interventions. Hence, a new, flexible, MEMS-based, low-powered, biocompatible pressure sensor was being developed. This pressure sensor enables reliable sensing for chronic *in-vivo* implantation and provides immediate access to actionable pressure data. My job is to characterize the transducer's design to maximize its sensitivity. So how does it work?
 
 
 ## Principle of pressure sensing using a microbubble
