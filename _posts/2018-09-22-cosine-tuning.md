@@ -94,7 +94,7 @@ Of the 606 arm-related cells tested, 323 cells were active under the task circum
 
 ## Significance
 
-Georgopoulos paper demonstrated empirically that cosine tuning exists in the motor system. From the biological perspective, Todorov has provided insight into as of why cosine tuning can be significant. He shows, through empirical observations as well, that the cosine tuning principle minimizes the net effect of neuromotor noise, thereby minimizing expected errors in force production.[^Todorov] He proves that a (truncated) cosine is the optimal force activation profile under arbitrary dimensions and arbitrary force direction distribution.
+Georgopoulos paper demonstrated empirically that cosine tuning exists in the motor system. From the biological perspective, Todorov has provided insight into as of why cosine tuning can be significant. He shows, through empirical observations as well, that the cosine tuning principle minimizes the net effect of neuromotor noise, thereby minimizing expected errors in force production.[^Todorov] He proves that a cosine is the optimal force activation profile under arbitrary dimensions and arbitrary force direction distribution.
 
 ## Working example
 
@@ -102,8 +102,8 @@ Let's apply the regression on a simulated dataset, $$y$$.
 
 {% highlight matlab %}
 angles = 45*(0:8);
-y = [-0.1900   -0.1936    0.2676    0.2650    0.2424   -0.0260   -0.2355   -0.2910];
-err = [0.0600    0.0703    0.0959    0.0989    0.0495    0.1356    0.0813    0.0804];
+y = [-0.1900  -0.1936  0.2676  0.2650  0.2424 -0.0260 -0.2355 -0.2910];
+err = [0.0600  0.0703  0.0959  0.0989  0.0495  0.1356  0.0813  0.0804];
 [b0, b1, b2, theta0, R, I] = CosineTuningRegression(y);
 angles360 = linspace(0,2*pi,360);
 yreg1 = b0 + b1*sin(angles360) + b2*cos(angles360);
