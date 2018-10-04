@@ -98,9 +98,9 @@ Georgopoulos paper demonstrated empirically that cosine tuning exists in the mot
 
 ## Working example
 
-Let's try applying the regression on a simulated data, $$y$$.
-<details>
-    {% highlight matlab %}
+Let's apply the regression on a simulated data, $$y$$.
+
+{% highlight matlab %}
     angles = 45*(0:8);
     y=[-0.1900   -0.1936    0.2676    0.2650    0.2424   -0.0260   -0.2355   -0.2910];
     err = [0.0600    0.0703    0.0959    0.0989    0.0495    0.1356    0.0813    0.0804];
@@ -134,7 +134,9 @@ Let's try applying the regression on a simulated data, $$y$$.
 	    R = 4*(b1^2+b2^2)/sum((y-b0).^2);
 	    I = sqrt(b1^2+b2^2)/b0;
 	end
-</details>
+{% endhighlight %}
+
+![Plot fitted cosine curve on top of the real data](/assets/img/posts/cosine_tuning_eg.png)
 
 ---
 [^Georgopoulos]: A. P. Georgopoulos, J. F. Kalaska: R. Caminiti, and J. T. Massey. “on The Relations Between The Direction Of Two-dimensional Arm Movements And Cell Discharge In Primate Motor Cortex.” The Journal of Neuroscience, Vol. 2, No. 11, pp. 1527-1537. 1982
