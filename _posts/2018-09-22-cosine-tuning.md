@@ -84,7 +84,7 @@ $$
 I = \frac{\sqrt{b^2_1 + b^2_2}}{b_0}, \quad b_0 > 0
 $$
 
-## Results
+## Results from his paper
 
 Of the 606 arm-related cells tested, 323 cells were active under the task circumstances. 296 cells have significant relations between cell discharge and the direction of movement during the total experimental time. Below are some of the key findings.
 
@@ -94,7 +94,47 @@ Of the 606 arm-related cells tested, 323 cells were active under the task circum
 
 ## Significance
 
-This paper demonstrated cosine tuning in the motor system, yet the biological explanation for its origin was not presented. Todorov has provided insight into why cosine tuning can be significant. He argues, through empirical observations, that it minimizes the net effect of neuromotor noise, thereby minimizing expected errors in force production.[^Todorov] He proves that a (truncated) cosine is the optimal force activation profile under arbitrary dimensions and arbitrary force direction distribution.
+Georgopoulos paper demonstrated empirically that cosine tuning exists in the motor system. From the biological perspective, Todorov has provided insight into as of why cosine tuning can be significant. He shows, through empirical observations as well, that the cosine tuning principle minimizes the net effect of neuromotor noise, thereby minimizing expected errors in force production.[^Todorov] He proves that a (truncated) cosine is the optimal force activation profile under arbitrary dimensions and arbitrary force direction distribution.
+
+## Working example
+
+Let's try applying the regression on a simulated data, $$y$$.
+<details>
+    {% highlight matlab %}
+    angles = 45*(0:8);
+    y=[-0.1900   -0.1936    0.2676    0.2650    0.2424   -0.0260   -0.2355   -0.2910];
+    err = [0.0600    0.0703    0.0959    0.0989    0.0495    0.1356    0.0813    0.0804];
+    %     errorbar(angles,BinAvg(:,channel)',BinStd(:,channel)')
+    [b0, b1, b2, theta0, R, I] = CosineTuningRegression(y);
+    angles360 = linspace(0,2*pi,360);
+    yreg1 = b0 + b1*sin(angles360) + b2*cos(angles360);
+    yreg2 = b0 + sqrt(b1^2+b2^2)*cos(angles360-theta0); % the same with yreg1
+    
+    % plot fitted curve
+    y = [y y(1)];err = [err err(1)]; % same data point at 0 and 360 degree
+    errorbar(angles,y,err,'LineStyle','none');
+    hold on
+    scatter(angles,y,10,'filled','k');
+    plot(angles360*180/pi,yreg1);
+    xlabel('Angle');
+    axis([0 360 -1 1]);
+    legend('y','error','regression fit')
+    text(280,0.5,['R^2 = ',num2str(R)])
+    box off
+
+	function [b0, b1, b2, theta0, R, I] = CosineTuningRegression(y)
+	    [ny,ly] = size(y);
+	    if(ly>ny);y=y';end;[ny,ly] = size(y);
+	    if(ny~=8);error('The input vector does not contain only 8 directions.');end
+	    if(ly~=1);error('Only one cell/feature/channel should be calculated each time');end
+	    b0 = mean(y);
+	    b1 = ((y(2)+y(4)-y(6)-y(8))/sqrt(2)+(y(3)-y(7)))/4;
+	    b2 = ((y(2)-y(4)-y(6)+y(8))/sqrt(2)+(y(1)-y(5)))/4;
+	    theta0 = atan2(b1,b2);
+	    R = 4*(b1^2+b2^2)/sum((y-b0).^2);
+	    I = sqrt(b1^2+b2^2)/b0;
+	end
+</details>
 
 ---
 [^Georgopoulos]: A. P. Georgopoulos, J. F. Kalaska: R. Caminiti, and J. T. Massey. “on The Relations Between The Direction Of Two-dimensional Arm Movements And Cell Discharge In Primate Motor Cortex.” The Journal of Neuroscience, Vol. 2, No. 11, pp. 1527-1537. 1982
