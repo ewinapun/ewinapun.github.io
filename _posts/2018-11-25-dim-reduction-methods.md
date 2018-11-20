@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Differences among various dimension reduction methods
+title: Differences Between Various Dimension Reduction Methods
 date: 2018-11-25 06:00
 description: PCA, LDA, factoral analysis, and more to talk about.
-public: false
+publish: false
 ---
 
 # Linear Discriminant Analysis
