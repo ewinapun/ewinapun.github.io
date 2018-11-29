@@ -6,10 +6,9 @@ description: Let's talk about linear dimension reduction techniques.
 published: true
 ---
 
-Imagine this scenerio: you getting late for a party, but you completely forget where you left your keys in your messy room (I get it, a typical college student room) and took way longer than needed to find it ~~anyways you're late to begin with~~. Frustrating isn't it? Wouldn't it be much easier to find it if your room is unclustered and neat? ~~dah that's what your mom has been trying to say.~~
+Imagine this scenerio: you getting late for a movie, but you completely forget where you left your keys in your messy room (I get it, a typical college student room) and took way longer than needed to find it ~~jokes, you're late anyways~~. Frustrating isn't it? Wouldn't this task be much easier if your room is unclustered and neat? ~~what your mom's been trying to tell you.~~
 
-Now apply this mindset to data analysis, That is why we perform dimension reduction.
-
+Now apply this thinking to your data, is there a way to "*tidy up*" the data prior to any regression or classification? That's right. That is why we perform dimension reduction. Dimension reduction offers us a reduction of the time and storage space required, and allows us to easily visualize the data when reduced to simply 2D- or 3D-space.
 
 Feature projection transforms the data in the high-dimensional space to a space of fewer dimensions.
 
