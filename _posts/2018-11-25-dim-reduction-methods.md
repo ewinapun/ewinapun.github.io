@@ -3,7 +3,7 @@ layout: post
 title: Differences Between Various Dimension Reduction Techniques
 date: 2018-11-25 06:00
 description: Let's talk about linear dimension reduction techniques.
-published: true
+published: false
 ---
 
 Imagine this scenerio: you getting late for a movie, but you completely forget where you left your keys in your messy room (I get it, a typical college student room) and took way longer than needed to find it ~~jokes, you're late anyways~~. Frustrating isn't it? Wouldn't this task be much easier if your room is unclustered and neat? ~~what your mom's been trying to tell you.~~
