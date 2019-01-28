@@ -2,7 +2,7 @@
 layout: post
 title: Cosine Tuning in Motor Cortical Neurons
 date: 2018-10-4 06:00
-description: to understand that neural cells have their preferred direction of movement and that it is distributed with a sinusoidal function
+description: understand neural cells have their preferred direction of movement and its underlying distribution
 ---
 
 Cosine tuning has been well established for motor cortical cells. This article serves as an introduction to this topic mainly through studying Georgopoulos's paper published in 1982.
