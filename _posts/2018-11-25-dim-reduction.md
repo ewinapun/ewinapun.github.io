@@ -3,25 +3,25 @@ layout: post
 title: Guide to Various Dimension Reduction Techniques
 date: 2018-11-25 06:00
 description: Let's talk about linear dimension reduction techniques.
-published: true
+published: false
 ---
 
 Imagine this scenerio: you are getting late for a movie, but you forget where you left your keys in your messy room. You ended up taking way longer than needed to find them. Frustrating isn't it? Wouldn't it be much easier if your room were clean and organized?
 
-Now apply this thinking to your data, is there a way to "*tidy up*" the data prior to any regression or classification, so that some features can be easier to observe? Indeed dimension reduction is what we need. Dimension reduction offers a reduction of time and storage space required, and it allows us to easily visualize the data through projecting data in higher-dimensional space to lower-dimensional space.
+Now apply this thinking to your data, is there a way to "*tidy up*" the data prior to any regression or classification, so that some features can be easier to observe? Indeed dimension reduction is what we need. Through projecting data in a higher-dimensional space to a lower-dimensional space, dimension reduction offers a reduction of time and storage space required, and allows us to easily visualize the data.
 
 I will cover three major linear dimensionality reduction techniques, namely Principle Component Analysis (PCA), Linear Discriminant Analysis (LDA), and Factor Analysis (FA).
 
 ## What is feature projection?
 
-![Chernin Entertainment Logo[^CE]](/assets/img/posts/CE.jpg)
-
 <p>
     <img src="/assets/img/posts/CE.jpg" style="width: 90%;"/>
     <div class="caption">
-        Chernin Entertainment Logo[^CE]
+        An example of projection with the Chernin Entertainment Logo obtained from http://logos.wikia.com/wiki/Chernin_Entertainment/Other.
     </div>
 </p>
+
+A
 
 # Linear Discriminant Analysis
 
@@ -41,4 +41,3 @@ In factor analysis we model the observed variables as linear functions of the â€
 
 ***
 
-[^CE]: http://logos.wikia.com/wiki/Chernin_Entertainment/Other
