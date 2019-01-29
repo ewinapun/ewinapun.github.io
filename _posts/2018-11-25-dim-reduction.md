@@ -14,8 +14,7 @@ I will cover three major linear dimensionality reduction techniques, namely Prin
 
 ## What is feature projection?
 
-![Chernin Entertainment Logo obtained from http://logos.wikia.com/wiki/Chernin_Entertainment/Other](/assets/img/posts/CE.png)
-
+![Chernin Entertainment Logo](/assets/img/posts/CE.png)
 
 # Linear Discriminant Analysis
 
