@@ -14,7 +14,7 @@ I will cover three major linear dimensionality reduction techniques, namely Prin
 
 ## What is feature projection?
 
-![Chernin Entertainment Logo](/assets/img/posts/CE.png)
+![Chernin Entertainment Logo[^CE]](/assets/img/posts/CE.jpg)
 
 # Linear Discriminant Analysis
 
@@ -31,3 +31,5 @@ In factor analysis we model the observed variables as linear functions of the â€
 | PCA | LDA | FA |
 | find component axes that maximize the variance of our data | find component axes that maximize the separation between multiple classes
 | unsupervised | supervised
+
+[^CE]: http://logos.wikia.com/wiki/Chernin_Entertainment/Other
