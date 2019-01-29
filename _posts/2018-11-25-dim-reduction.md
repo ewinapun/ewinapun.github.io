@@ -16,6 +16,13 @@ I will cover three major linear dimensionality reduction techniques, namely Prin
 
 ![Chernin Entertainment Logo[^CE]](/assets/img/posts/CE.jpg)
 
+<p>
+    <img src="/assets/img/posts/CE.jpg" style="width: 90%;"/>
+    <div class="caption">
+        Chernin Entertainment Logo[^CE]
+    </div>
+</p>
+
 # Linear Discriminant Analysis
 
 It projects a dataset onto a lower-dimensional space with good class-separability in order to avoid overfitting (“curse of dimensionality”) and reduce computational costs. LDA is “supervised” and computes the directions (“linear discriminants”) that will represent the axes that 1) maximize the distance between means/ find a the central point with maximum distances from means 2) minimize the variances ("scatters") within each category; in math terms, it maximizes $$\sum{d_i^2}/\sum{s_i^2}$$ where $$d_i$$ represents distances and $$s_i$$ represents variances of the $$i$$\textsuperscript{th} category.
@@ -31,5 +38,7 @@ In factor analysis we model the observed variables as linear functions of the �
 | PCA | LDA | FA |
 | find component axes that maximize the variance of our data | find component axes that maximize the separation between multiple classes
 | unsupervised | supervised
+
+***
 
 [^CE]: http://logos.wikia.com/wiki/Chernin_Entertainment/Other
