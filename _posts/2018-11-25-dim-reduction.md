@@ -12,7 +12,7 @@ Now apply this thinking to your data, is there a way to "*tidy up*" the data pri
 
 I will cover three major linear dimensionality reduction techniques, namely Principle Component Analysis (PCA), Linear Discriminant Analysis (LDA), and Factor Analysis (FA).
 
-## What is feature projection?
+### What is feature projection?
 
 <p>
     <img src="/assets/img/posts/CE.jpg" style="width: 90%;"/>
@@ -21,7 +21,7 @@ I will cover three major linear dimensionality reduction techniques, namely Prin
     </div>
 </p>
 
-A
+Some of you might recognize the Chernin Entertainment Logo from movies opening. It is a great example to show the idea of projections. As you can see, the 3D object in the middle is projected from two different angles, resulting two different shadows on the wall
 
 # Linear Discriminant Analysis
 
