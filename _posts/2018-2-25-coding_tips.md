@@ -9,7 +9,7 @@ published: true
 Everyone has different coding styles. Whether you are a clean or messy coder, it is fine as long as the program runs, right? Well, not quite. This quick article serves as a summary of what I've observed and learned, from coursework and working with people of various background (engineering, CS, biomedical, neuroscience folks...) throughout the years. To me, writing code is similar to writing an article. There are certain elements that can make a a piece of code *good*. What are some tricks and tips that might benefit YOU?
 
 <p class="caption">
-    P.S. People write books on how to write nice code. I am not intended to condense their work here. This article is a my own short summary that will most benefit beginner coders.
+    P.S. People write books on how to write nice code. I am not trying to condense their work. This article is my own short summary that will most benefit beginner coders.
 </p>
 
 ## Quality of code
