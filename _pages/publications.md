@@ -2,8 +2,8 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Publications by categories in reversed chronological order.
-years: [1956, 1950, 1935, 1905]
+<!-- description: Publications by categories in reversed chronological order. -->
+<!-- years: [1956, 1950, 1935, 1905] -->
 ---
 
 <h3 class="year">2018</h3>
