@@ -4,7 +4,7 @@
 name: Ewina Pun
 email: tsam_kiu_pun@brown.edu
 description: > # this means to ignore newlines until "url:"
-  An academic webpage of a PhD student who studies Brain-machine interfaces at Brown University.
+  An academic webpage of a PhD student interested Brain-machine interfaces at Brown University.
 
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
@@ -31,7 +31,7 @@ google_analytics: UA-123145736-1 # out your google-analytics code
 # Blog
 # -----------------------------------------------------------------------------
 blog_name: Blog
-blog_description: a collection of my understanding on various topics
+blog_description:
 
 # Pagination
 paginate: 5
