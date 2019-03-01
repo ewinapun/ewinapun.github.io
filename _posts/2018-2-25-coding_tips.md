@@ -1,12 +1,10 @@
 ---
 layout: post
 title: Don't tell me how to code
-date: 2018-2-28 06:00
+date: 2019-2-28 06:00
 description: Giving some advise on coding from a researcher perspective
 published: true
 ---
-
-## Don't tell me how to code
 
 Everyone has different coding styles. Whether you are a clean or messy coder, it is fine as long as the program runs, right? Well, not quite. This quick article serves as a summary of what I've observed and learned, from coursework and working with people of various background (engineering, CS, biomedical, neuroscience folks...) throughout the years. To me, writing code is similar to writing an article. There are certain elements that can make a a piece of code *good*. What are some tricks and tips that might benefit YOU?
 
