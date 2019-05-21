@@ -18,4 +18,4 @@ social: true
 
 Hi, I am a doctoral student in the <a href="https://www.braingate.org/">BrainGate team</a> at Brown University. My research interest lies in designing closed-loop brain machine interfaces for applications in clinical neuroscience.
 
-Originally from Hong Kong, I completed both undergraduate and master degree at the University of Southern California from 2014-2018, majoring in Electrical Engineering and Biomedical Engineering respectively. I wrote her <a href="http://ewinapun.tk/projects/2_project/">undergraduate thesis</a> on adaptive subspace identification algorithm for dynamic tracking. During my free time, I love playing badminton, drawing, and chocolate making.
+Originally from Hong Kong, I completed both undergraduate and master degree at the University of Southern California from 2014-2018, majoring in Electrical Engineering and Biomedical Engineering respectively. I wrote my <a href="http://ewinapun.tk/projects/2_project/">undergraduate thesis</a> on adaptive subspace identification algorithm for dynamic tracking. During my free time, I love playing badminton and making artisan chocolates.
