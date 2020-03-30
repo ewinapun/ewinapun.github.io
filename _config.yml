@@ -23,10 +23,9 @@ linkedin_username: ewinapun
 scholar_userid: # your Google Scholar ID
 orcid_id: # your ORCID ID
 contact_note: >
-  Email me if you want a quicker response.
 
 google_analytics: UA-123145736-1 # out your google-analytics code
-
+markdown_extensions: admonition
 # -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------

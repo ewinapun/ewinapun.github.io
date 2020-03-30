@@ -2,12 +2,15 @@
 layout: post
 title: Feature Reuse with ANIL
 date: 2020-03-30 06:00
-description: we will dive into a meta-learning algorithm called ANIL (Almost No Inner Loop) and explain how to implement it with learn2learn
+description: Describe a meta-learning algorithm called ANIL (Almost No Inner Loop) and explain how to implement it with learn2learn
 ---
 
 In this article, we will dive into a meta-learning algorithm called ANIL (Almost No Inner Loop) presented by [Raghu et al., 2019](https://arxiv.org/abs/1909.09157.pdf), and explain how to implement it with learn2learn.
 
 Original published on [learn2learn.net](http://learn2learn.net/tutorials/anil_tutorial/ANIL_tutorial/), this tutorial is written for experienced PyTorch users who are getting started with meta-learning.
+<p>
+    <img src="/assets/img/BioMEMS_project/learn2learn.png" style="float: right; width:30%;"/>
+</p>
 
 ## Overview
 
@@ -25,12 +28,7 @@ In 2019, Raghu et al. conjectured that we can obtain the same rapid learning per
 
 **Rapid learning vs. feature reuse**
 
-<p style="text-align:center;">
-<img src="/assets/img/postsrapid_learning_or_feature_reuse.png" style="width:100%; vertical-align: middle;"/>
-    <div class="caption">
-    Visualizations of rapid learning and feature reuse. Diagram from Raghu et al., 2019.
-    </div>
-</p>
+[Visualizations of rapid learning and feature reuse. Diagram from Raghu et al., 2019.](/assets/img/postsrapid_learning_or_feature_reuse.png)
 
 Before we describe ANIL, we have to understand the difference between rapid learning and feature reuse. In ***rapid learning***, the meta-initialization in the outer loop results in a parameter setting that is favorable for fast learning, thus significant adaptation to new tasks can rapidly take place in the inner loop. In ***feature reuse***, the meta-initialization already contains useful features that can be reused, so little adaptation on the parameters is required in the inner loop. To prove feature reuse is a competitive alternative to rapid learning in MAML, the authors proposed a simplified algorithm, ANIL, where the inner loop is removed for all but the task-specific head of the underlying neural network during training and testing.
 
@@ -108,10 +106,10 @@ train_tasks = l2l.data.TaskDataset(train_dataset,
 * `RemapLabels(dataset)`: given samples from \(n\) classes, maps the labels to \(0, \dots, n\).
 * `ConsecutiveLabels(dataset)`: re-orders the samples in the task description such that they are sorted in consecutive order.
 
-!!! question
-    Why `k = 2*shots`?
-
-    The number of samples \(k\) is twice the number of shots because one half of the samples are for adaption and the other half are for evaluation in the inner loop.
+<button type="button" class="collapsible">Why `k = 2*shots`?</button>
+<div class="content">
+  <p>The number of samples \(k\) is twice the number of shots because one half of the samples are for adaption and the other half are for evaluation in the inner loop.</p>
+</div>
 
 !!! info
     For more details, please refer to the [documentation of learn2learn.data](http://learn2learn.net/docs/learn2learn.data/).
