@@ -8,10 +8,10 @@ description: Describe a meta-learning algorithm called ANIL (Almost No Inner Loo
 In this article, we will dive into a meta-learning algorithm called ANIL (Almost No Inner Loop) presented by [Raghu et al., 2019](https://arxiv.org/abs/1909.09157.pdf), and explain how to implement it with learn2learn.
 
 <p>
-    <img src="/assets/img/posts/learn2learn.png" style="float: right; width:15%;"/>
-        <div class="caption">
+    <img src="/assets/img/posts/learn2learn.png" style="float: right; width:10%;"/>
+        <!-- <div class="caption">
         learn2learn
-        </div>
+        </div> -->
 </p>
 
 Original published on [learn2learn.net](http://learn2learn.net/tutorials/anil_tutorial/ANIL_tutorial/), this tutorial is written for experienced PyTorch users who are getting started with meta-learning.
@@ -132,20 +132,13 @@ train_tasks = l2l.data.TaskDataset(train_dataset,
 
 `l2l.data.TaskDataset` creates a set of tasks from the MetaDataset using a list of task transformations:
 
-* `FusedNWaysKShots(dataset, n=ways, k=2*shots)`: efficient implementation to keep $$k$$ data samples from $$n$$ randomly sampled labels.
+* `FusedNWaysKShots(dataset, n=ways, k=2*shots)`: efficient implementation to keep $$k$$ data samples from $$n$$ randomly sampled labels. The number of samples $$k$$ is twice the number of shots because one half of the samples are for adaption and the other half are for evaluation in the inner loop.
 
 * `LoadData(dataset)`: loads a sample from the dataset given its index.
 * `RemapLabels(dataset)`: given samples from $$n$$ classes, maps the labels to $$0, \dots, n$$.
 * `ConsecutiveLabels(dataset)`: re-orders the samples in the task description such that they are sorted in consecutive order.
 
-<button type="button" class="collapsible">Why `k = 2*shots`?</button>
-<div class="content">
-  <p>The number of samples $$k$$ is twice the number of shots because one half of the samples are for adaption and the other half are for evaluation in the inner loop.
-  </p>
-</div>
-
-!!! info
-    For more details, please refer to the [documentation of learn2learn.data](http://learn2learn.net/docs/learn2learn.data/).
+For more details, please refer to the [documentation of learn2learn.data](http://learn2learn.net/docs/learn2learn.data/).
 
 **Creating model**
 
@@ -160,8 +153,7 @@ head.to(device)
 
 We then instantiate two modules, one for features and one for the head. ConvBase instantiates a four-layer CNN, and the head is a fully connected layer. Because we are not updating the feature extractor parameters, we only need to wrap the head with the `l2l.algorithms.MAML()` wrapper, which takes in the fast adaptation learning rate `fast_lr` used for the inner loop later.
 
-!!! info
-    For more details on the MAML wrapper, please refer to the [documentation of l2l.algorithms](http://learn2learn.net/docs/learn2learn.algorithms/).
+For more details on the MAML wrapper, please refer to the [documentation of l2l.algorithms](http://learn2learn.net/docs/learn2learn.algorithms/).
 
 **Optimization setup**
 
@@ -215,10 +207,7 @@ def fast_adapt(batch, learner, features, loss, adaptation_steps, shots,
 
 In `fast_adapt()`, we separate data into adaptation and evaluation sets with `k` shot samples each. In each adaptation step, `learner.adapt()` takes a gradient step on the loss and updates the cloned parameter, `learner`, such that we can back-propagate through the adaptation step. Under the hood, this is achieved by calling `torch.autograd.grad()` and setting `create_graph=True`. `fast_adapt()` then returns the evaluation loss and accuracy based on the predicted and true labels.
 
-!!! question
-    Why is the number of adaptation steps so small?
-
-    To demonstrate fast adaptation, we want the algorithm to adapt to each specific task quickly within a few steps. Since the number of samples is so small in few-shot learning, increasing number of adaptation steps would not help raising the performance.
+Some may ask, why is the number of adaptation steps so small? To demonstrate fast adaptation, we want the algorithm to adapt to each specific task quickly within a few steps. Since the number of samples is so small in few-shot learning, increasing number of adaptation steps would not help raising the performance.
 
 **Closing the outer loop**
 
