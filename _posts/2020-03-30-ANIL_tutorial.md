@@ -9,7 +9,7 @@ In this article, we will dive into a meta-learning algorithm called ANIL (Almost
 
 Original published on [learn2learn.net](http://learn2learn.net/tutorials/anil_tutorial/ANIL_tutorial/), this tutorial is written for experienced PyTorch users who are getting started with meta-learning.
 <p>
-    <img src="/assets/img/BioMEMS_project/learn2learn.png" style="float: right; width:30%;"/>
+    <img src="/assets/img/posts/learn2learn.png" style="float: right; width:30%;"/>
 </p>
 
 ## Overview
@@ -28,28 +28,28 @@ In 2019, Raghu et al. conjectured that we can obtain the same rapid learning per
 
 **Rapid learning vs. feature reuse**
 
-[Visualizations of rapid learning and feature reuse. Diagram from Raghu et al., 2019.](/assets/img/postsrapid_learning_or_feature_reuse.png)
+[Visualizations of rapid learning and feature reuse. Diagram from Raghu et al., 2019.](/assets/img/posts/rapid_learning_or_feature_reuse.png)
 
 Before we describe ANIL, we have to understand the difference between rapid learning and feature reuse. In ***rapid learning***, the meta-initialization in the outer loop results in a parameter setting that is favorable for fast learning, thus significant adaptation to new tasks can rapidly take place in the inner loop. In ***feature reuse***, the meta-initialization already contains useful features that can be reused, so little adaptation on the parameters is required in the inner loop. To prove feature reuse is a competitive alternative to rapid learning in MAML, the authors proposed a simplified algorithm, ANIL, where the inner loop is removed for all but the task-specific head of the underlying neural network during training and testing.
 
 **ANIL vs. MAML**
 
-Now, let us illustrate the difference mathematically. Let \(\theta\) be the set of meta-initialization parameters for the feature extractable layers of the network and \(w\) be the meta-initialization parameters for the head. We obtain the label prediction \(\hat{y} = w^T\phi_\theta(x)\), where x is the input data and \(\phi\) is a feature extractor parametrized by \(\theta\).
+Now, let us illustrate the difference mathematically. Let $\theta$ be the set of meta-initialization parameters for the feature extractable layers of the network and $w$ be the meta-initialization parameters for the head. We obtain the label prediction $\hat{y} = w^T\phi_\theta(x)$, where x is the input data and $\phi$ is a feature extractor parametrized by $\theta$.
 
-Given \(\theta_i\) and \(w_i\) at iteration step \(i\), the outer loop updates both parameters via gradient descent:
-\[\theta_{i+1} = \theta_i - \alpha\nabla_{\theta_i}\mathcal{L}_{\tau}(w^{\prime \top}_i\phi_{\theta^\prime_i}(x), y)\]
-\[w_{i+1} = w_i - \alpha\nabla_{w_i}\mathcal{L}_{\tau}(w^{\prime \top}_i\phi_{\theta^\prime_i}(x), y)\]
+Given $\theta_i$ and $w_i$ at iteration step $i$, the outer loop updates both parameters via gradient descent:
+$$\theta_{i+1} = \theta_i - \alpha\nabla_{\theta_i}\mathcal{L}_{\tau}(w^{\prime \top}_i\phi_{\theta^\prime_i}(x), y)$$
+$$w_{i+1} = w_i - \alpha\nabla_{w_i}\mathcal{L}_{\tau}(w^{\prime \top}_i\phi_{\theta^\prime_i}(x), y)$$
 
-where \(\mathcal{L}_\tau\) is the loss computed for task \(\tau\), and \(\alpha\) is the meta learning rate in the outer loop.
-Notice how the gradient is taken with respect to the initialization parameters \(w_i\) and \(\theta_i\), but the loss is computed on the adapted parameters \(\theta_i^\prime\) and \(w_i^\prime\).
+where $\mathcal{L}_\tau$ is the loss computed for task $\tau$, and $\alpha$ is the meta learning rate in the outer loop.
+Notice how the gradient is taken with respect to the initialization parameters $w_i$ and $\theta_i$, but the loss is computed on the adapted parameters $\theta_i^\prime$ and $w_i^\prime$.
 For one adaptation step in the inner loop, ANIL computes those adapted parameters as:
-\[\theta_{i}^\prime = \theta_i\]
-\[w_{i}^\prime = w_i - \beta\nabla_{w_i}\mathcal{L}_{\tau}(w_i^T\phi_{\theta_i}(x), y)\]
-where \(\beta\) is the learning rate of the inner loop.
+$$\theta_{i}^\prime = \theta_i$$
+$$w_{i}^\prime = w_i - \beta\nabla_{w_i}\mathcal{L}_{\tau}(w_i^T\phi_{\theta_i}(x), y)$$
+where $\beta$ is the learning rate of the inner loop.
 Concretely, ANIL keeps the feature extractor constant and only adapts the head with gradient descent.
 In contrast, MAML updates both the head and the feature extractor:
-\[\theta_{i}^\prime = \theta_i - \beta\nabla_{\theta_i}\mathcal{L}_{\tau}(w_i^T\phi_{\theta_i}(x), y)\]
-\[w_{i}^\prime = w_i - \beta\nabla_{w_i}\mathcal{L}_{\tau}(w_i^T\phi_{\theta_i}(x), y).\]
+$$\theta_{i}^\prime = \theta_i - \beta\nabla_{\theta_i}\mathcal{L}_{\tau}(w_i^T\phi_{\theta_i}(x), y)$$
+$$w_{i}^\prime = w_i - \beta\nabla_{w_i}\mathcal{L}_{\tau}(w_i^T\phi_{\theta_i}(x), y).$$
 
 Unsurprisingly, ANIL is much more computationally efficient since it requires fewer updates in the inner loop. What might be surprising, is that this efficiency comes at almost no cost in terms of performance.
 
@@ -100,15 +100,16 @@ train_tasks = l2l.data.TaskDataset(train_dataset,
 
 `l2l.data.TaskDataset` creates a set of tasks from the MetaDataset using a list of task transformations:
 
-* `FusedNWaysKShots(dataset, n=ways, k=2*shots)`: efficient implementation to keep \(k\) data samples from \(n\) randomly sampled labels.
+* `FusedNWaysKShots(dataset, n=ways, k=2*shots)`: efficient implementation to keep $k$ data samples from $n$ randomly sampled labels.
 
 * `LoadData(dataset)`: loads a sample from the dataset given its index.
-* `RemapLabels(dataset)`: given samples from \(n\) classes, maps the labels to \(0, \dots, n\).
+* `RemapLabels(dataset)`: given samples from $n$ classes, maps the labels to $0, \dots, n$.
 * `ConsecutiveLabels(dataset)`: re-orders the samples in the task description such that they are sorted in consecutive order.
 
 <button type="button" class="collapsible">Why `k = 2*shots`?</button>
 <div class="content">
-  <p>The number of samples \(k\) is twice the number of shots because one half of the samples are for adaption and the other half are for evaluation in the inner loop.</p>
+  <p>The number of samples $k$ is twice the number of shots because one half of the samples are for adaption and the other half are for evaluation in the inner loop.
+  </p>
 </div>
 
 !!! info
