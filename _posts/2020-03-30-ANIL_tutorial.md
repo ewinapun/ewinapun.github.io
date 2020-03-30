@@ -28,7 +28,7 @@ In 2019, Raghu et al. conjectured that we can obtain the same rapid learning per
 
 **Rapid learning vs. feature reuse**
 
-[Visualizations of rapid learning and feature reuse. Diagram from Raghu et al., 2019.](/assets/img/posts/rapid_learning_or_feature_reuse.png)
+![Visualizations of rapid learning and feature reuse. Diagram from Raghu et al., 2019.](/assets/img/posts/rapid_learning_or_feature_reuse.png)
 
 Before we describe ANIL, we have to understand the difference between rapid learning and feature reuse. In ***rapid learning***, the meta-initialization in the outer loop results in a parameter setting that is favorable for fast learning, thus significant adaptation to new tasks can rapidly take place in the inner loop. In ***feature reuse***, the meta-initialization already contains useful features that can be reused, so little adaptation on the parameters is required in the inner loop. To prove feature reuse is a competitive alternative to rapid learning in MAML, the authors proposed a simplified algorithm, ANIL, where the inner loop is removed for all but the task-specific head of the underlying neural network during training and testing.
 
