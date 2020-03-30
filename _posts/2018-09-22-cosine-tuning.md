@@ -2,7 +2,7 @@
 layout: post
 title: Cosine Tuning in Motor Cortical Neurons
 date: 2018-10-4 06:00
-description: understand neural cells have their preferred direction of movement and its underlying distribution
+description: Understand neuron's preferred direction of movement and its underlying cosine distribution
 ---
 
 Cosine tuning has been well established for motor cortical cells. This article serves as an introduction to this topic mainly through studying Georgopoulos's paper published in 1982.
@@ -22,7 +22,7 @@ Neuronal activity in the primate motor cortex can be related to the force exerte
 
 Previous studies utilized only two opposite directions in their experiments. So in 1982, Georgopoulos has thus performed an 8-direction study to examine the relations of single neuron activity to the direction of movement.[^Georgopoulos]
 
-## Experimental set up
+## Experimental setup
 
 Four rhesus monkeys were used in Georgopoulos's experiment. They were trained to perform a task to move a manipulandum from the center to one of the eight directions of the working surface, prompted when the LED lights up at one of the eight targets.
 
