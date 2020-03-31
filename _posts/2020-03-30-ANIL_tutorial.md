@@ -5,14 +5,13 @@ date: 2020-03-30 06:00
 description: Describe a meta-learning algorithm called ANIL (Almost No Inner Loop) and explain how to implement it with learn2learn
 ---
 
-In this article, we will dive into a meta-learning algorithm called ANIL (Almost No Inner Loop) presented by [Raghu et al., 2019](https://arxiv.org/abs/1909.09157.pdf), and explain how to implement it with learn2learn.
 
 <p>
     <img src="/assets/img/posts/learn2learn.png" style="float: right; width:10%;"/>
-        <!-- <div class="caption">
-        learn2learn
-        </div> -->
 </p>
+
+In this article, we will dive into a meta-learning algorithm called ANIL (Almost No Inner Loop) presented by [Raghu et al., 2019](https://arxiv.org/abs/1909.09157.pdf), and explain how to implement it with learn2learn.
+
 
 Original published on [learn2learn.net](http://learn2learn.net/tutorials/anil_tutorial/ANIL_tutorial/), this tutorial is written for experienced PyTorch users who are getting started with meta-learning.
 
@@ -104,7 +103,7 @@ With our understanding of how ANIL works, we are ready to implement the algorith
 | CIFAR-FS      | CNN          | 5    | 5     | n/a      | 68.3%       |
 | FC100         | CNN          | 5    | 5     | n/a      | 47.6%       |
 
-## ANIL Implementation
+### ANIL Implementation
 
 This section breaks down step-by-step the ANIL implementation with our example code.
 
