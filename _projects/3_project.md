@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Identify Changes in Volitional State
-description:
+description: via intracortical BCI
 img: /assets/img/SfN2019/24hBehaviorial.gif
 ---
 
