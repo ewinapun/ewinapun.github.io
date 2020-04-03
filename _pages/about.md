@@ -1,7 +1,7 @@
 ---
 layout: about
 permalink: /
-title: <strong>Ewina Tsam Kiu</strong> Pun
+title: Ewina Tsam Kiu Pun
 description: A doctoral student at Brown University.
 
 profile:
