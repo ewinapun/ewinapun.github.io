@@ -1,19 +1,22 @@
 ---
 layout: page
 title: Identify Volitional States via Intracortical BCI
-description: On October 19 - 23, 2019, I attended Society for Neuroscience (SfN) Annual meeting in Chicago, IL, USA. I presented our research with a poster, titled ***Identifying changes in volitional state and task engagement based on the intrinsic structure of neural ensemble activity patterns in motor cortex of people with tetraplegia during daily activities and BCI use***.
-img: /assets/img/SfN2019/24hBehaviorial.gif
+description: describe my poster at SfN 2019
+img: /assets/img/SfN2019/thumbnail.gif
 ---
-<a href='http://ewinapun.tk/assets/pdf/SfN_poster_2019.pdf'>View poster.</a>
+
+On October 19 - 23, 2019, I attended Society for Neuroscience (SfN) Annual meeting in Chicago, IL, USA. I presented our research with a poster, titled ***Identifying changes in volitional state and task engagement based on the intrinsic structure of neural ensemble activity patterns in motor cortex of people with tetraplegia during daily activities and BCI use***. You can view the poster <a href='http://ewinapun.tk/assets/pdf/SfN_poster_2019.pdf'>here.</a>
 *Keywords:* Motor Cortex, Brain Computer Interface, tetraplegia, neural state space
 
 ***
+
+
 
 ## Overview
 
 * Brain-computer interfaces (BCIs) are designed to bypass damaged motor pathways and provide new links to assistive technologies for people with neuromotor deficits. It is widely accepted that motor cortex incorporates a mix of incoming sensory, cognitive, and motor planning information, reflecting latent variables that are not directly related to kinematic motor output.
 * There is a need to reliably identify neural activity patterns indicative of a set of latent factors affected by task and cognitive context changes to build BCI systems that support continuous, multi-effector use.
-* Studies previously showed successful decoding of contextual changes in idle vs. active states (Lesenfants et. al, SfN, 2016), and controlling different end effectors (Fasoli et. al., APMR, 2017).
+* Studies previously showed successful decoding of contextual changes in idle vs. active states [^Lesenfants], and controlling different end effectors [^Fasoli].
 * We present clustering of the projections of neural data representing different context-dependent volitional states using an approach that visualizes data by generating low-dimensional state spaces based solely on the intrinsic similarity of single unit ensemble recordings.
 
 ## Introduction
@@ -32,39 +35,48 @@ Here we present a new approach to generate state spaces based solely on the intr
 
 Two participants (enrolled in BrainGate2 pilot clinical trial): T9 is 52 years old with tetraplegia due to amyotrophic lateral sclerosis (ALSFRS-R of 8), and T10 is 35 years old with tetraplegia due to spinal cord injury (C4 AIS-A). Two 96-channel Utah microelectrode arrays implanted both on left precentral gyrus (PCG) for T9, and one array on the left middle frontal gyrus (MFG) and one on the left PCG for T10.
 
+
+<p>
+<img src="/assets/img/SfN2019/setup.png"/>
+    <div class="caption">
+        blah blah blah
+    </div>
+</p>
+
 ### Spike Train SIMilarity Space (SSIMS)
 
-(Vargas-Irwin et. al., 2015)
+[^SSIMS]
 
-Step 1: compute similarity metrics between pairs of spike trains by calculating the cost to transform one spike train to another with inserting, deleting, or shifting spikes (Victor and Purpura, 2011)
+Step 1: compute similarity metrics between pairs of spike trains by calculating the cost to transform one spike train to another with inserting, deleting, or shifting spikes[^Victor]
 
-Step 2: perform dimensionality reduction using t-Distributed Stochastic Neighbor Embedding (van der Maaten, 2008)
+Step 2: perform dimensionality reduction using t-Distributed Stochastic Neighbor Embedding [^tsne]
 
 These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual
 
 ### Data Acquisition
 
-## (i) Full day continuous neural recording of BCI use and daily activities
+## I. Full day continuous neural recording of BCI use and daily activities
 
 26-hour continuous wireless recording from T10 performing center out task, grid task, and other usual daily activities.
 <p>
-  <img src="/assets/img/SfN2019/R8.png" style="float: right; width:35%;"/>
+  <img src="/assets/img/SfN2019/R8.png" style="float: right; width:30%;"/>
 </p>
 
 <p>
-  <img src="/assets/img/SfN2019/GRID.png" style="float: right; width:35%;"/>
+  <img src="/assets/img/SfN2019/GRID.png" style="float: right; width:30%;"/>
 </p>
 
 ### Data Selection
 
+Tasks: from 1s after the ‘go’ cue in each trial
+
 each event denotes a 1 second long spike train
 
 <p>
-  <img src="/assets/img/SfN2019/events.png" style="float: right; width:40%;"/>
+  <img src="/assets/img/SfN2019/snippet.png" style="float: right; width:40%;"/>
 </p>
-- Tasks: from 1s after the ‘go’ cue in each trial
-- Other categories:
-events in top percentile of change in smoothed mean threshold crossings after outlier elimination (to avoid signal dropout and electronic noise)
+
+Other categories: events in top percentile of change in smoothed mean threshold crossings after outlier elimination (to avoid signal dropout and electronic noise)
 
 
 
@@ -75,27 +87,27 @@ events in top percentile of change in smoothed mean threshold crossings after ou
 
 ### Results
 
+
+
+<p>
+<img src="/assets/img/SfN2019/24hBehaviorial.gif" style="width:50%;vertical-align: middle;"/>
+    <div class="caption">
+        cool SSIMS
+    </div>
+</p>
+
 10-fold cross validated 5-Nearest-Neighbor (KNN) of 7 states: 81.18% ± 2.38% (chance: 17.82% ± 2.95% ) • Eating and watching TV difficult to separate; potentially because T10 was watching TV while eating
 
-
 <p>
-    <img src="/assets/img/SfN2019/24hBehaviorial.gif" style="width:50%;vertical-align: middle;"/>
-        <div class="caption">
-            cool gif
-        </div>
-</p>
-
-
-<p>
-    <img src="/assets/img/SfN2019/result1.png""/>
-        <div class="caption">
-            blah blah blah
-        </div>
+<img src="/assets/img/SfN2019/result1.png"/>
+    <div class="caption">
+        blah blah blah
+    </div>
 </p>
 
 
 
-## (ii) Cursor vs robotic arm control
+## II. Cursor vs robotic arm control
 
 In each recording session (8 for T9 and 4 for T10), the decoder was first calibrated on one effector using open-loop imagery and then closed-loop decoder calibration. The decoder then ran on blocks (each consisting of many trials of the same task) that alternated between the two effectors.
 
@@ -131,10 +143,10 @@ direction classification - T9 : 63.52 ± 9.20% and T10 : 43.57 ± 7.63%
 effector classification - T9 : 97.58 ± 1.55% and T10 : 87.94 ± 5.17%
 
 <p>
-<img src="/assets/img/SfN2019/result1.png" style="width:50%;vertical-align: middle;"/>
-<div class="caption">
-The above 3D SSIMS spaces of T9 and T10 view from 2 orientations. One presents the clustering between directions, while another shows separation of tasks using different effectors.
-</div>
+<img src="/assets/img/SfN2019/result2.png" style="width:60%;vertical-align: middle;"/>
+    <div class="caption">
+    The above 3D SSIMS spaces of T9 and T10 view from 2 orientations. One presents the clustering between directions, while another shows separation of tasks using different effectors.
+    </div>
 </p>
 
 
@@ -159,4 +171,8 @@ This work is supported by Office of Research and Development, Rehabilitation R&D
 
 ***
 
-[^note1]:
+[^Lesenfants et al., SfN, 2016]:
+[^Fasoli et. al., APMR, 2017]:
+[^SSIMS]:
+[^Victor]: Victor and Purpura, 2011
+[^tsne]: van der Maaten, 2008
