@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2020-03-30 16:11:00-0400
+date: 2019-1-25 16:11:00-0400
 inline: true
 ---
 
-A new blog post about a meta-learning algorithm called **ANIL** is added.
+Check out the <a href='http://ewinapun.tk/projects'>project page for the new article</a> on the poster I presented at SfN last year.
