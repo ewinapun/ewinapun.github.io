@@ -48,7 +48,7 @@ disqus_shortname: al-folio # put your disqus shortname
 show_social_icons:  false
 enable_anchorjs:    false
 enable_katex:       true
-
+show_drafts: true
 # -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------
@@ -62,7 +62,7 @@ collections:
     output: true
     permalink: /projects/:path/
 
-news_limit: 5
+news_limit:
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
