@@ -9,12 +9,17 @@
     .thumbnail {
         overflow: hidden;
         height: 200px;
-        width: 100%;
+        width: 200px;
 
         img {
-            height: 500px;
-            position: relative;
-            width: 500px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 100%;
+        width: auto;
+        -webkit-transform: translate(-50%,-50%);
+          -ms-transform: translate(-50%,-50%);
+              transform: translate(-50%,-50%);
         }
 
         a {
