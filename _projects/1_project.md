@@ -2,7 +2,7 @@
 layout: page
 title: BioMEMS
 description: Microbubble length tracking using image processing
-img: /assets/img/BioMEMS_project/bubble_crop1.gif
+img: /assets/img/BioMEMS_project/bubble.gif
 ---
 
 I spent two years in USC Biomedical Microsystems Laboratory working as an undergraduate researcher. One of the projects aims to treat hydrocephalus via a novel pressure sensor.[^note1]
