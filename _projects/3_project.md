@@ -24,7 +24,9 @@ On October 19 - 23, 2019, I attended Society for Neuroscience (SfN) Annual meeti
 
 Neuromotor deficits resulting from conditions such as amyotrophic lateral sclerosis (ALS), brainstem stroke, and spinal cord injury (SCI) result in loss of volitional movement reducing independence. Brain-computer interfaces (BCI) bypass damaged motor pathways and provide new links to assistive technologies. Voluntary action engages vast networks of neurons performing complex calculations which are still not fully understood. It is widely accepted that motor cortex incorporates a mix of incoming sensory, cognitive, and motor planning information, reflecting latent variables that are not directly related to kinematic motor output. Reliably identifying neural activity patterns indicative of a set of latent factors impacted by task and cognitive context is a challenge for developing BCI systems that support continuous, multi-effector use.
 
-Here we present a new approach to generate state spaces based solely on the intrinsic properties of single unit ensemble recordings. We used Spike train SIMilarity Space (SSIMS) analysis to map neural activity patterns into low dimensional state spaces (based on spike train metrics combined with dimensionality reduction). These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual neurons. We applied this method to data collected from two participants enrolled in the BrainGate2 clinical trial - T10, an adult male with tetraplegia due to SCI (C4 AIS-A), and T9, an adult male with tetraplegia due to ALS (ALSFRS-R of 8). T10 had two 96 microeletrode arrays (Blackrock Microsystem, Inc) implanted on the left middle frontal gyrus (MFG) and precentral gyrus (PCG), and T9 on the left PCG. We collected data during sessions where T10 & T9 controlled either a computer cursor or a JACO robotic arm to perform a 2D target acquisition task via intracortical BCI. We demonstrate that our approach can be used to generate state spaces that differentiate between effectors (cursor vs. robotic arm) in both T10 & T9 (81.4±8.0%, 99.5±0.58% accuracy). Additionally, we recorded data from T10 over a 24 hour period; we can identify 5 partially overlapping states related to session tasks, interaction with caretakers and others, engagement with a sip-and-puff computer system, eating, and sleeping (Nearest Neighbor Classifier: 46.5±0.6%, p<.01; against chance classification: 23.5±0.8%). Our findings suggest that state space models based on intrinsic similarity can be used to detect context-dependent changes in volitional state, providing a useful indicator of when BCI control modes should be adjusted.
+Here we present a new approach to generate state spaces based solely on the intrinsic properties of single unit ensemble recordings. We used Spike train SIMilarity Space (SSIMS) analysis to map neural activity patterns into low dimensional state spaces (based on spike train metrics combined with dimensionality reduction). These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual neurons.
+
+We collected data during sessions where T10 & T9 controlled either a computer cursor or a JACO robotic arm to perform a 2D target acquisition task via intracortical BCI. We demonstrate that our approach can be used to generate state spaces that differentiate between effectors (cursor vs. robotic arm) in both T10 & T9 (81.4±8.0%, 99.5±0.58% accuracy). Additionally, we recorded data from T10 over a 24 hour period; we can identify 5 partially overlapping states related to session tasks, interaction with caretakers and others, engagement with a sip-and-puff computer system, eating, and sleeping (Nearest Neighbor Classifier: 46.5±0.6%, p<.01; against chance classification: 23.5±0.8%). Our findings suggest that state space models based on intrinsic similarity can be used to detect context-dependent changes in volitional state, providing a useful indicator of when BCI control modes should be adjusted.
 
 ## Background
 
@@ -32,9 +34,9 @@ Here we present a new approach to generate state spaces based solely on the intr
 
 ## Methods
 
-## Participants and Implants
+### Participants and Implants
 
-Two participants (enrolled in BrainGate2 pilot clinical trial): T9 is 52 years old with tetraplegia due to amyotrophic lateral sclerosis (ALSFRS-R of 8), and T10 is 35 years old with tetraplegia due to spinal cord injury (C4 AIS-A). Two 96-channel Utah microelectrode arrays implanted both on left precentral gyrus (PCG) for T9, and one array on the left middle frontal gyrus (MFG) and one on the left PCG for T10.
+Data are collected from two participants enrolled in the BrainGate2 clinical trial - T9 is 52 years old with tetraplegia due to amyotrophic lateral sclerosis (ALSFRS-R of 8), and T10 is 35 years old with tetraplegia due to spinal cord injury (C4 AIS-A). Two 96-channel Utah microelectrode arrays (Blackrock Microsystem, Inc)implanted both on left precentral gyrus (PCG) for T9, and one array on the left middle frontal gyrus (MFG) and one on the left PCG for T10.
 
 
 <p>
@@ -48,9 +50,9 @@ Two participants (enrolled in BrainGate2 pilot clinical trial): T9 is 52 years o
 
 [^SSIMS]
 
-Step 1: compute similarity metrics between pairs of spike trains by calculating the cost to transform one spike train to another with inserting, deleting, or shifting spikes[^Victor]
+Step 1: compute similarity metrics between pairs of spike trains by calculating the cost to transform one spike train to another with inserting, deleting, or shifting spikes [^Victor]
 
-Step 2: perform dimensionality reduction using t-Distributed Stochastic Neighbor Embedding [^tsne]
+Step 2: perform dimensionality reduction using t-Distributed Stochastic Neighbor Embedding [^tsne].
 
 These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual
 
@@ -60,12 +62,12 @@ These state space projections can be used to identify clusters of similar, recur
 
 <p>
   <img src="/assets/img/SfN2019/R8.PNG" style="float: right; width:30%;"/>
-</p>
-
-26-hour continuous wireless recording from T10 performing center out task, grid task, and other usual daily activities.
-<p>
   <img src="/assets/img/SfN2019/GRID.PNG" style="float: right; width:30%;"/>
 </p>
+
+
+26-hour continuous wireless recording from T10 performing center out task, grid task, and other usual daily activities. [^wireless][^wireless2][^wireless3]
+
 
 ### Data Selection
 
@@ -133,7 +135,7 @@ Engaging different effectors elicits different neural activity patterns
 
 <p>
 <img src="/assets/img/SfN2019/T9_SSIMS.gif" style="width:45%"/>
-<img src="/assets/img/SfN2019/T10_SSIMS.gif" style="width:45%"/>
+<img src="/assets/img/SfN2019/T10_SSIMS.gif" style="width:49%"/>
 <div class="caption">
 3D SSIMS spaces of a session of T9 and T10.
 </div>
@@ -144,7 +146,7 @@ direction classification - T9 : 63.52 ± 9.20% and T10 : 43.57 ± 7.63%
 effector classification - T9 : 97.58 ± 1.55% and T10 : 87.94 ± 5.17%
 
 <p>
-<img src="/assets/img/SfN2019/result2.png" style="width:60%;vertical-align: middle;"/>
+<img src="/assets/img/SfN2019/result2.png" style="width:100%;vertical-align: middle;"/>
     <div class="caption">
     The above 3D SSIMS spaces of T9 and T10 view from 2 orientations. One presents the clustering between directions, while another shows separation of tasks using different effectors.
     </div>
@@ -158,22 +160,37 @@ effector classification - T9 : 97.58 ± 1.55% and T10 : 87.94 ± 5.17%
 ## Conclusion and Future Work
 
 
-• State space models based on intrinsic activity pattern similarity can be used to:
+State space models based on intrinsic activity pattern similarity can be used to:
 (1) detect context-dependent changes in volitional state across daily activities
 (2) differentiate between the intention to engage different effectors (cursor vs. robot)
-• Motor cortex contains information about volitional states, in addition to intended movements. • Future work includes
-- comparing various dimensionality reduction techniques;
-- investigating non-stationarity across days, obtaining more than one day of continuous data;
-- using these data to support the development of a highly interactive BCI system that enables continuous, multi-effector use for people with tetraplegia.
+Motor cortex contains information about volitional states, in addition to intended movements.
 
+Future work includes comparing various dimensionality reduction techniques, investigating non-stationarity across days, obtaining more than one day of continuous data, using these data to support the development of a highly interactive BCI system that enables continuous, multi-effector use for people with tetraplegia.
+
+***
 
 This work is supported by Office of Research and Development, Rehabilitation R&D Service, Department of Veterans Affairs, NIH and Massachusetts General Hospital.
 
 
-***
 
-[^Lesenfants et al., SfN, 2016]:
-[^Fasoli et. al., APMR, 2017]:
-[^SSIMS]:
-[^Victor]: Victor and Purpura, 2011
-[^tsne]: van der Maaten, 2008
+[^Lesenfants]: Lesenfants D, Saab J, Brandman DM, Jarosiewicz B, Sorice B, Sarma AA, Simeral JD, Donoghue JP, Hochberg LR. (2015). User state-based modulation of intracortical activity: distinguishing the idle state. Neuroscience Meeting Planner. Chicago, IL: Society for Neuroscience, 2015. Online.
+
+[^Fasoli]: Fasoli S, Chavakula V, Brandman D, Vargas-Irwin C, Saab J, Hosman T, Franco B, Simeral J,Donoghue J, Hochberg L. (2017). Intracortical brain-computer interface (iBCI) to control multiple end effectors: effects of context. Abstract ID 305174. American Congress of Rehabilitation Medicine 94th Annual Conference, Progress in Rehabilitation Medicine. Atlanta, GA.
+
+[^SSIMS]: Vargas-Irwin, C. E., Brandman, D. M., Zimmermann, J. B., Donoghue, J. P., & Black, M. J. (2015). (Spike train SIMilarity Space (SSIMS): a framework for single neuron and ensemble data analysis.)[https://doi.org/10.1162/NECO_a_00684] Neural Computation, 27(1), 1–31.
+
+[^wireless]: Borton DA, Yin M, Aceros J, Nurmikko A. (2013). An implantable wireless neural interface for recording cortical circuit dynamics in moving primates. J Neural Eng. 10(2), 026010.
+
+[^wireless2]: Simeral JD, Heelan CD, Komar J, Nurmikko AV. (2017). Advances in mobile wireless signalprocessing toward intracortical BCI deployment. Washington, DC: Society for Neuroscience, 2017. Online.
+
+[^wireless3]: Saab J, Hosman T, Yin M, Borton DA, Franco B, Kelemen J, Brandman DM, Vilela M, Ciancibello JG, Larson L, Rosler DM, Simeral JD, Nurmikko AV, Hochberg LR. (2017). Wirelessintracortical BCI cursor control by a person with tetraplegia. Washington, DC: Society for Neuroscience, 2017. Online.
+
+[^Victor]: Victor, J. D., & Purpura, K. P. (1996). Nature and precision of temporal coding invisual cortex: A metric-space analysis. J. Neurophysiol., 76(2), 1310–1326.
+
+[^tsne]: Maaten, L. van der, & Hinton, G. (2008). Visualizing Data using t-SNE. Journal of Machine Learning Research, 9, 2579–2605.
+
+<!-- Hepp-Reymond, M.-C., Kirkpatrick-Tanner, M., Gabernet, L., Qi, H. X., & Weber,B. (1999). Context-dependent force coding in motor and premotor cortical areas.Exp. Brain Res.,128(1–2), 123–133.
+
+Stokes, M. G., Kusunoki, M., Sigala, N., Nili, H., Gaffan, D., & Duncan, J. (2013).Dynamic coding for cognitive control in prefrontal cortex.Neuron,78(2), 364–375.
+
+Tolias, A. S., Keliris, G. A., Smirnakis, S. M., & Logothetis, N. K. (2005). Neurons inmacaque area v4 acquire directional tuning after adaptation to motion stimuli.Nat. Neurosci.,8(5), 591–593. -->
