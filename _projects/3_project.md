@@ -38,7 +38,7 @@ Two participants (enrolled in BrainGate2 pilot clinical trial): T9 is 52 years o
 
 
 <p>
-<img src="/assets/img/SfN2019/setup.png"/>
+<img src="/assets/img/SfN2019/setup.png" style="width:100%;"/>
     <div class="caption">
         blah blah blah
     </div>
@@ -58,32 +58,30 @@ These state space projections can be used to identify clusters of similar, recur
 
 ## I. Full day continuous neural recording of BCI use and daily activities
 
-26-hour continuous wireless recording from T10 performing center out task, grid task, and other usual daily activities.
 <p>
-  <img src="/assets/img/SfN2019/R8.png" style="float: right; width:30%;"/>
+  <img src="/assets/img/SfN2019/R8.PNG" style="float: right; width:30%;"/>
 </p>
 
+26-hour continuous wireless recording from T10 performing center out task, grid task, and other usual daily activities.
 <p>
-  <img src="/assets/img/SfN2019/GRID.png" style="float: right; width:30%;"/>
+  <img src="/assets/img/SfN2019/GRID.PNG" style="float: right; width:30%;"/>
 </p>
 
 ### Data Selection
+
+<p>
+  <img src="/assets/img/SfN2019/snippet.PNG" style="float: right; width:40%;"/>
+</p>
 
 Tasks: from 1s after the ‘go’ cue in each trial
 
 each event denotes a 1 second long spike train
 
-<p>
-  <img src="/assets/img/SfN2019/snippet.png" style="float: right; width:40%;"/>
-</p>
-
 Other categories: events in top percentile of change in smoothed mean threshold crossings after outlier elimination (to avoid signal dropout and electronic noise)
-
-
 
 <p>
   <img src="/assets/img/SfN2019/events.png" style="width:80%;"/>
-  <img src="/assets/img/SfN2019/label_event_long.png" style="width:20%;"/>
+  <img src="/assets/img/SfN2019/label_event_long.png" style="width:19%;"/>
 </p>
 
 ### Results
@@ -91,16 +89,18 @@ Other categories: events in top percentile of change in smoothed mean threshold 
 
 
 <p>
-<img src="/assets/img/SfN2019/24hBehaviorial.gif" style="width:50%;vertical-align: middle;"/>
+<img src="/assets/img/SfN2019/24hBehaviorial.gif" style="width:80%;vertical-align: middle;"/>
     <div class="caption">
         cool SSIMS
     </div>
 </p>
 
-10-fold cross validated 5-Nearest-Neighbor (KNN) of 7 states: 81.18% ± 2.38% (chance: 17.82% ± 2.95% ) • Eating and watching TV difficult to separate; potentially because T10 was watching TV while eating
+10-fold cross validated 5-Nearest-Neighbor (KNN) of 7 states: 81.18% ± 2.38% (chance: 17.82% ± 2.95% )
+
+Eating and watching TV difficult to separate possibly because T10 was watching TV while eating
 
 <p>
-<img src="/assets/img/SfN2019/result1.png"/>
+<img src="/assets/img/SfN2019/result1.png" style="width:100%;"/>
     <div class="caption">
         blah blah blah
     </div>
