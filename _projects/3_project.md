@@ -26,18 +26,13 @@ Neuromotor deficits resulting from conditions such as amyotrophic lateral sclero
 
 Here we present a new approach to generate state spaces based solely on the intrinsic properties of single unit ensemble recordings. We used Spike train SIMilarity Space (SSIMS) analysis to map neural activity patterns into low dimensional state spaces (based on spike train metrics combined with dimensionality reduction). These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual neurons.
 
-We collected data during sessions where T10 & T9 controlled either a computer cursor or a JACO robotic arm to perform a 2D target acquisition task via intracortical BCI. We demonstrate that our approach can be used to generate state spaces that differentiate between effectors (cursor vs. robotic arm) in both T10 & T9 (81.4±8.0%, 99.5±0.58% accuracy). Additionally, we recorded data from T10 over a 24 hour period; we can identify 5 partially overlapping states related to session tasks, interaction with caretakers and others, engagement with a sip-and-puff computer system, eating, and sleeping (Nearest Neighbor Classifier: 46.5±0.6%, p<.01; against chance classification: 23.5±0.8%). Our findings suggest that state space models based on intrinsic similarity can be used to detect context-dependent changes in volitional state, providing a useful indicator of when BCI control modes should be adjusted.
-
-## Background
-
-
+We collected data during sessions where T10 & T9 controlled either a computer cursor or a JACO robotic arm to perform a 2D target acquisition task via intracortical BCI. We demonstrate that our approach can be used to generate state spaces that differentiate between effectors (cursor vs. robotic arm) in both T10 & T9 (81.4±8.0%, 99.5±0.58% accuracy). Additionally, we recorded data from T10 over a 24 hour period. Our findings suggest that state space models based on intrinsic similarity can be used to detect context-dependent changes in volitional state, providing a useful indicator of when BCI control modes should be adjusted.
 
 ## Methods
 
 ### Participants and Implants
 
 Data are collected from two participants enrolled in the BrainGate2 clinical trial - T9 is 52 years old with tetraplegia due to amyotrophic lateral sclerosis (ALSFRS-R of 8), and T10 is 35 years old with tetraplegia due to spinal cord injury (C4 AIS-A). Two 96-channel Utah microelectrode arrays (Blackrock Microsystem, Inc)implanted both on left precentral gyrus (PCG) for T9, and one array on the left middle frontal gyrus (MFG) and one on the left PCG for T10.
-
 
 <p>
 <img src="/assets/img/SfN2019/setup.png" style="width:100%;"/>
@@ -72,7 +67,7 @@ These state space projections can be used to identify clusters of similar, recur
 ### Data Selection
 
 <p>
-  <img src="/assets/img/SfN2019/snippet.PNG" style="float: right; width:40%;"/>
+  <img src="/assets/img/SfN2019/snippet.png" style="float: right; width:40%;"/>
 </p>
 
 Tasks: from 1s after the ‘go’ cue in each trial
@@ -83,7 +78,7 @@ Other categories: events in top percentile of change in smoothed mean threshold 
 
 <p>
   <img src="/assets/img/SfN2019/events.png" style="width:80%;"/>
-  <img src="/assets/img/SfN2019/label_event_long.png" style="width:19%;"/>
+  <img src="/assets/img/SfN2019/label_event_long.PNG" style="width:19%;"/>
 </p>
 
 ### Results
