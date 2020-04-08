@@ -1,7 +1,7 @@
 .project {
     box-sizing: border-box;
     float: left;
-    height: 190px;
+    height: 250px;
     padding: 10px;
     vertical-align: middle;
     width: 33.33%;
@@ -9,7 +9,7 @@
     .thumbnail {
         overflow: hidden;
         height: 200px;
-        width: 200px;
+        width: 100%;
         position: relative;
 
         img {
@@ -26,7 +26,7 @@
 
         a {
             float: left;
-            height: 200px;
+            height: 230px;
             position: relative;
             width: 100%;
 
