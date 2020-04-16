@@ -1,19 +1,19 @@
 ---
 layout: page
 title: BioMEMS
-description: Microbubble length tracking using image processing
+description: tracking microbubble length with image processing
 img: /assets/img/BioMEMS_project/bubble.gif
 ---
+
+<p>
+  <img src="/assets/img/BioMEMS_project/bubble.gif" style="width: 100%;"/>
+</p>
 
 I spent two years in USC Biomedical Microsystems Laboratory working as an undergraduate researcher. One of the projects aims to treat hydrocephalus via a novel pressure sensor.[^note1]
 
 *Keywords: pressure sensor, image processing, BioMEMS, implantable device, microbubble, fluid dynamics, device characterization, Boyle's law.*
 
 ***
-
-<p>
-  <img src="/assets/img/BioMEMS_project/bubble.gif" style="width: 70%;"/>
-</p>
 
 ## Introducing a pressure sensor
 

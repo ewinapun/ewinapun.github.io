@@ -6,27 +6,37 @@ img: /assets/img/SfN2019/thumbnail.gif
 published: true
 ---
 
-On October 19 - 23, 2019, I attended Society for Neuroscience (SfN) Annual meeting in Chicago, IL, USA. I presented our research with a poster, titled ***Identifying changes in volitional state and task engagement based on the intrinsic structure of neural ensemble activity patterns in motor cortex of people with tetraplegia during daily activities and BCI use***. You can view the poster <a href='http://ewinapun.tk/assets/pdf/SfN_poster_2019.pdf'>here.</a>
+<p>
+  <img src="/assets/img/SfN2019/24hBehaviorial.gif" style="float: right; width: 30%;"/>
+</p>
+
+On October 19 - 23, 2019, I attended Society for Neuroscience (SfN) Annual meeting in Chicago, IL, USA. I presented our research with a poster, titled ***Identifying changes in volitional state and task engagement based on the intrinsic structure of neural ensemble activity patterns in motor cortex of people with tetraplegia during daily activities and BCI use***.
+
+You can view the poster <a href='http://ewinapun.tk/assets/pdf/SfN_poster_2019.pdf'>**here**.</a>
+
+
 *Keywords:* Motor Cortex, Brain Computer Interface, tetraplegia, neural state space
 
 ***
 
-
-
-## Overview
+## Highlights
 
 * Brain-computer interfaces (BCIs) are designed to bypass damaged motor pathways and provide new links to assistive technologies for people with neuromotor deficits. It is widely accepted that motor cortex incorporates a mix of incoming sensory, cognitive, and motor planning information, reflecting latent variables that are not directly related to kinematic motor output.
+
 * There is a need to reliably identify neural activity patterns indicative of a set of latent factors affected by task and cognitive context changes to build BCI systems that support continuous, multi-effector use.
-* Studies previously showed successful decoding of contextual changes in idle vs. active states [^Lesenfants], and controlling different end effectors [^Fasoli].
-* We present clustering of the projections of neural data representing different context-dependent volitional states using an approach that visualizes data by generating low-dimensional state spaces based solely on the intrinsic similarity of single unit ensemble recordings.
+
+* Using an approach that visualizes data by generating low-dimensional state spaces based solely on the intrinsic similarity of single unit ensemble recordings, we present the projected neural data form clusters of different context-dependent volitional states.
+
+* We obtain up to 80% accuracy using a K-nearest neighbor (KNN) classifier for 7 classes of daily activity over a day of continuous .
 
 ## Introduction
 
 Neuromotor deficits resulting from conditions such as amyotrophic lateral sclerosis (ALS), brainstem stroke, and spinal cord injury (SCI) result in loss of volitional movement reducing independence. Brain-computer interfaces (BCI) bypass damaged motor pathways and provide new links to assistive technologies. Voluntary action engages vast networks of neurons performing complex calculations which are still not fully understood. It is widely accepted that motor cortex incorporates a mix of incoming sensory, cognitive, and motor planning information, reflecting latent variables that are not directly related to kinematic motor output. Reliably identifying neural activity patterns indicative of a set of latent factors impacted by task and cognitive context is a challenge for developing BCI systems that support continuous, multi-effector use.
 
-Here we present a new approach to generate state spaces based solely on the intrinsic properties of single unit ensemble recordings. We used Spike train SIMilarity Space (SSIMS) analysis to map neural activity patterns into low dimensional state spaces (based on spike train metrics combined with dimensionality reduction). These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual neurons.
+* Studies previously showed successful decoding of contextual changes in idle vs. active states [^Lesenfants], and controlling different end effectors [^Fasoli].
+Here we present a new approach to generate state spaces based solely on the intrinsic properties of single unit ensemble recordings. We used Spike train SIMilarity Space (SSIMS) analysis to map neural activity patterns into low dimensional state spaces. These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual neurons.
 
-We collected data during sessions where T10 & T9 controlled either a computer cursor or a JACO robotic arm to perform a 2D target acquisition task via intracortical BCI. We demonstrate that our approach can be used to generate state spaces that differentiate between effectors (cursor vs. robotic arm) in both T10 & T9 (81.4±8.0%, 99.5±0.58% accuracy). Additionally, we recorded data from T10 over a 24 hour period. Our findings suggest that state space models based on intrinsic similarity can be used to detect context-dependent changes in volitional state, providing a useful indicator of when BCI control modes should be adjusted.
+We collected data during sessions where T10 & T9 controlled either a computer cursor or a JACO robotic arm to perform a 2D target acquisition task via intracortical BCI. We demonstrate that our approach can be used to generate state spaces that differentiate between effectors (cursor vs. robotic arm) in both T10 & T9 (81.4±8.0%, 99.5±0.58% accuracy). Additionally, we recorded data from T10 over a 24 hour period. Our findings suggest that state space models based on neurons ensemble instrinic similarity can be used to detect context-dependent changes in volitional state, providing a useful indicator of when BCI control modes should be adjusted.
 
 ## Methods
 
@@ -43,13 +53,9 @@ Data are collected from two participants enrolled in the BrainGate2 clinical tri
 
 ### Spike Train SIMilarity Space (SSIMS)
 
-[^SSIMS]
+We used Spike train SIMilarity Space (SSIMS) analysis to map neural activity patterns into low dimensional state spaces[^SSIMS]. It is a two-step process - step 1: compute similarity metrics between pairs of spike trains by calculating the cost to transform one spike train to another with inserting, deleting, or shifting spikes [^Victor] and step 2: perform dimensionality reduction using t-Distributed Stochastic Neighbor Embedding [^tsne].
 
-Step 1: compute similarity metrics between pairs of spike trains by calculating the cost to transform one spike train to another with inserting, deleting, or shifting spikes [^Victor]
-
-Step 2: perform dimensionality reduction using t-Distributed Stochastic Neighbor Embedding [^tsne].
-
-These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual
+These state space projections can be used to identify clusters of similar, recurring activity patterns, soly based on the intrinsic structure of neural ensemble activity patterns, eliminating the need to define task-related tuning models for individual neurons.
 
 ### Data Acquisition
 
@@ -61,7 +67,7 @@ These state space projections can be used to identify clusters of similar, recur
 </p>
 
 
-26-hour continuous wireless recording from T10 performing center out task, grid task, and other usual daily activities. [^wireless][^wireless2][^wireless3]
+26-hour continuous wireless recording from T10 performing center out task, grid task, and other usual daily activities [^wireless] $^,$ [^].[^wireless2].
 
 
 ### Data Selection
@@ -86,7 +92,7 @@ Other categories: events in top percentile of change in smoothed mean threshold 
 
 
 <p>
-<img src="/assets/img/SfN2019/24hBehaviorial.gif" style="width:80%;vertical-align: middle;"/>
+<img src="/assets/img/SfN2019/24hBehaviorial.gif" style="width:100%;vertical-align: middle;"/>
     <div class="caption">
         cool SSIMS
     </div>
@@ -112,7 +118,7 @@ In each recording session (8 for T9 and 4 for T10), the decoder was first calibr
 Participants were instructed to move either a computer cursor or a JACO robotic arm to a cued target with no instructed delay in a center-out task.
 
 <p>
-  <img src="/assets/img/SfN2019/JACO.jpg" style="float: right; width:35%;"/>
+  <img src="/assets/img/SfN2019/JACO.png" style="float: right; width:35%;"/>
 </p>
 <p>
 <div class="caption">
@@ -129,7 +135,7 @@ each point repersents one trial; use spike trains 2.5s before target is acquired
 Engaging different effectors elicits different neural activity patterns
 
 <p>
-<img src="/assets/img/SfN2019/T9_SSIMS.gif" style="width:45%"/>
+<img src="/assets/img/SfN2019/T9_SSIMS.gif" style="width:45.3%"/>
 <img src="/assets/img/SfN2019/T10_SSIMS.gif" style="width:49%"/>
 <div class="caption">
 3D SSIMS spaces of a session of T9 and T10.
@@ -176,9 +182,7 @@ This work is supported by Office of Research and Development, Rehabilitation R&D
 
 [^wireless]: Borton DA, Yin M, Aceros J, Nurmikko A. (2013). An implantable wireless neural interface for recording cortical circuit dynamics in moving primates. J Neural Eng. 10(2), 026010.
 
-[^wireless2]: Simeral JD, Heelan CD, Komar J, Nurmikko AV. (2017). Advances in mobile wireless signalprocessing toward intracortical BCI deployment. Washington, DC: Society for Neuroscience, 2017. Online.
-
-[^wireless3]: Saab J, Hosman T, Yin M, Borton DA, Franco B, Kelemen J, Brandman DM, Vilela M, Ciancibello JG, Larson L, Rosler DM, Simeral JD, Nurmikko AV, Hochberg LR. (2017). Wirelessintracortical BCI cursor control by a person with tetraplegia. Washington, DC: Society for Neuroscience, 2017. Online.
+[^wireless2]: Saab J, Hosman T, Yin M, Borton DA, Franco B, Kelemen J, Brandman DM, Vilela M, Ciancibello JG, Larson L, Rosler DM, Simeral JD, Nurmikko AV, Hochberg LR. (2017). Wireless intracortical BCI cursor control by a person with tetraplegia. Washington, DC: Society for Neuroscience, 2017. Online.
 
 [^Victor]: Victor, J. D., & Purpura, K. P. (1996). Nature and precision of temporal coding invisual cortex: A metric-space analysis. J. Neurophysiol., 76(2), 1310–1326.
 
