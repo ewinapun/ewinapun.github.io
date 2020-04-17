@@ -7,7 +7,7 @@ published: true
 ---
 
 <p>
-  <img src="/assets/img/SfN2019/24hBehaviorial.gif" style="float: right; width: 30%;"/>
+  <img src="/assets/img/SfN2019/thumbnail.gif" style="float: right; width: 30%;"/>
 </p>
 
 On October 19 - 23, 2019, I attended Society for Neuroscience (SfN) Annual meeting in Chicago, IL, USA. I presented our research with a poster, titled ***Identifying changes in volitional state and task engagement based on the intrinsic structure of neural ensemble activity patterns in motor cortex of people with tetraplegia during daily activities and BCI use***.
@@ -33,8 +33,7 @@ You can view the poster <a href='http://ewinapun.tk/assets/pdf/SfN_poster_2019.p
 
 Neuromotor deficits resulting from conditions such as amyotrophic lateral sclerosis (ALS), brainstem stroke, and spinal cord injury (SCI) result in loss of volitional movement reducing independence. Brain-computer interfaces (BCI) bypass damaged motor pathways and provide new links to assistive technologies. Voluntary action engages vast networks of neurons performing complex calculations which are still not fully understood. It is widely accepted that motor cortex incorporates a mix of incoming sensory, cognitive, and motor planning information, reflecting latent variables that are not directly related to kinematic motor output. Reliably identifying neural activity patterns indicative of a set of latent factors impacted by task and cognitive context is a challenge for developing BCI systems that support continuous, multi-effector use.
 
-* Studies previously showed successful decoding of contextual changes in idle vs. active states [^Lesenfants], and controlling different end effectors [^Fasoli].
-Here we present a new approach to generate state spaces based solely on the intrinsic properties of single unit ensemble recordings. We used Spike train SIMilarity Space (SSIMS) analysis to map neural activity patterns into low dimensional state spaces. These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual neurons.
+Studies previously showed successful decoding of contextual changes in idle vs. active states [^Lesenfants], and controlling different end effectors [^Fasoli]. Here we present a new approach to generate state spaces based solely on the intrinsic properties of single unit ensemble recordings. We used Spike train SIMilarity Space (SSIMS) analysis to map neural activity patterns into low dimensional state spaces. These state space projections can be used to identify clusters of similar, recurring activity patterns, without the need to define task-related tuning models for individual neurons.
 
 We collected data during sessions where T10 & T9 controlled either a computer cursor or a JACO robotic arm to perform a 2D target acquisition task via intracortical BCI. We demonstrate that our approach can be used to generate state spaces that differentiate between effectors (cursor vs. robotic arm) in both T10 & T9 (81.4±8.0%, 99.5±0.58% accuracy). Additionally, we recorded data from T10 over a 24 hour period. Our findings suggest that state space models based on neurons ensemble instrinic similarity can be used to detect context-dependent changes in volitional state, providing a useful indicator of when BCI control modes should be adjusted.
 
@@ -59,22 +58,23 @@ These state space projections can be used to identify clusters of similar, recur
 
 ### Data Acquisition
 
-## I. Full day continuous neural recording of BCI use and daily activities
 
 <p>
   <img src="/assets/img/SfN2019/R8.PNG" style="float: right; width:30%;"/>
   <img src="/assets/img/SfN2019/GRID.PNG" style="float: right; width:30%;"/>
 </p>
 
+## I. Full day continuous neural recording of BCI use and daily activities
 
-26-hour continuous wireless recording from T10 performing center out task, grid task, and other usual daily activities [^wireless] $^,$ [^].[^wireless2].
 
-
-### Data Selection
+26-hour continuous wireless recording from T10 performing center out task, grid task, and other usual daily activities [^wireless] $$^,$$ [^wireless2].
 
 <p>
   <img src="/assets/img/SfN2019/snippet.png" style="float: right; width:40%;"/>
 </p>
+
+
+### Data Selection
 
 Tasks: from 1s after the ‘go’ cue in each trial
 
@@ -88,8 +88,6 @@ Other categories: events in top percentile of change in smoothed mean threshold 
 </p>
 
 ### Results
-
-
 
 <p>
 <img src="/assets/img/SfN2019/24hBehaviorial.gif" style="width:100%;vertical-align: middle;"/>
@@ -111,11 +109,7 @@ Eating and watching TV difficult to separate possibly because T10 was watching T
 
 
 
-## II. Cursor vs robotic arm control
-
-In each recording session (8 for T9 and 4 for T10), the decoder was first calibrated on one effector using open-loop imagery and then closed-loop decoder calibration. The decoder then ran on blocks (each consisting of many trials of the same task) that alternated between the two effectors.
-
-Participants were instructed to move either a computer cursor or a JACO robotic arm to a cued target with no instructed delay in a center-out task.
+## II. Cursor vs Robotic Arm
 
 <p>
   <img src="/assets/img/SfN2019/JACO.png" style="float: right; width:35%;"/>
@@ -125,6 +119,11 @@ Participants were instructed to move either a computer cursor or a JACO robotic 
     A center-out task controlled with a JACO robotic arm.
 </div>
 </p>
+
+In each recording session (8 for T9 and 4 for T10), the decoder was first calibrated on one effector using open-loop imagery and then closed-loop decoder calibration. The decoder then ran on blocks (each consisting of many trials of the same task) that alternated between the two effectors.
+
+Participants were instructed to move either a computer cursor or a JACO robotic arm to a cued target with no instructed delay in a center-out task.
+
 
 
 ### Data Selection
@@ -149,12 +148,9 @@ effector classification - T9 : 97.58 ± 1.55% and T10 : 87.94 ± 5.17%
 <p>
 <img src="/assets/img/SfN2019/result2.png" style="width:100%;vertical-align: middle;"/>
     <div class="caption">
-    The above 3D SSIMS spaces of T9 and T10 view from 2 orientations. One presents the clustering between directions, while another shows separation of tasks using different effectors.
+    Two 3D SSIMS spaces of T9 and T10 view from 2 orientations. One presents the clustering between directions, while another shows separation of tasks using different effectors.
     </div>
 </p>
-
-
-## Discussions
 
 
 
