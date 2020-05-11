@@ -8,7 +8,7 @@ profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>Lab for Resotrative Neurotechnology</p>
+    <p>Lab for Restorative Neurotechnology</p>
     <p>131 Waterman Street</p>
     <p>Providence, RI, 02912</p>
 
