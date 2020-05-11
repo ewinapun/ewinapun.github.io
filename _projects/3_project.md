@@ -68,7 +68,7 @@ We recorded data from participant T10 over a 24-hour period. Our findings sugges
 
 <p>
   <img src="/assets/img/SfN2019/R8.PNG" style="width:40%;"/>
-  <img src="/assets/img/SfN2019/GRID.png" style="width:40%;"/>
+  <img src="/assets/img/SfN2019/grid.PNG" style="width:40%;"/>
     <div class="caption">
         Left: an example of the radial-8 task. The eight peripheral targets and the center target are presented on the screen (blue circle). In each trial, participant was instructed to move the cursor (white circle) to the goal (red circle). Targets were acquired when the cursor overlapped the target for 300 ms, before a predetermined time-out of 5 seconds.
         Right: an example of the grid task. Square targets were arranged in a grid. T10 was instructed to move the cursor (white circle) to the target (green square). A target was acquired when participant held the cursor within any square for 1 second.
@@ -122,9 +122,9 @@ With a 10-fold cross validated 5-Nearest-Neighbor (KNN) of the 7 states, we achi
 
 <p>
   <img src="/assets/img/SfN2019/JACO.png" style="float: right; width:35%;"/>
-  <div class="caption">
-      A two-dimensional radial-8 task controlled with a JACO robotic arm placed over the display monitor.
-  </div>
+    <div class="caption">
+        A two-dimensional radial-8 task controlled with a JACO robotic arm placed over the display monitor.
+    </div>
 </p>
 
 We hypothesized that neural firing patterns alter contextually based on the end-effector controlled by the iBCI user. As part of the BrainGate2 pilot clinical trial, two participants were asked to control either a computer cursor or robotic arm during the same two-dimensional target acquisition tasks via iBCI. In each recording session (eight sessions for T9 and four for T10), the decoder was first calibrated using open-loop imagery where the participant observed either single effector movement or simultaneous cursor and robotic arm movement. Then the participant engaged in closed-loop control on alternating blocks between the two effectors. One day of "session" consists of multiple "blocks" that last for several minutes, and one "block" consists of many trials of the same task. In this case, one trial is acquiring one target upon cued with no instruction delay.
