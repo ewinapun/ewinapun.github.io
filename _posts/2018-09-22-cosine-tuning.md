@@ -144,7 +144,7 @@ function [b0, b1, b2, theta0, R, I] = CosineTuningRegression(y)
 end
 {% endhighlight %}
 
-![Plot fitted cosine curve on top of the real data.](/assets/img/posts/cosine_tuning_eg.pdf)
+![Plot fitted cosine curve on top of the real data.](/assets/img/posts/cosine_tuning_eg.png)
 
 
 ---
