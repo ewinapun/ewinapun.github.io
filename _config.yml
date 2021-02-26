@@ -112,5 +112,5 @@ scholar:
 # Other settings
 # -----------------------------------------------------------------------------
 jquery_version: "1.12.4"
-katex_version: "0.10.0-rc.1"
+katex_version: "0.12.0"
 anchorjs_version: "3.2.2"
