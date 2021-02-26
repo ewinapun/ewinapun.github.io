@@ -5,15 +5,6 @@ date: 2018-10-4 06:00
 description: Understand neuron's preferred direction of movement and its underlying cosine distribution
 ---
 
-<style>
-  .katex-version {display: none;}
-  .katex-version::after {content:"0.10.2 or earlier";}
-</style>
-<span class="katex">
-  <span class="katex-mathml">The KaTeX stylesheet is not loaded!</span>
-  <span class="katex-version rule">KaTeX stylesheet version: </span>
-</span>
-
 Cosine tuning has been observed in most nuerons in motor systems including human and non-human primate. This article serves as an introduction to this topic mainly through understanding the paper that first reported it in 1982 [^Georgopoulos]. This early work has inspired a number of successful algorithms for decoding neural activity in motor cortex to perform offline reconstruction or online control of cursors or robotic arms.
 
 ## Goals
