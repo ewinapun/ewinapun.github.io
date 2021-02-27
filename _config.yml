@@ -114,7 +114,7 @@ scholar:
 enable_math: true
 
 # jquery_version: "1.12.4"
-katex_version: "0.10.0"
+# katex_version: "0.10.0"
 jquery:
   version: "3.5.1"
   integrity: "sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
