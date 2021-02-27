@@ -111,6 +111,14 @@ scholar:
 # -----------------------------------------------------------------------------
 # Other settings
 # -----------------------------------------------------------------------------
-jquery_version: "1.12.4"
-katex_version: "0.12.0"
+enable_math: true
+
+# jquery_version: "1.12.4"
+katex_version: "0.10.0"
+jquery:
+  version: "3.5.1"
+  integrity: "sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+
+mathjax:
+  version: "3.1.2"
 anchorjs_version: "3.2.2"
