@@ -48,6 +48,7 @@ disqus_shortname: al-folio # put your disqus shortname
 show_social_icons:  false
 enable_anchorjs:    false
 enable_katex:       false
+enable_math: true
 show_drafts: true
 # -----------------------------------------------------------------------------
 # Collections
@@ -68,10 +69,20 @@ news_limit:
 # Jekyll settings
 # -----------------------------------------------------------------------------
 
-# Build settings
+# Markdown and syntax highlight
 markdown: kramdown
 markdown_extensions: admonition
 highlighter: rouge
+highlight_theme: github  # https://github.com/jwarby/jekyll-pygments-themes
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
 
 # Includes & excludes
 include: ['_pages']
@@ -80,7 +91,7 @@ exclude: [vendor]
 # Plug-ins
 plugins:
     - jekyll-email-protect
-    - jekyll-paginate
+    - jekyll-paginate-v2
     - jekyll/scholar
     - jemoji
 
@@ -111,7 +122,6 @@ scholar:
 # -----------------------------------------------------------------------------
 # Other settings
 # -----------------------------------------------------------------------------
-enable_math: true
 
 # jquery_version: "1.12.4"
 # katex_version: "0.10.0"
