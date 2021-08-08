@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2019-10-25 16:11:00-0400
+date: 2019-9-01 16:11:00-0400
 inline: true
 ---
 
-I presented a <a href='http://ewinapun.tk/publications'>poster</a> at Society for Neuroscience (SfN) Annual meeting in Chicago, IL. 2019!
+I got awarded for a 2-year funding scholarship from the wonderful Croucher Foundation, Hong Kong!
