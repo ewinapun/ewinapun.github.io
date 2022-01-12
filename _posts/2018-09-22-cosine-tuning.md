@@ -5,7 +5,7 @@ date: 2018-10-4 06:00
 description: Understand neuron's preferred direction of movement and its underlying cosine distribution
 ---
 
-Cosine tuning has been observed in most nuerons in motor systems including human and non-human primate. This article serves as an introduction to this topic mainly through understanding the paper that first reported it in 1982 [^Georgopoulos]. This early work has inspired a number of successful algorithms for decoding neural activity in motor cortex to perform offline reconstruction or online control of cursors or robotic arms.
+Cosine tuning has been observed in most neurons in motor systems including human and non-human primate. This article serves as an introduction to this topic mainly through understanding the paper that first reported it in 1982 [^Georgopoulos]. This early work has inspired a number of successful algorithms for decoding neural activity in motor cortex to perform offline reconstruction or online control of cursors or robotic arms.
 
 ## Goals
 
@@ -20,11 +20,11 @@ In 1968, Evarts first observed the activity of single cells in the motor cortex 
 
 Neuronal activity in the primate motor cortex can be related to the force exerted, the direction, or the velocity of the movement, alone or in combination. Of the three, the relations to the direction of the movement have been least well analyzed.
 
-Previous studies utilized only two opposite directions in their experiments. So in 1982, Georgopoulos and colleagues performed an 8-direction reach task to examine the relations of single neuron activity to the direction of movement.
+Previous studies utilized only two opposite directions in their experiments. So in 1982, Georgopoulos and colleagues designed an 8-direction reach task to examine the relations of single neuron activity to the direction of movement.
 
 ## Experimental setup
 
-Four rhesus monkeys were used in Georgopoulos's experiment. On the working surface were eight peripheral targets arranged equidistantly on the circumference circle and a target at the center of the circle. The monkeys were trained to perform a reach task to move a freely moveable manipulandum from the center to one of the eight directions of the working surface, prompted when the LED lights up randomly at one of the eight targets. The eight direction of the movement trajetories covered the whole circle at intervals of 45$$^{\circ}$$. This classical setup is later referred to a center-out or radial-8 task.
+Four rhesus monkeys were used in Georgopoulos's experiment. On the working surface were eight peripheral targets arranged equidistantly on the circumference circle and a target at the center of the circle. The monkeys were trained to perform a reach task to move a freely moveable manipulandum from the center to one of the eight directions of the working surface, prompted when the LED lights up randomly at one of the eight targets. The eight direction of the movement trajectories covered the whole circle at intervals of 45$$^{\circ}$$. This classical setup is later referred to a center-out or radial-8 task.
 
 Neural data were collected through placing a recording chamber over the arm area of the motor cortex under general anesthesia.
 
@@ -35,13 +35,13 @@ Neural data were collected through placing a recording chamber over the arm area
 Let $$ y_i (i = 1, 2, ..., 8 ) $$ be the mean rate when a cell discharges during movements towards direction $$ \theta_i = 0, 45, 90, ..., 315^{\circ}$$, respectively. We can fit a regress with
 
 $$
-y = b_0 + b_1sin \theta + b_2 cos \theta
+y = b_0 + b_1 \cos \theta + b_2 \sin \theta
 $$
 
 or alternatively,
 
 $$
-y = b_0 + \sqrt{b^2_1 + b^2_2} cos (\theta - \theta_0)
+y = b_0 + \sqrt{b^2_1 + b^2_2} \cos (\theta - \theta_0)
 $$
 
 where $$ b_0, b_1, b_2 $$ are regression coefficients that can be estimated with least square unbiased estimators as follow
@@ -61,7 +61,7 @@ $$
 $$ \theta_0 $$ is the preferred direction. Using trigonometric moments, we can calculate $$ \theta_0 $$ by first defining
 
 $$
-\theta_0' = \tan^{-1}(\frac{b_1}{b_2}), \quad -45^{\circ} < \theta_0' < 45^{\circ}
+\theta_0' = \tan^{-1}(\frac{b_2}{b_1}), \quad -45^{\circ} < \theta_0' < 45^{\circ}
 $$
 
 According to the quadrant, $$ \theta_0 $$ is given by

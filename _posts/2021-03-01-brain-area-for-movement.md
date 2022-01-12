@@ -8,17 +8,46 @@ published: false
 
 # Brain Areas
 
-## Primary motor cortex (M1)
+## Primary motor cortex (M1) in precentral gyrus (PCG)
+
+# Premotor cortex (PMC)
+## Sumpplementary motor area (SMA)
+## PMd
+## PMv
+
+refer to Rizzolatti 2001 & 1998 and Chouinard 2006 object lifting
 
 ## Primary sensory area (S1)
 
-## SMA
+# Posterior parietal cortex (PPC)
+posterior to the primary somatosensory cortex
 
-## Anterior Intraparietal Area (AIP)
+Damage to the posterior parietal cortex can produce a variety of sensorimotor deficits, including deficits in the perception and memory of spatial relationships, inaccurate reaching and grasping, in the control of eye movement, and inattention.
 
-## Inferior Frontal Gyrus (F5)
+## Anterior intraparietal area (AIP)
+transformation from visual to motor
+Direct connection to V1 via the dorsal stream / “where” pathway for information about size/shape of object
+Found at junction of intraparietal sulcus and postcentral sulcus
+Activation during hand motion:
+● Visuomotor transformations
+● Observation
+● Execution of complex hand tasks
 
-## PCG/MFG
+## Inferior Frontal Gyrus (F5 in NHP)
+
+Located near Broca’s area / posterior to Brodmann’s 44
+Most likely the closest F5 homologue in humans though could be dispersed throughout premotor cortex)
+Activation during hand motion
+● Observation and comprehension
+● “ Object directed action execution”
+○ Grasping, manipulating object, finger movements,
+44 45
+ 
+## Middle frontal gyrus
+
+Suggest that MFG appears to engage in movement planning before an effector is determined. Also, MFG neurons are inherently sensitive to auditory stimuli, only when the stimuli is followed by cued action planning.
+
+(Hosman et al., 2020)
 
 ## Visual cortex
 
