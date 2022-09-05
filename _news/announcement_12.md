@@ -5,4 +5,4 @@ inline: true
 published: true
 ---
 
-I am thankful to receive the two-year T32 training grant for Interdisciplinary Training in Computational, Cognitive, and Systems Neuroscience (ICoN) at the Carney Institute for Brain Science.
+I am thankful to receive a two-year T32 training grant for Interdisciplinary Training in Computational, Cognitive, and Systems Neuroscience (ICoN) at the Carney Institute for Brain Science.

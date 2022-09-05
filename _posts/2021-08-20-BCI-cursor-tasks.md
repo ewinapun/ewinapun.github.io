@@ -27,3 +27,5 @@ A  “high  speed”  task  presented  larger  grid targets  with  a  shorter  d
 Ahigh-performanceBCI decoder should  achieve  a high combined bitrate across both speed and accuracytasks. Therefore, each  decoder  was  evaluated  on  both  Grid  task configurations using the same optimized gain and smoothing
 
 ## Fitts task
+
+## Typing task

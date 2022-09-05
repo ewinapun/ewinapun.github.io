@@ -10,7 +10,7 @@ years: [1956, 1950, 1935, 1905]
 
 T. K. Pun, A. Catoya, C. E. Vargas-Irwin, S. S. Cash, J. D. Simeral, L. R. Hochberg.
 
-<a href='http://ewinapun.tk/assets/pdf/SfN_poster_2019.pdf'>Identifying Changes in Volitional State and Task Engagement Based on the Intrinsic Structure of Neural Ensemble Activity Patterns in Motor Cortex of People with Tetraplegia During Daily Activities and BCI Use</a>
+<a href='http://ewinapun.com/assets/pdf/SfN_poster_2019.pdf'>Identifying Changes in Volitional State and Task Engagement Based on the Intrinsic Structure of Neural Ensemble Activity Patterns in Motor Cortex of People with Tetraplegia During Daily Activities and BCI Use</a>
 
 Society for Neuroscience (SfN) Annual meeting in Chicago, IL. 2019.
 

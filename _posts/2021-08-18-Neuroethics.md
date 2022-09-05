@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Neuroethics
-date: 2021-03-19 06:00
+date: 2021-08-18 06:00
 description: the ethical issues of using invasive BCIs
 published: false
 ---
