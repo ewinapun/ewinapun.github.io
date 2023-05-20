@@ -6,7 +6,7 @@ description: Understand neuron's preferred direction of movement and its underly
 published: false
 ---
 
-Almost all of the non-BrainGate literature on nonstationarity was tested on nonhuman primates (NHP). To translate their work to clinical iBCI, we need to address the important differences in methodology between NHP and human recordings. First, most NHP research sessions are conducted in a controlled, noise-reduced laboratory setting, whereas BrainGate's research sessions are conducted in the participant’s home - a deliberate choice as our BCI system is intended for home use. There are many potential sources of distraction and noise from the environment.
+Most literature on studying nonstationarity uses nonhuman primates (NHP) model. To translate their work to clinical iBCI, we need to address the important differences in methodology between NHP and human recordings. There are three key differences. First, most NHP research sessions are conducted in a controlled, noise-reduced laboratory setting, whereas BrainGate's research sessions are conducted in the participant’s home - a deliberate choice as our BCI system is intended for at-home use. There are many potential sources of distraction and noise from the environment.
 
 Second, NHP electrode arrays are connected via a short 3-cm wire bundles, whereas BrainGate employs a wireless connection to acquire signals from the electrode arrays. Although the wireless system can achieved high-resolution record broadband intracortical signals over a long period of time, it is still susceptible to picking up noise before amplification and experience signal dropout from receiving antenna interference \cite{Simeral2019-av}.
 

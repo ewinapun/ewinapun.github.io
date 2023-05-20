@@ -2,29 +2,64 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Publications by categories in reversed chronological order.
-years: [1956, 1950, 1935, 1905]
+description: By categories in reversed chronological order.
 ---
 
-<h3 class="year">2019</h3>
-
-T. K. Pun, A. Catoya, C. E. Vargas-Irwin, S. S. Cash, J. D. Simeral, L. R. Hochberg.
-
-<a href='http://ewinapun.com/assets/pdf/SfN_poster_2019.pdf'>Identifying Changes in Volitional State and Task Engagement Based on the Intrinsic Structure of Neural Ensemble Activity Patterns in Motor Cortex of People with Tetraplegia During Daily Activities and BCI Use</a>
-
-Society for Neuroscience (SfN) Annual meeting in Chicago, IL. 2019.
+<h2>Publications</h2>
 
 <h3 class="year">2018</h3>
 
-Y.L. Tsai, D.P. Ha, H. Zhao, A.J. Carlos, S. Wei, T.K. Pun, K. Wu, E. Zandi, K. Kelly, and A.S. Lee.
+Y.L. Tsai, D.P. Ha, H. Zhao, A.J. Carlos, S. Wei, **T. K. Pun**, K. Wu, E. Zandi, K. Kelly, and A.S. Lee.
 
 <a href='https://doi.org/10.1073/pnas.1714866115'>Endoplasmic Reticulum Stress Activates SRC Relocating Chaperones to the Cell Surface where GRP78/CD109 Blocks TGF-β Signaling</a>
 
 *Proceedings of the National Academy of Sciences*, vol. 115, no. 18, E4245–E4254, 2018.
 
+<h2>Conferences</h2>
+
+<h3 class="year">2023</h3>
+
+**T. K. Pun**\*, T. Hosman\*, A. Kapitonava, J. D. Simeral, and L. R. Hochberg.
+
+“Months-long high-performance fixed LSTM decoder for cursor control in human intracortical brain-computer interfaces.(\*co-first authors. Accepted 4-page paper.)
+
+*11th International IEEE/EMBS Conference on Neural Engineering*, Baltimore, Maryland.
+
+<h3 class="year">2022</h3>
+
+**T. K. Pun**, T. Hosman, A. Kapitonava, C. E. Vargas-Irwin, J.D. Simeral, M. T. Harrison, Leigh R. Hochberg. 
+
+Tracking nonstationarity In multi-day intracortical neural recordings during iBCI cursor control by a person with tetraplegia. 
+
+*Society for Neuroscience (SfN) Annual meeting*. San Diego, CA.
+
+<h3 class="year">2022</h3>
+
+**T. K. Pun**, T. Hosman, A. Kapitonava, C. E. Vargas-Irwin, J.D. Simeral, M. T. Harrison, Leigh R. Hochberg. 
+
+Tracking nonstationarity In multi-day intracortical neural recordings during iBCI use by a person with tetraplegia. 
+
+*Research in Encoding And Decoding of Neural Ensembles (AREADNE)*. Santorini, Greece.
+
+<h3 class="year">2021</h3>
+
+**T. K. Pun**, M. Khoshnevis, M. Harrison, L. R. Hochberg. 
+
+Statistical measures of nonstationarity in simulated neural data during BCI 2D control. 
+
+*Society for Neuroscience (SfN) Annual meeting*. Virtual.
+
+<h3 class="year">2019</h3>
+
+**T. K. Pun**, A. Catoya, C. E. Vargas-Irwin, S. S. Cash, J. D. Simeral, L. R. Hochberg.
+
+<a href='http://ewinapun.com/assets/pdf/SfN_poster_2019.pdf'> Identifying Changes in Volitional State and Task Engagement Based on the Intrinsic Structure of Neural Ensemble Activity Patterns in Motor Cortex of People with Tetraplegia During Daily Activities and BCI Use</a>
+
+*Society for Neuroscience (SfN) Annual meeting*, Chicago, IL. 2019.
+
 <h3 class="year">2017</h3>
 
-S. Arnold, T.K. Pun, T.J. Denisart, F.J. Valero-Cuevas.
+S. Arnold, **T. K. Pun**, T. J. Denisart, F. J. Valero-Cuevas.
 
 <a href='https://arxiv.org/abs/1709.05070'>Shapechanger: Environments for Transfer Learning</a>
 
@@ -32,7 +67,7 @@ S. Arnold, T.K. Pun, T.J. Denisart, F.J. Valero-Cuevas.
 
 <h3 class="year">2016</h3>
 
-L. Yu, E. Pun, E. Meng.
+L. Yu, **T. K. Pun**, E. Meng.
 
 <a href='https://pdfs.semanticscholar.org/40c2/6b44b5037d6e75982d4a65442ff4fc50344d.pdf'>A Contactless Electrochemical Impedance Measurement Method</a>
 
