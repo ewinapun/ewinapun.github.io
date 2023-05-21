@@ -19,9 +19,9 @@ Y.L. Tsai, D.P. Ha, H. Zhao, A.J. Carlos, S. Wei, **T. K. Pun**, K. Wu, E. Zandi
 
 <h3 class="year">2023</h3>
 
-**T. K. Pun**\*, T. Hosman\*, A. Kapitonava, J. D. Simeral, and L. R. Hochberg.
+**T. K. Pun**\*, T. Hosman\*, A. Kapitonava, J. D. Simeral, and L. R. Hochberg. (\*co-first authors)
 
-<a href='http://ewinapun.com/assets/pdf/NER2023.pdf'>Months-long high-performance fixed LSTM decoder for cursor control in human intracortical brain-computer interfaces.</a>(\*co-first authors. Accepted 4-page paper.)
+<a href='http://ewinapun.com/assets/pdf/NER2023.pdf'>Months-lon	g high-performance fixed LSTM decoder for cursor control in human intracortical brain-computer interfaces.</a>
 
 *11th International IEEE/EMBS Conference on Neural Engineering*, Baltimore, Maryland. USA. pp. 1-5. doi: 10.1109/NER52421.2023.10123740
 
