@@ -7,9 +7,17 @@ description: By categories in reversed chronological order.
 
 <h2>Publications</h2>
 
+<h3 class="year">2024</h3>
+
+ **T. K. Pun**, M. Khoshnevis, T. Hosman, G. H. Wilson, A. Kapitonava, Foram Kamdar,  J. M. Henderson, J. D. Simeral, C. E. Vargas-Irwin, M. T. Harrison, L. R. Hochberg.
+
+<a href='https://www.biorxiv.org/content/10.1101/2024.02.29.582733v1'>Measuring instability in chronic human intracortical neural recordings towards stable, long-term brain-computer interfaces</a>
+
+*Submitted. Under review.*
+
 <h3 class="year">2018</h3>
 
-Y.L. Tsai, D.P. Ha, H. Zhao, A.J. Carlos, S. Wei, **T. K. Pun**, K. Wu, E. Zandi, K. Kelly, and A.S. Lee.
+Y. L. Tsai, D. P. Ha, H. Zhao, A. J. Carlos, S. Wei, **T. K. Pun**, K. Wu, E. Zandi, K. Kelly, and A. S. Lee.
 
 <a href='https://doi.org/10.1073/pnas.1714866115'>Endoplasmic Reticulum Stress Activates SRC Relocating Chaperones to the Cell Surface where GRP78/CD109 Blocks TGF-β Signaling</a>
 
@@ -27,7 +35,7 @@ Y.L. Tsai, D.P. Ha, H. Zhao, A.J. Carlos, S. Wei, **T. K. Pun**, K. Wu, E. Zandi
 
 <h3 class="year">2022</h3>
 
-**T. K. Pun**, T. Hosman, A. Kapitonava, C. E. Vargas-Irwin, J.D. Simeral, M. T. Harrison, Leigh R. Hochberg. 
+**T. K. Pun**, T. Hosman, A. Kapitonava, C. E. Vargas-Irwin, J. D. Simeral, M. T. Harrison, L. R. Hochberg. 
 
 Tracking nonstationarity In multi-day intracortical neural recordings during iBCI cursor control by a person with tetraplegia. 
 
