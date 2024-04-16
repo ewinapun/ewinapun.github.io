@@ -17,7 +17,9 @@ description: By categories in reversed chronological order.
 
 <h3 class="year">2024</h3>
 
-G. H Wilson, E. A. Stein, F. Kamdar, D. T. Avansino, **T. K. Pun**, R. Gross, T. Hosman, T. Singer-Clark, A. Kapitonava, L. R. Hochberg, J. D. Simeral, K. V. Shenoy, S. Druckmann, J. M. Henderson, F. R. Willett. Long-term unsupervised recalibration of cursor BCIs. 
+G. H Wilson, E. A. Stein, F. Kamdar, D. T. Avansino, **T. K. Pun**, R. Gross, T. Hosman, T. Singer-Clark, A. Kapitonava, L. R. Hochberg, J. D. Simeral, K. V. Shenoy, S. Druckmann, J. M. Henderson, F. R. Willett. 
+
+Long-term unsupervised recalibration of cursor BCIs. 
 
 *Submitted. Under review.*
 
