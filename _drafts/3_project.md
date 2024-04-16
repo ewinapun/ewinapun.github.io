@@ -6,7 +6,7 @@ img: /assets/img/SfN2019/thumbnail.gif
 published: false
 ---
 
-On October 19 - 23, 2019, I attended Society for Neuroscience (SfN) Annual meeting in Chicago, IL, USA. I presented our research with a poster, titled ***Identifying changes in volitional state and task engagement based on the intrinsic structure of neural ensemble activity patterns in motor cortex of people with tetraplegia during daily activities and BCI use***. You can view the poster <a href='http://ewinapun.tk/assets/pdf/SfN_poster_2019.pdf'>here.</a>
+On October 19 - 23, 2019, I attended Society for Neuroscience (SfN) Annual meeting in Chicago, IL, USA. I presented our research with a poster, titled ***Identifying changes in volitional state and task engagement based on the intrinsic structure of neural ensemble activity patterns in motor cortex of people with tetraplegia during daily activities and BCI use***. You can view the poster <a href='/assets/pdf/SfN_poster_2019.pdf'>here.</a>
 *Keywords:* Motor Cortex, Brain Computer Interface, tetraplegia, neural state space
 
 ***
