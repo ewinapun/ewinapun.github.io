@@ -5,13 +5,15 @@ title: Publications
 description: By categories in reversed chronological order.
 ---
 
-<h2>Journals / Proceedings</h2>
+<h2>Journals and Proceedings</h2>
 
 <h3 class="year">2024</h3>
 
  **T. K. Pun**, M. Khoshnevis, T. Hosman, G. H. Wilson, A. Kapitonava, Foram Kamdar,  J. M. Henderson, J. D. Simeral, C. E. Vargas-Irwin, M. T. Harrison, L. R. Hochberg.
 
 <a href='https://www.biorxiv.org/content/10.1101/2024.02.29.582733v1'>Measuring instability in chronic human intracortical neural recordings towards stable, long-term brain-computer interfaces</a>
+
+<h3 class="year">2024</h3>
 
 *Nature Communications Biology. In press.*
 
@@ -25,6 +27,8 @@ C. Vargas-Irwin, T. Hosman, J. T. Gusman, **T. K. Pun**, J. D. Simeral, T. Singe
 <a href='/assets/pdf/NER2023.pdf'>Months-long high-performance fixed LSTM decoder for cursor control in human intracortical brain-computer interfaces</a>
 
 *11th International IEEE/EMBS Conference on Neural Engineering*, Baltimore, Maryland. USA. pp. 1-5. doi: 10.1109/NER52421.2023.10123740
+
+<h3 class="year">2023</h3>
 
 G. H Wilson, E. A. Stein, F. Kamdar, D. T. Avansino, **T. K. Pun**, R. Gross, T. Hosman, T. Singer-Clark, A. Kapitonava, L. R. Hochberg, J. D. Simeral, K. V. Shenoy, S. Druckmann, J. M. Henderson, F. R. Willett. 
 
