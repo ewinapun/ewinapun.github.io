@@ -13,12 +13,14 @@ description: By categories in reversed chronological order.
 
 <a href='https://www.biorxiv.org/content/10.1101/2024.02.29.582733v1'>Measuring instability in chronic human intracortical neural recordings towards stable, long-term brain-computer interfaces</a>
 
-<h3 class="year">2024</h3>
-
 *Nature Communications Biology. In press.*
 
-C. Vargas-Irwin, T. Hosman, J. T. Gusman, **T. K. Pun**, J. D. Simeral, T. Singer-Clark, A. Kapitonava, C. Nicolas, N. P. Shah, D. Avansino, F. Kamdar, Z. Williams, J. M. Henderson, L. Hochberg.
+<h3 class="year">2024</h3>
+
+C. E. Vargas-Irwin, T. Hosman, J. T. Gusman, **T. K. Pun**, J. D. Simeral, T. Singer-Clark, A. Kapitonava, C. Nicolas, N. P. Shah, D. Avansino, F. Kamdar, Z. Williams, J. M. Henderson, L. Hochberg.
 <a href='https://www.biorxiv.org/content/10.1101/2024.08.23.608325v1'>Gesture encoding in human left precentral gyrus neuronal ensembles</a>
+
+*In review.*
 
 <h3 class="year">2023</h3>
 
@@ -30,11 +32,11 @@ C. Vargas-Irwin, T. Hosman, J. T. Gusman, **T. K. Pun**, J. D. Simeral, T. Singe
 
 <h3 class="year">2023</h3>
 
-G. H Wilson, E. A. Stein, F. Kamdar, D. T. Avansino, **T. K. Pun**, R. Gross, T. Hosman, T. Singer-Clark, A. Kapitonava, L. R. Hochberg, J. D. Simeral, K. V. Shenoy, S. Druckmann, J. M. Henderson, F. R. Willett. 
+G. H. Wilson, E. A. Stein, F. Kamdar, D. T. Avansino, **T. K. Pun**, R. Gross, T. Hosman, T. Singer-Clark, A. Kapitonava, L. R. Hochberg, J. D. Simeral, K. V. Shenoy, S. Druckmann, J. M. Henderson, F. R. Willett. 
 
 <a href='https://www.biorxiv.org/content/10.1101/2023.02.03.527022v1'>Long-term unsupervised recalibration of cursor BCIs</a>
 
-*Submitted. Under review.*
+*In review.*
 
 <h3 class="year">2018</h3>
 

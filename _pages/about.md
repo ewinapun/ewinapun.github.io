@@ -16,7 +16,7 @@ news: true
 social: true
 ---
 
-**I'm current on the job market! Please take a look of my <a href='/assets/pdf/Ewina_TKP_resume.pdf'>resume</a> and reach out if you are hiring a research scientist, R&D engineer, or similar roles.
+**I'm current on the job market! Please take a look of my <a href='/assets/pdf/Ewina_TKP_resume.pdf'>resume</a> and reach out if you are hiring a research scientist, R&D engineer, or similar roles.**
 
 Hi, I am a graduating doctoral candidate in the <a href="https://www.braingate.org/">BrainGate team</a> at Brown University, under the supervision of Dr. Leigh Hochberg. My research focuses on designing stable and reliable brain-computer interfaces for long-term continuous clinical use for people with tetraplegia. 
 
