@@ -11,9 +11,9 @@ description: By categories in reversed chronological order.
 
  **T. K. Pun**, M. Khoshnevis, T. Hosman, G. H. Wilson, A. Kapitonava, Foram Kamdar,  J. M. Henderson, J. D. Simeral, C. E. Vargas-Irwin, M. T. Harrison, L. R. Hochberg.
 
-<a href='https://www.biorxiv.org/content/10.1101/2024.02.29.582733v1'>Measuring instability in chronic human intracortical neural recordings towards stable, long-term brain-computer interfaces</a>
+<a href='/assets/pdf/Mindful CommsBio.pdf'>Measuring instability in chronic human intracortical neural recordings towards stable, long-term brain-computer interfaces</a>
 
-*Nature Communications Biology. In press.*
+*Nature Communications Biology.* vol. 7, no. 1363. 2024.
 
 <h3 class="year">2024</h3>
 
