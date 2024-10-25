@@ -6,7 +6,7 @@ img: /assets/img/dynamic_tracking_project/auto(1)-eig-99.png
 ---
 
 On this page, I will go over what I wrote on my senior thesis. I only extract key research ideas and figures from my thesis.
-To view the full version of my senior thesis, <a href='/assets/pdf/thesis.pdf'>click here</a>. To view the matlab code, please go to my <a href='https://github.com/ewinapun/subid'>github repo</a>.
+To view the full version of my senior thesis, <a href='/assets/pdf/UGthesis.pdf'>click here</a>. To view the matlab code, please go to my <a href='https://github.com/ewinapun/subid'>github repo</a>.
 
 *Keywords: adaptive subspace identification, dynamic tracking, state-space models, forgetting factor, prediction error, tracking error.*
 

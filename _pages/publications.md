@@ -100,7 +100,7 @@ Statistical measures of nonstationarity in simulated neural data during BCI 2D c
 
 **T. K. Pun**, A. Catoya, C. E. Vargas-Irwin, S. S. Cash, J. D. Simeral, L. R. Hochberg.
 
-<a href='http://ewinapun.com/assets/pdf/SfN_poster_2019.pdf'> Identifying Changes in Volitional State and Task Engagement Based on the Intrinsic Structure of Neural Ensemble Activity Patterns in Motor Cortex of People with Tetraplegia During Daily Activities and BCI Use</a>
+<a href='http://ewinapun.com/assets/pdf/SfN2019.pdf'> Identifying Changes in Volitional State and Task Engagement Based on the Intrinsic Structure of Neural Ensemble Activity Patterns in Motor Cortex of People with Tetraplegia During Daily Activities and BCI Use</a>
 
 *Society for Neuroscience (SfN) Annual meeting*, Chicago, IL.
 
